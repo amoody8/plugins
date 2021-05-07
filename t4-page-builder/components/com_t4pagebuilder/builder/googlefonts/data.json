@@ -1,0 +1,22 @@
+{
+    "Playfair Display":
+    {
+        "name": "Playfair Display",
+        "weight": ["400", "400i", "700", "700i"]
+    },
+    "Quicksand":
+    {
+        "name": "Quicksand",
+        "weight": ["400", "500", "600", "700"]
+    },
+    "Josefin Sans":
+    {
+        "name": "Josefin Sans",
+        "weight": ["300", "400", "400i", "600"]
+    },
+    "Ibarra Real Nova":
+    {
+        "name": "Ibarra Real Nova",
+        "weight": ["400", "400i", "600", "700"]
+    }
+}

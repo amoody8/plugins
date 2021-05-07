@@ -1,0 +1,161 @@
+:root {
+  --link-color: #007bff;
+  --link-hover-color: #006DE1;
+  --spacer: 20px;
+}
+
+.t4b-editor {
+  position: relative;
+}
+
+.t4b-editor .hidden {
+  display: none;
+}
+
+/* Preview canvas */
+.t4b-editor .jpb-preview {
+  border-radius: 3px;
+  border: 1px solid #dedede;
+}
+
+.t4b-editor .jpb-edit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.t4b-editor .btn-customize {
+  background: var(--link-color);
+  box-sizing: border-box;
+  border: 0;
+  box-shadow: none;
+  border-radius: 22px;
+  color: #fff;
+  display: none;
+  height: 44px;
+  padding: 0 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.25s ease-in-out;
+  white-space: nowrap;
+  width: 44px;
+}
+
+.t4b-editor .btn-customize:hover,
+.t4b-editor .btn-customize:focus,
+.t4b-editor .btn-customize:active {
+  background: var(--link-hover-color);
+  width: 100px;
+}
+
+.t4b-editor:hover .btn-customize {
+  display: block;
+}
+
+.t4b-editor .btn-customize > span {
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  width: 20px;
+}
+
+.t4b-editor .btn-customize strong {
+  font-weight: 600;
+  padding-left: 8px;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.t4b-editor .btn-customize:hover strong,
+.t4b-editor .btn-customize:focus strong,
+.t4b-editor .btn-customize:active strong {
+  opacity: 1;
+}
+
+/* Toggle T4 Page Builder */
+.btn-t4pagebuilder .btn {
+  background-color: var(--link-color);
+  border: 0;
+  border-radius: 5px !important;
+  font-weight: 400;
+  padding: 8px 16px;
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-t4pagebuilder .btn:hover,
+.btn-t4pagebuilder .btn:focus,
+.btn-t4pagebuilder .btn:active {
+  background-color: var(--link-hover-color);
+}
+
+/* T4 Modal */
+.t4-modal {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  border-radius: 9px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 500px;
+  transform: translate(-50%, -50%);
+}
+
+.t4-modal .modal-content {
+  padding: 0;
+}
+
+.t4-modal .modal-content h3 {
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.t4-modal .modal-body {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.56;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.t4-modal .actions-wrap {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.t4-modal .actions-wrap .btn {
+  background-color: #eee;
+  box-shadow: none;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0 4px;
+  padding: 8px 16px;
+}
+
+.t4-modal .actions-wrap .btn:hover,
+.t4-modal .actions-wrap .btn:focus,
+.t4-modal .actions-wrap .btn:active {
+  background-color: #ccc;
+}
+
+.t4-modal .actions-wrap .btn-primary {
+  background-color: var(--link-color);
+}
+
+.t4-modal .actions-wrap .btn-primary:hover,
+.t4-modal .actions-wrap .btn-primary:focus,
+.t4-modal .actions-wrap .btn-primary:active {
+  background-color: var(--link-hover-color);
+}
+
+/* Modal overlay */
+#t4b-modal-overlay {
+  background: rgba(0,0,0,0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}

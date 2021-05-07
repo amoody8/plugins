@@ -1,0 +1,1364 @@
+/** 
+ *------------------------------------------------------------------------------
+ * @package       T4 Page Builder for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2020 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
+ *                & Google group to become co-author)
+ *------------------------------------------------------------------------------
+ */
+
+//
+// GJS CV Canvas
+.gjs-cv-canvas {
+  // Reset the canvas
+  background-color: #fff;
+  color: #000;
+
+  height: calc(100% - $commandsPanelHeight);
+  bottom: 0;
+  right: 0;
+  left: $viewPanelWidth + $viewPanelContainerWidth;
+  top: $commandsPanelHeight;
+  width: auto;
+}
+
+.gjs-editor-cont {
+  background: $colorWhite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  height: auto !important;
+  width: auto !important;
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .nav.nav-tabs {
+  background: none;
+  margin-bottom: 0;
+  justify-content: inherit;
+}
+
+.gjs-editor-cont .gjs-mdl-header,
+.gjs-editor-cont .gjs-mdl-content {
+  padding: 15px;
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .nav.nav-tabs {
+  background-color: darken($gray-900, 5%);
+  border-bottom: 1px solid lighten($gray-900, 5%);
+  border-radius: 5px 5px 0 0;
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .nav.nav-tabs .nav-item {
+  background: transparent;
+  border: 0;
+  border-bottom: 0;
+  color: #666;
+  display: inline-block;
+  padding: .7em 2em;
+  margin-right: -5px;
+  font-size: 14px;
+  text-decoration: none;
+  width: auto;
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .nav.nav-tabs .nav-item:hover {
+  color: $colorWhite;
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .nav.nav-tabs .nav-item:first-child {
+  border-radius: 3px 0 0 0;
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .nav.nav-tabs .nav-item:last-child {
+  border-radius: 0 3px 0 0;
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .nav.nav-tabs .nav-item.active {
+  background: $gray-900;
+  color: #fff;
+}
+
+// Code editor
+.cm-s-hopscotch.CodeMirror {
+  background-color: $gray-900;
+  border-radius: 0 0 5px 5px;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.4;
+  font-size: 13px;
+  padding: 0;
+}
+
+.cm-s-hopscotch {
+  .CodeMirror-gutters {
+    background-color: $gray-900;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .btn-prim {
+  background: #3073bb;
+  border-radius: 5px;
+  border: none;
+  color: $gray-700;
+  cursor: pointer;
+  font-family: 'Roboto', Sans-serif;
+  float: right;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding: $basePadding $basePadding*2;
+  transition: all 0.25s;
+
+  &:hover, &:focus, &:active {
+    background-color: $gray-200;
+  }
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .btn-prim:hover {
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .gjs-btn-import {
+  background-color: $colorBlue;
+  color: $colorWhite;
+
+  &:hover, &:focus, &:active {
+    background-color: darken($colorBlue, 10%);
+  }
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .gjs-btn-danger {
+  background-color: transparent;
+}
+
+.gjs-editor-cont .gjs-mdl-dialog .gjs-btn-danger:hover {
+}
+
+.gjs-am-assets-cont .gjs-am-asset-image {
+  border-bottom: none;
+  box-sizing: border-box;
+  float: left;
+  padding: $basePadding/2;
+  width: 20%;
+}
+
+.gjs-am-assets-cont .gjs-am-preview-cont {
+  background-color: $colorWhite;
+  border-radius: 3px 3px 0 0;
+  box-sizing: border-box;
+}
+
+.gjs-am-assets-cont .gjs-am-preview-cont .gjs-am-preview,
+.gjs-am-assets-cont .gjs-am-preview-cont .gjs-am-preview-bg {
+  left: 6px;
+  right: 6px;
+  top: 6px;
+  bottom: 0;
+  height: auto;
+  width: auto;
+}
+
+.gjs-am-assets-cont .gjs-am-asset-image .gjs-am-meta {
+  background: $colorWhite;
+  border-radius: 0 0 3px 3px;
+  line-height: 1;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.gjs-am-assets-cont .gjs-am-asset-image .gjs-am-name {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gjs-am-assets-cont .gjs-am-asset-image .gjs-am-close {
+  background-color: $colorBlack;
+  border-radius: 50%;
+  color: $colorWhite;
+  height: 20px;
+  font-size: 18px;
+  line-height: 20px;
+  opacity: 0.8;
+  top: 0;
+  right: 0;
+  text-align: center;
+  text-shadow: none;
+  width: 20px;
+  z-index: 100;
+}
+
+.gjs-am-dimensions:empty {
+  display: none;
+}
+
+.gjs-am-preview-cont,
+.gjs-am-assets-cont #gjs-am-meta,
+.gjs-am-assets-cont #gjs-am-preview-cont {
+  width: 100%;
+}
+
+.gjs-am-assets-cont #gjs-am-preview-cont {
+  height: 100px;
+}
+
+.gjs-am-assets-cont #gjs-am-close {
+  line-height: 0;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+}
+
+.gjs-btn-filestack {
+  margin-bottom: 10px;
+}
+
+.gjs-am-assets-cont {
+  background-color: transparent;
+  padding: 0;
+  height: 400px;
+}
+
+.gjs-am-assets {
+  background-color: rgba(0, 0, 0, 0.075);
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: calc(100% - 50px);
+  padding: $basePadding*2 $basePadding*1.5;
+  margin: 0;
+}
+
+.gjs-am-add-asset .gjs-am-add-field {
+  box-sizing: border-box;
+  width: 75%;
+
+  .gjs-btn-media {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    z-index: 2;
+  }
+}
+
+//
+// GJS Panels
+// -------------------------------
+.gjs-pn-panel {
+  padding: 0;
+}
+
+//
+// Default Panel Buttons
+.gjs-pn-btn {
+  border-radius: 50px;
+  font-size: $fontSizeXL;
+  padding: $baseWidth;
+  transition: $btnTrans;
+  text-transform: uppercase;
+  //color: $gray-600;
+
+  &:hover {
+    //color: $gray-900;
+    //background: $mainDklColor;
+  }
+}
+
+.gjs-pn-btn.gjs-pn-active {
+  background: $mainDklColor;
+  box-shadow: none;
+  color: $mainAccentColor;
+}
+
+// Text Panel Buttons
+.gjs-pn-btn-txt {
+  line-height: normal;
+  font-size: $fontSizeL;
+  font-weight: 500;
+  padding: $baseWidth $baseWidth*2;
+}
+
+
+//
+// Main Commands Panel (Top Panel)
+.gjs-pn-commands {
+  border-bottom: 1px solid $borderColor;
+  box-shadow: $elevationZ0;
+  height: $commandsPanelHeight;
+  padding: $baseWidth*1.5 $baseWidth*2;
+  transition: $elevationTrans;
+  width: 100%;
+
+  &.canvas-is-scrolled {
+    //box-shadow: $elevationZ6;
+    border-bottom: 1px solid darken($borderColor, 10%);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.045);
+  }
+
+  .gjs-pn-buttons {
+    display: none;
+  }
+
+  .gjs-logo-cont {
+    background-color: $colorBlue;
+    border-right: 1px solid rgba($colorBlack, 0.1);
+    box-sizing: border-box;
+    padding: $basePadding*1.5 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: $commandsPanelHeight;
+    text-align: center;
+    width: $viewPanelWidth;
+
+    img {
+      max-height: 32px;
+      vertical-align: middle;
+    }
+  }
+}
+
+//
+// Devices Panel (Top Panel)
+.gjs-pn-devices-a {
+  display: none;
+}
+
+.gjs-pn-devices-c {
+  background: transparent;
+  padding: $baseWidth*1.5 $baseWidth*2;
+  position: absolute;
+  left: $baseWidth*5;
+  z-index: 4;
+
+  @media screen and (min-width: 992px) {
+    left: 50%;
+    transform: translateX(-50%);    
+  }
+
+  .gjs-pn-buttons,
+  .gjs-styles-c {
+    display: block;
+    float: left;
+  }
+
+  // Hide
+  .gjs-styles-c {
+  }
+
+  .gjs-styles-c label {
+    display: none;
+  }
+
+  // Buttons
+  .gjs-pn-btn {
+    @extend .gjs-t4-btn-lg;
+    border-radius: 50px;
+    padding-top: 1px;
+    margin-right: $baseMargin;
+    padding-bottom: 0;
+
+    &:hover, &:focus, &:active {
+      background: $mainDklColor;
+    }
+
+    &.mobile-landscape:before {
+      display: block;
+      transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+    }
+  }
+}
+
+
+//
+// Options Panel (Top Panel)
+.gjs-pn-options {
+  right: 0;
+  padding: $baseWidth*1.5 $baseWidth*2;
+  background: transparent;
+
+  // Buttons
+  .gjs-pn-btn {
+    @extend .gjs-t4-btn-lg;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: $baseWidth;
+  }
+
+  .gjs-pn-btn-txt {
+    width: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  // Publish Buttons
+  .gjs-pn-btn-publish {
+    @extend .gjs-t4-btn-raised;
+    @extend .gjs-t4-btn-alt;
+    font-size: $fontSizeS;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    &:before {
+      font-family: 'Font Awesome 5 Pro';
+      content: "\f0c7";
+      font-size: $fontSizeL;
+      margin-right: $basePadding/2;
+    }
+  }
+
+  // Close button
+  .gjs-pn-btn-close {
+    background-color: $gray-200;
+    color: $gray-600;
+    margin-left: $basePadding/2;
+
+    &:hover {
+      background-color: $gray-300;
+      color: $gray-800;
+    }
+
+    &:after {
+      margin-top: $baseMargin;
+      right: 0;
+      left: auto;
+      transform: translateX(0);
+    }
+  }
+}
+
+
+//
+// Reload button
+.gjs-pn-btn-reload {
+  position: fixed;
+  bottom: 50px;
+  right: 16px;
+}
+
+
+//
+// Views Panel (Side Panel)
+.gjs-pn-views.gjs-pn-panel {
+  background: $mainDkLlColor;
+  border-right: 1px solid $borderColor;
+
+  left: 0;
+  top: $commandsPanelHeight;
+
+  width: $viewPanelWidth;
+  height: 100%;
+  padding: 0;
+
+  // Navigation Items
+  .gjs-pn-buttons {
+    flex-direction: column; //** Change buttons display to column
+    padding: $baseWidth/2;
+    margin: 0;
+  }
+
+  .gjs-pn-btn {
+    margin: $baseWidth/2 auto;
+    padding: $baseWidth;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: $fontSizeXXL;
+    opacity: .7;
+    transition: $btnTrans;
+
+    > span {
+      line-height: normal;
+      font-family: $altFont;
+      font-size: $fontSizeS;
+      font-weight: 500;
+      margin-top: $baseWidth;
+      display: block;
+      text-transform: none;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &::before {
+      font-weight: 300;
+    }
+  }
+
+  .gjs-pn-btn:after {
+    // bottom: 0;
+    // left: 0;
+    // -webkit-transform: none;
+    // -ms-transform: none;
+    // transform: none;
+    // opacity: 1;
+    // white-space: normal;
+    // background: none;
+    // color: inherit;
+    // font-family: $altFont;
+    // font-size: $fontSizeS;
+    // font-weight: 500;
+    // text-transform: none;
+    // padding: 0;
+    // margin-top: $baseWidth;
+    // position: relative;
+    // box-shadow: none;
+    display: none;  // Hide Tooltips
+  }
+
+  .gjs-pn-btn.gjs-pn-active {
+    pointer-events: none;
+    background: $gjs-one-bg;
+    color: $mainAccentColor;
+    box-shadow: none;
+    border: 1px solid $borderColor;
+    opacity: 1;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  // Seperator
+  .gjs-separator {
+    border-top: 1px solid $borderColor;
+    border-radius: 0;
+    padding-bottom: 0;
+    pointer-events: none;
+    width: 100%;
+    margin: 0;
+
+    > span {
+      font-size: $fontSizeSm;
+      font-weight: 500;
+      opacity: .5;
+      letter-spacing: 1px;
+      text-transform: UPPERCASE;
+      margin-top: 0;
+    }
+  }
+
+}
+
+.gjs-pn-views-container {
+  background: $mainDkLlColor;
+  border-right: 1px solid $borderColor;
+  box-shadow: none;
+
+  padding: 0;
+  left: $viewPanelWidth;
+  bottom: 0;
+  top: $commandsPanelHeight;
+
+  height: auto;
+  width: $viewPanelContainerWidth;
+}
+
+
+//
+// Crumbs View
+.gjs-crumbs-view-c label{
+  white-space: nowrap;
+  margin-right: 10px;
+  color: #FFF;
+}
+
+.gjs-crumbs-view-c {
+  display: flex;
+  text-align: left;
+}
+
+.gjs-crumbs-view-c > label {
+  margin: 0;
+}
+
+.gjs-pn-crumbs-view {
+  background-color: $gray-100;
+  border-top: 1px solid $borderColor;
+  left: $viewPanelWidth + $viewPanelContainerWidth;
+  width: 100%;
+  z-index: 4;
+  line-height: 30px;
+  bottom: 0;
+  padding: 0;
+}
+
+.gjs-pn-crumbs-view .gjs-crumbs {
+  background: none;
+}
+
+.gjs-pn-crumbs-view .gjs-pn-crumbTab:after, 
+.gjs-pn-crumbs-view .gjs-pn-crumbTab:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 1em solid;
+  border-left-color: #eee;
+  right: -1em;
+  z-index: 1;
+}
+
+.gjs-pn-crumbs-view .gjs-pn-crumbTab:before {
+  border-left-color: #d1d1d1;
+  right: -1.1em;
+  z-index: 1;
+}
+
+.gjs-pn-crumbs-view #gjs-input-holder .gjs-pn-crumbTab {
+  background-color: #eee;
+  color: #777;
+  cursor: pointer;
+  position: relative;
+  padding: 0 1em 0 2em;
+}
+
+.gjs-pn-crumbs-view #gjs-input-holder .gjs-pn-crumbTab:hover {
+  color: #000;
+}
+
+.gjs-pn-crumbs-view #gjs-input-holder .gjs-pn-crumbTab.active {
+  background-color: #ddd;
+  color: #333;
+}
+
+.gjs-pn-crumbs-view .gjs-pn-crumbTab.active:after,
+.gjs-pn-crumbs-view .gjs-pn-crumbTab.active:before {
+  border-left-color: #ddd;
+}
+
+.gjs-pn-crumbs-view .gjs-pn-crumbTab.active:before {
+  border-left-color: #d1d1d1;
+}
+
+
+//
+#gjs-input-holder div {
+  display: inline-block;
+  color: #FFF;
+  float: left;
+  width: auto;
+  padding-right: 20px;
+}
+
+.blocks-group {
+  padding: 15px 0;
+  margin: 0;
+  list-style: none;
+  text-align: left;
+  display: flex;
+}
+
+.blocks-group li {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(0,0,0,0.1);
+  cursor: pointer;
+  margin: 0;
+  color: #333;
+  line-height: normal;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.blocks-group li:hover {
+  background-color: #008da6;
+  color: #fff;
+}
+
+.blocks-group li.active {
+  background-color: #008da6;
+  color: #fff;
+}
+
+.grp-wrapper {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==")
+}
+
+.grp-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair
+}
+
+#gjs-sm-preview-box {
+  background-color: rgba(0,0,0,0.05);
+}
+
+#gjs-sm-preview-file {
+  background-size: cover;
+  height: 100px;
+}
+
+.grp-handler {
+  width: 4px;
+  margin-left: -2px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  height: 100%
+}
+
+.grp-handler-close {
+  color: rgba(0, 0, 0, 0.4);
+  border-radius: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  text-align: center;
+  padding-top: 2px;
+  width: 15px;
+  height: 15px;
+  margin-left: -5px;
+  line-height: 10px;
+  font-size: 21px;
+  cursor: pointer
+}
+
+.grp-handler-close-c {
+  position: absolute;
+  top: -17px
+}
+
+.grp-handler-drag {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: col-resize;
+  width: 100%;
+  height: 100%
+}
+
+.grp-handler-selected .grp-handler-drag {
+  background-color: rgba(255, 255, 255, 0.5)
+}
+
+.grp-handler-cp-c {
+  display: none
+}
+
+.grp-handler-selected .grp-handler-cp-c {
+  display: block
+}
+
+.grp-handler-cp-wrap {
+  width: 15px;
+  height: 15px;
+  margin-left: -5px;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  border-radius: 100%;
+  cursor: pointer
+}
+
+.grp-handler-cp-wrap input[type=color] {
+  opacity: 0;
+  cursor: pointer
+}
+
+#gjs-sm-background-image {
+  width: 100%;
+}
+
+.gjs-mdl-btn-fulwith {
+  color: $gray-800;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.CodeMirror-height {
+  height: 700px;
+}
+
+.gjs-mdl-dialog.fulwith {
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.gjs-mdl-dialog.fulwith .CodeMirror-height {
+  height: calc(100vh - 190px);
+}
+
+
+//
+// Style Manager
+// --------------------------------------------
+
+//
+// Custom Category Icons
+#gjs-sm-general,
+#gjs-sm-flex,
+#gjs-sm-dimension,
+#gjs-sm-typography,
+#gjs-sm-decorations,
+#gjs-sm-extra,
+#gjs-sm-OverLays {
+  .gjs-sm-title::before {
+    @include icon($icon: "\f105");
+    margin-right: $baseWidth;
+    font-size: 1rem;
+    display: inline-block;
+    min-width: 26px;
+    text-align: center;
+  }
+}
+
+#gjs-sm-general {
+  .gjs-sm-title::before {
+    @include icon($icon: "\f568");
+  }
+}
+
+#gjs-sm-flex {
+  .gjs-sm-title::before {
+    @include icon($icon: "\f326");
+  }
+}
+
+#gjs-sm-dimension {
+  .gjs-sm-title::before {
+    @include icon($icon: "\f5ef");
+  }
+}
+
+#gjs-sm-typography {
+  .gjs-sm-title::before {
+    @include icon($icon: "\f031");
+  }
+}
+
+#gjs-sm-decorations {
+  .gjs-sm-title::before {
+    @include icon($icon: "\f53f");
+  }
+}
+
+#gjs-sm-extra {
+  .gjs-sm-title::before {
+    @include icon($icon: "\f141");
+  }
+}
+
+#gjs-sm-OverLays {
+  .gjs-sm-title::before {
+    @include icon($icon: "\f6fa");
+  }
+}
+
+.gjs-sm-title > .icon-settings {
+    margin-right: $baseWidth;
+    font-size: 1rem;
+    display: inline-block;
+    min-width: 26px;
+    text-align: center;
+    &::before {
+      content: "\f013";
+      font-weight: 300;
+    }
+}
+
+
+//
+// Tags Editor
+.gjs-clm-tags {
+
+  border-top-color: $borderColor;
+  border-bottom-color: $borderColor;
+  background: #fff;
+
+  padding: $baseWidth $baseWidth*2;
+
+  &:hover {
+    border-top-color: $borderColor;
+    border-bottom-color: $borderColor;
+    background: #fff;
+  }
+
+  #gjs-clm-tags-c {
+    display: block;
+    margin-bottom: $baseWidth;
+  }
+
+  #gjs-clm-up {
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+  }
+
+  #gjs-clm-tags-field,
+  #gjs-clm-tags-field:hover {
+    position: relative;
+    padding: 0;
+    margin: $baseWidth 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+
+  #gjs-clm-label,
+  #gjs-clm-sel {
+    padding: $baseWidth 0;
+  }
+
+  #gjs-clm-sel {
+    font-style: italic;
+    margin-left: $baseWidth;
+  }
+}
+
+#gjs-clm-sel-help {
+  font-size: $fontSize;
+}
+
+
+//
+// Custom Fields
+
+
+// Font Family
+#gjs-sm-font-family {
+  width: 100%;
+}
+
+
+//
+// Layer Manager
+// -----------------------------------------------
+.gjs-layer {
+}
+
+.gjs-layer-title {
+  padding: 4px 16px;
+}
+
+.gjs-layer-vis {
+  padding: 10px 8px;
+}
+
+
+//
+/* code editor css */
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+.nav-tabs .nav-link.disabled {
+  color: #6c757d;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #495057;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.tab-content > .tab-pane {
+  display: none;
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+.CodeMirror pre {
+  white-space: pre-wrap !important;
+}
+
+/* end edit code css */
+
+/* save share function css*/
+
+/*.gjs-group-Blocks,
+.gjs-group-Pages,
+.gjs-group-UserBlocks,
+.gjs-group-Contents,
+.gjs-group-Elements,
+.gjs-group-Layouts{
+  padding-bottom: 36px; 
+}*/
+
+/* css Revision Block */
+.gjs-group-Revision {
+  padding: 0;
+}
+
+.gjs-revision-header {
+  background: $gray-700;
+  height: 20px;
+  line-height: 20px;
+  padding: 12px;
+  text-align: left;
+}
+
+.gjs-revision-header label {
+  color: #fff;
+  font-size: $fontSizeL;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.gis-revision-item {
+  color: #bbb;
+  border-bottom: 1px solid #eee;
+  font-size: .8rem;
+  text-align: left;
+  text-transform: capitalize;
+  transition: all 0.25s;
+}
+
+.gis-revision-item span {
+  display: block;
+  padding: 10px 0;
+}
+
+.gis-revision-item span:empty {
+  display: none;
+}
+
+.gis-revision-item:hover,
+.gis-revision-item:hover .gjs-revision-del {
+  background-color: $gray-100;
+  color: $gray-700;
+  padding-left: $basePadding;
+}
+
+.gis-revision-item:hover i {
+  color: $colorGreen;
+  animation: spin 4s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+}
+
+.gis-revision-item i {
+  margin-right: 5px;
+}
+
+.gis-revision-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.gis-revision-item.active,
+.gis-revision-item.active i,
+.gis-revision-item span:hover {
+  color: #333;
+}
+
+.gis-revision-item > span,
+.gjs-revision-back {
+  cursor: pointer;
+  z-index: 1;
+}
+
+.gis-revision-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.gis-revision-body {
+  background: #fff;
+  padding: 12px;
+}
+
+.gjs-revision-save,
+.gjs-revision-apply {
+  background-color: darken($colorGreen, 5%);
+  border: 0;
+  border-radius: 5px;
+  color: $colorWhite;
+  cursor: pointer;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: $fontSizeL;
+  font-weight: 400;
+  float: right;
+  padding: 7px 12px;
+  opacity: 0.8;
+
+  &:before {
+    font-family: 'Font Awesome 5 Pro';
+    opacity: 0.8;
+    margin-right: 5px;
+  }
+}
+
+.gjs-revision-save:hover,
+.gjs-revision-apply:hover {
+  opacity: 1;
+}
+
+.gjs-revision-footer {
+  background: #eff1f4;
+  bottom: 0;
+  padding: 12px;
+  position: sticky;
+  overflow: hidden;
+}
+
+.gjs-revision-back {
+  background-color: $colorWhite;
+  border: 0;
+  border-radius: 5px;
+  float: left;
+  padding: 7px 12px;
+  cursor: pointer;
+  opacity: 0.8;
+  outline: none;
+  transition: all 0.25s;
+}
+
+.gjs-revision-back:hover {
+  background-color: $gray-600;
+  color: $colorWhite;
+  opacity: 1;
+}
+
+.gjs-revision-del {
+  background: transparent;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  float: right;
+  font-size: .62rem;
+  padding: 1px 4px;
+  z-index: 2;
+}
+
+.gjs-revision-del:hover {
+  color: #091e42;
+}
+
+/* End of css revision block */
+
+
+/* Media Popup */
+.gjs-am-assets-header {
+  margin-bottom: 10px;
+
+  &:after {
+    content: "";
+    clear: both;
+  }
+
+  .gjs-am-add-asset {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: left;
+    padding-right: $basePadding;
+    position: relative;
+    width: 85%;
+
+    .gjs-am-add-field {
+      border: 0;
+      float: none;
+      z-index: 10;
+      width: 100%;
+
+      input {
+        background-color: $gray-200;
+        border: 1px solid $borderColor;
+        border-radius: 25px;
+        padding: 10px 120px 9px 16px;
+        width: 100%;
+      }
+    }
+  }
+
+  .gjs-btn-prim,
+  .gjs-btn-media {
+    background-color: $colorGreen;
+    display: inline-block;
+    border-radius: 25px;
+    margin: 0;
+    padding: 8px 10px;
+    color: $colorWhite;
+    line-height: 1;
+    font-family: $mainFont;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: normal;
+
+    &:before {
+      content: "\f055";
+      display: inline-block;
+      font-family: 'Font Awesome 5 Pro';
+      margin-right: $basePadding;
+    }
+  }
+
+  .gjs-btn-prim {
+    position: absolute;
+    right: $basePadding + 2px;
+    top: 2px;
+    width: auto;
+    z-index: 15;
+  }
+
+  .gjs-btn-media {
+    background-color: $colorBlue;
+    box-sizing: border-box;
+    -moz-osx-font-smoothing: unset;
+    -webkit-font-smoothing: none;
+    text-rendering: auto;
+    width: 15%;
+
+    &:before {
+      content: "\f302";
+    }
+  }
+}
+
+.saveblock-mask {
+  font-family: Helvetica, sans-serif;
+  overflow-y: auto;
+  position: fixed;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 102;
+}
+
+// Dialog popup
+// ------------
+.gjs-mdl-dialog {
+  z-index: 104;
+
+  // Dialog header
+  .gjs-mdl-header {
+    .gjs-mdl-title {
+      color: $gray-800;
+      font-size: $fontSizeXXL;
+      font-weight: 500;
+      text-shadow: none;
+    }
+  }
+
+  // Dialog content
+  .gjs-mdl-content {
+    font-weight: 400;
+    text-shadow: none;
+
+    input, textarea {
+      border-radius: 25px;
+    }
+
+    .form-title {
+      display: block;
+      font-weight: 500;
+      margin-bottom: $baseMargin;
+    }
+
+    .form-check {
+      margin-bottom: $basePadding*2;
+    }
+
+    .form-check-label {
+      font-size: $fontSizeL;
+    }
+
+    .form-row {
+      margin-bottom: $baseMargin*2;
+
+      select {
+        border: 1px solid $gray-300;
+        border-radius: 3px;
+        font-size: $fontSizeL;
+        margin-right: $baseMargin;
+        padding: $basePadding;
+      }
+
+      .addnew {
+        border: 1px solid $gray-300;
+        border-radius: 3px;
+        font-size: $fontSizeL;
+        padding: $basePadding $basePadding*2;
+
+        &:hover, &:focus, &:active {
+          border: 1px solid $gray-400;
+        }
+      }
+    }
+  }
+
+  #jpb_saveblock_form .form-actions {
+    .btn {
+      background-color: transparent;
+      border-radius: 5px;
+      border: 0;
+      color: $gray-700;
+      font-family: Roboto, Helvetica, sans-serif;
+      font-size: $fontSizeL;
+      line-height: 1;
+      padding: 11px $basePadding*2;
+      margin-right: $baseMargin/2;
+      transition: all 0.25s;
+      text-transform: capitalize;
+
+      &:hover, &:focus, &:active {
+        background-color: $gray-200;
+        cursor: pointer;
+      }
+
+      &.saveblock {
+        background: $colorBlue;
+        color: $colorWhite;
+
+        &:hover, &:focus, &:active {
+          background-color: darken($colorBlue, 5%);
+        }
+      }
+    }
+  }
+}
+
+/* XTD Buttons */
+#xtd-jform_articletext {
+  display: none;
+}
+
+.gjs-toolbar-item {
+  background-color: #3b97e3;
+  padding: $basePadding;
+  min-width: 12px;
+
+  &:hover, &:focus, &:active {
+    background-color: darken(#3b97e3, 15%);
+  }
+}

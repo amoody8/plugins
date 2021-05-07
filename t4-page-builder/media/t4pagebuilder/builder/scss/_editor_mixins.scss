@@ -1,0 +1,73 @@
+/** 
+ *------------------------------------------------------------------------------
+ * @package       T4 Page Builder for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2020 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
+ *                & Google group to become co-author)
+ *------------------------------------------------------------------------------
+ */
+
+@charset "UTF-8";
+
+// ------------------------------------
+// T4 Utilities & Mixins
+// ------------------------------------
+
+//
+// Insert Font Awesome Icons
+// Default is Angle Right [http://fortawesome.github.io/Font-Awesome/icon/angle-right/]
+@mixin icon($icon: "\f105") {
+  content: $icon;
+  display: inline-block;
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+  font-style: normal;
+}
+
+//
+// Insert Typography Separator
+// Default is En Dash [https://www.typewolf.com/cheatsheet]
+@mixin separator($sep: "–") {
+  content: $sep;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-style: normal;
+}
+
+//
+// Vertical Align Anything
+// Note: In some case, the Container need Height to working properly
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+// mixin that calculates if text needs to be light or dark
+// depending on the background color passed.
+
+// From this W3C document: http://www.webmasterworld.com/r.cgi?f=88&d=9769&url=http://www.w3.org/TR/AERT#color-contrast
+
+// Color brightness is determined by the following formula: 
+// ((Red value X 299) + (Green value X 587) + (Blue value X 114)) / 1000
+
+@mixin text-contrast($n) {
+  $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+  $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+  
+  @if abs($color-brightness) < ($light-color/2){
+    color: white;
+  }
+
+  @else {
+    color: black;
+  }
+}
+

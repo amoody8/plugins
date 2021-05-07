@@ -1,0 +1,656 @@
+/* MODAL STYLE
+------------------------- */
+/* Modal Body */
+.t4-google-content {
+  max-height: 550px;
+  overflow: auto;
+  padding: 0;
+  position: relative;
+  min-height: 550px;
+}
+
+
+/* FONT SELECTED
+------------------------- */
+.font-selected-wrap {
+  position: sticky;
+  position: -webkit-sticky;
+  padding: 0;
+  /* Safari */
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.font-selected-wrap .jpb-fonts-selected {
+  background-color: #F1F3F4;
+  border-radius: 5px;
+  min-height: 56px;
+  padding: 30px 16px 16px;
+  position: relative;
+}
+
+.font-selected-wrap .jpb-fonts-selected > span {
+  color: #999;
+  font-size: 0.75rem;
+  font-weight: 500;
+  position: absolute;
+  top: 12px;
+}
+
+.font-selected-wrap .jpb-fonts-selected ul {
+  margin: 0 -5px;
+  padding: 0;
+  list-style: none;
+  height: 114px;
+  max-height: 114px;
+  overflow-y: auto;
+}
+
+.font-selected-wrap .jpb-fonts-selected ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.font-selected-wrap .jpb-fonts-selected ul li {
+  background-color: #fff;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: inline-block;
+  float: left;
+  min-height: 37px;
+  margin: 5px;
+  padding: 4px 20px 4px 8px;
+  position: relative;
+  width: 23%;
+}
+
+.font-selected-wrap .jpb-fonts-selected ul li:hover {
+  border: 1px solid #ddd;
+}
+
+.font-selected-wrap .jpb-fonts-selected ul li .font-name {
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.font-selected-wrap .jpb-fonts-selected ul li .font-styles {
+  color: #999;
+  font-size: 11px;
+  line-height: 1;
+}
+
+/* Close button */
+.jpb-fonts-selected li .jpb-font-deleted {
+  background-color: #E0463C;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 11px;
+  height: 16px;
+  line-height: 16px;
+  opacity: 0;
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  text-align: center;
+  transition: all 0.25s ease-in;
+  width: 16px;
+}
+
+.jpb-fonts-selected li .jpb-font-deleted:hover {
+  background-color: #E0463C;
+  color: #fff;
+  cursor: pointer;
+}
+
+.jpb-fonts-selected li:hover .jpb-font-deleted {
+  opacity: 1;  
+}
+
+ul.jub-fonts li {
+  display: block;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 33%;
+}
+
+/* Search font */
+.t4b-fonts-search,
+.t4b-icons-search {
+  background-color: #fff;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.05);
+  border-bottom: 1px solid #E4E8EA;
+  margin: 0 -15px 15px -15px;
+  padding: 8px 16px;
+  position: relative;
+}
+
+.t4b-fonts-search:before,
+.t4b-icons-search:before {
+  content: "\f002";
+  color: #999;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Font Awesome 5 Pro';
+  position: absolute;
+  top: 18px;
+  left: 16px;
+}
+
+.t4b-fonts-search .font-filter,
+.t4b-icons-search .icon-filter {
+  background-color: #fff;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px 16px 10px 24px;
+  transition: all 0.25s ease-out;
+  width: 100%;
+}
+
+.t4b-fonts-search .font-filter::placeholder,
+.t4b-icons-search .icon-filter::placeholder {
+  color: #999;
+  text-transform: uppercase;
+}
+
+.t4b-fonts-search .font-filter:hover,
+.t4b-icons-search .icon-filter:hover {
+}
+
+.t4b-fonts-search .font-filter:focus,
+.t4b-icons-search .icon-filter:focus {
+  background-color: #fff;
+}
+
+.t4-font-filter-message {
+  color: #999;
+  font-size: 14px;
+  position: absolute;
+  right: 16px;
+  top: 18px;
+}
+
+.t4-font-filter-message strong {
+  color: #333;
+  font-weight: 500;
+}
+
+.t4-font .tab-content {
+  border: 1px dashed #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 8px;
+  position: absolute;
+  height: calc(100% - 196px);
+  width: 100%;
+  z-index: 30;
+  overflow-y: scroll;
+}
+
+.jub-font-container {
+  background-color: #fff;
+  background-position: 0 calc(-40px * var(--pos));
+  background-repeat: no-repeat;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #666;
+  cursor: pointer;
+  display: block;
+  height: 45px;
+  margin: 8px 8px 16px 8px;
+  position: relative;
+  /*line-height: 40px;*/
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.custom-font-container {
+  margin-bottom: 8px;
+}
+
+.jub-font-container:before {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.jub-font-container:hover:before {
+  opacity: 1;
+}
+
+.jub-font-container span {
+  background-color: #fff;
+  color: #333;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 4px;
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  line-height: 1;
+}
+
+.jub-font-container span.jub-font-styles {
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  color: #999;
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 4px;
+  position: absolute;
+  left: auto;
+  right: 16px;
+  opacity: 0;
+  text-align: center;
+  top: 12px;
+  width: 60px;
+  vertical-align: middle;
+}
+
+.jub-font-container:hover span.jub-font-styles,
+.font-focus .jub-font-container span.jub-font-styles {
+  opacity: 1;
+}
+
+.font-focus span.jub-font-styles {
+  border-radius: 3px 3px 0 0;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #fff;
+  z-index: 2001;
+}
+
+.font-focus .top span.jub-font-styles {
+  border-radius: 0 0 3px 3px;
+  border: 1px solid #ccc;
+  border-top: 1px solid #fff;
+}
+
+.font-active .jub-font-container,
+.jub-font-container:focus {
+  border-color: #2196F3;
+}
+
+.jub-font-container:hover span {
+  color: #2196F3;
+}
+
+.jub-font-container:hover i.fa-check {
+  opacity: 1;
+}
+
+.jub-font-container i.fa-check.checked {
+  color: #2196f3;
+  opacity: 1;
+}
+
+/* Custom Fonts */
+.editor-settings .t4b-nav-tabs {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tab-content-wrap {
+  min-height: 120px;
+}
+
+.add-more-custom-font {
+  background-color: #e9ecef;
+  overflow: hidden;
+}
+
+.add-more-custom-font span {
+  float: left;
+  display: block;
+  padding: 8px 0;
+  text-align: center;
+  width: 50%;
+}
+
+.add-more-custom-font span:hover {
+  cursor: pointer;
+}
+
+.add-more-custom-font span.active {
+  background-color: #f8f9fa;
+}
+
+.form-add-custom-font {
+  background-color: #f8f9fa;
+  border-radius: 0 0 5px 5px;
+  border-top: 1px solid #e5e6e7;
+  margin: 0;
+  min-height: 100px;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 301;
+}
+
+.custom-font-form {
+  padding: 8px 24px 24px;
+}
+
+.form-add-custom-font textarea {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px;
+  width: 100%;
+}
+
+.form-add-custom-font input.custom-font-input {
+  border: 1px solid #e5e6e7;
+  border-radius: 25px;
+  height: 28px;
+  line-height: 28px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.custom-fonts {
+  list-style: none;
+  margin: 0 -15px;
+  padding: 32px 8px;
+  overflow: hidden;
+}
+
+.custom-fonts li {
+  float: left;
+  padding: 4px;
+}
+.custom-font.hide{
+  display:none;
+}
+.custom-fonts li .custom-font-container {
+  padding-right: 24px;
+  position: relative;
+  background-color: #fff;
+  background-position: 0 calc(-40px * var(--pos));
+  background-repeat: no-repeat;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #666;
+  cursor: pointer;
+  display: block;
+  height: 45px;
+  margin: 8px 8px 16px 8px;
+  position: relative;
+  line-height: 40px;
+  transition: all 0.25s;
+}
+
+.custom-fonts li .custom-font-container:hover {
+  border-color: #2196F3;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+}
+
+.custom-fonts li .custom-font-container:hover .custom-font-name {
+  color: #2196F3;
+}
+
+.custom-fonts li:hover .t4-btn {
+  color: #2196F3;
+}
+
+.custom-fonts li .t4-btn {
+  display: inline-block;
+  height: 24px;
+  line-height: 1;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+  width: 24px;
+  z-index: 300;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+  color: #757575;
+  border-radius: 25px;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+.custom-fonts li:hover .t4-btn {
+  display: inline-block;
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.custom-fonts li:hover .t4-btn:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.custom-fonts li .t4-btn i {
+  line-height: 24px;
+  font-size: 12px;
+  margin: 0;
+}
+/* System Fonts */
+.custom-font-name {
+  color: #333;
+  display: inline-block;
+  font-size: 16px;
+  white-space: nowrap;
+  line-height: 40px;
+  padding: 0 15px;
+}
+
+/* Font weight popup */
+.t4-font-weight-popup {
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 2px 2px 0 rgba(0, 0, 0, 0.06),0 1px 5px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, 0.08);
+  font-family: Roboto, Helvetica, sans-serif;
+  padding: 8px;
+  position: absolute;
+  right: 16px;
+  top: 30px;
+  width: 200px;
+  z-index: 2000;
+}
+
+ul.jub-fonts {
+  padding: 0;
+}
+
+ul.jub-fonts::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ul.jub-fonts li .right .t4-font-weight-popup {
+  right: auto;
+  left: 112px;
+}
+
+.top .t4-font-weight-popup {
+  border-radius: 3px 3px 0 3px;
+  top: auto;
+  bottom: 30px;
+}
+
+ul.jub-fonts li:nth-child(3n+1) .top .t4-font-weight-popup {
+  border-radius: 3px 3px 3px 0;
+}
+
+.font-focus .t4-font-weight-popup {
+  border-radius: 3px 0 3px 3px;
+}
+
+.t4-font-weight-popup ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.jub-fonts .t4-font-weight-popup ul li {
+  padding: 2px 0;
+  float: none;
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.t4-font-weight-popup ul li label {
+  background-color: #f6f6f6;
+  border: 1px solid #f6f6f6;
+  border-radius: 3px;
+  color: #333;
+  display: inline-block;
+  font-size: 13px;
+  margin: 0;
+  padding: 5px 10px;
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.t4-font-weight-popup ul li label:hover {
+  border-color: #2196F3; }
+
+.t4-font-weight-popup ul li input {
+  border: 1px solid #ddd;
+  margin: 0 6px 0 0;
+  vertical-align: middle;
+}
+
+.t4-font-weight-popup .btn-actions {
+  padding-top: 8px;
+  text-align: right;
+}
+
+.t4-font-weight-popup .btn-actions .t4-btn {
+  background-color: #f0f0f0;
+  border: 0;
+  border-radius: 25px;
+  color: #666;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-size: 13px;
+  margin-left: 8px;
+  padding: 6px 12px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.t4-font-weight-popup .btn-actions .t4-btn:hover,
+.t4-font-weight-popup .btn-actions .t4-btn:focus,
+.t4-font-weight-popup .btn-actions .t4-btn:active {
+  background-color: #2196F3;
+  color: #fff;
+  cursor: pointer;
+}
+
+.jub-font[data-bash="1"] > div  { background-image: url(../googlefonts/thumbs/fonts01.jpeg); }
+.jub-font[data-bash="2"] > div  { background-image: url(../googlefonts/thumbs/fonts02.jpeg); }
+.jub-font[data-bash="3"] > div  { background-image: url(../googlefonts/thumbs/fonts03.jpeg); }
+.jub-font[data-bash="4"] > div  { background-image: url(../googlefonts/thumbs/fonts04.jpeg); }
+.jub-font[data-bash="5"] > div  { background-image: url(../googlefonts/thumbs/fonts05.jpeg); }
+.jub-font[data-bash="6"] > div  { background-image: url(../googlefonts/thumbs/fonts06.jpeg); }
+.jub-font[data-bash="7"] > div  { background-image: url(../googlefonts/thumbs/fonts07.jpeg); }
+.jub-font[data-bash="8"] > div  { background-image: url(../googlefonts/thumbs/fonts08.jpeg); }
+.jub-font[data-bash="9"] > div  { background-image: url(../googlefonts/thumbs/fonts09.jpeg); }
+.jub-font[data-bash="10"] > div { background-image: url(../googlefonts/thumbs/fonts10.jpeg); }
+.jub-font[data-bash="11"] > div { background-image: url(../googlefonts/thumbs/fonts11.jpeg); }
+
+div[title="Arial"] .custom-font-name                { font-family: Arial; }
+div[title="Arial Black"] .custom-font-name          { font-family: Arial Black; }
+div[title="Brush Script MT"] .custom-font-name      { font-family: Brush Script MT; }
+div[title="Comic Sans MS"] .custom-font-name        { font-family: Comic Sans MS; }
+div[title="Courier New"] .custom-font-name          { font-family: Courier New; }
+div[title="Georgia"] .custom-font-name              { font-family: Georgia; }
+div[title="Helvetica"] .custom-font-name            { font-family: Helvetica; }
+div[title="Impact"] .custom-font-name               { font-family: Impact; }
+div[title="Lucida Sans Unicode"] .custom-font-name  { font-family: Lucida Sans Unicode; }
+div[title="Tahoma"] .custom-font-name               { font-family: Tahoma; }
+div[title="Times New Roman"] .custom-font-name      { font-family: Times New Roman; }
+div[title="Trebuchet MS"] .custom-font-name         { font-family: Trebuchet MS; }
+div[title="Verdana"] .custom-font-name              { font-family: Verdana; }
+
+/* Popup footer */
+.t4b-action {
+  border-top: 1px solid #eee;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 12px 16px 0;
+  text-align: right;
+}
+
+.t4b-action button {
+  background-color: #f0f0f0;
+  border: 0;
+  border-radius: 25px;
+  color: #666;
+  display: inline-block;
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  margin-right: 6px;
+  padding: 8px 16px;
+  line-height: 1;
+
+  transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -webkit-transition: all 0.25s ease-in;
+}
+
+.t4b-action .t4b-update,
+.t4b-action .saveblock {
+  background-color: #2196F3;
+  color: #fff;
+}
+
+.t4b-action button:hover {
+  background-color: #DEDEDE;
+  cursor: pointer;
+}
+
+.t4b-action .t4b-update:hover,
+.t4b-action .saveblock:hover {
+  background-color: #1D84D6;
+}
+.custom-fonts .hide,
+.customfonts .hide{
+  display:none;
+}
+.custom-fonts .t4-btn.btn-action{
+  cursor: pointer;
+}
+.custom-fonts .message.alert{
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  position: relative;
+  padding: .75rem 1.25rem;
+  padding-right: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-radius: .25rem;
+}

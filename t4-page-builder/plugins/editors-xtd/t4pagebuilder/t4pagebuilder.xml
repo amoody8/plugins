@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="editors-xtd" method="upgrade">
+	<name>Editors-xtd - T4 Page Builder</name>
+	<author>JoomlArt</author>
+	<creationDate>Feb 09, 2021</creationDate>
+	<copyright>Copyright (C) 2005 - 2021 JoomlArt. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.0.7</version>
+	<description>T4 Builder Article Integration plugin integrates T4 page builder with Joomla article to build content blocks, website elements and page using powerful T4 page builder tool</description>
+	<files>
+		<filename plugin="t4pagebuilder">t4pagebuilder.php</filename>
+		<folder>assets</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB.plg_editors-xtd_t4pagebuilder.ini</language>
+		<language tag="en-GB">en-GB.plg_editors-xtd_t4pagebuilder.sys.ini</language>
+	</languages>
+	<updateservers>
+        <server type="extension" priority="1" name="Editors - T4 Page Builder">http://update.joomlart.com/service/tracking/j31/plg_editors-xtd_t4pagebuilder.xml</server>
+    </updateservers>
+</extension>

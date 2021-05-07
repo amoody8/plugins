@@ -1,0 +1,351 @@
+/** 
+ *------------------------------------------------------------------------------
+ * @package       T4 Page Builder for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2020 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
+ *                & Google group to become co-author)
+ *------------------------------------------------------------------------------
+ */
+
+// Font icons modal
+// ---------------------------
+.gjs-mdl-dialog {
+  max-height: 90%;
+  overflow: auto;
+}
+
+.gjs-mdl-header {
+  background-color: #fff;
+  border-radius: 3px 3px 0 0;
+  position: sticky;
+  top: 0;
+}
+
+.tab-pane {
+  &.fade {
+    display: none;
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
+// Nav tab
+.t4b-nav-tabs {
+  background-color: $colorWhite;
+  border-bottom: 1px solid $gray-200;
+  list-style: none;
+  margin: -15px -15px 0;
+  padding: 0 15px;
+  position: sticky;
+  top: 55px;
+
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  li {
+    display: block;
+    float: left;
+    padding: 0 $basePadding*2;
+
+    a {
+      color: $gray-600;
+      display: block;
+      font-size: $fontSizeL;
+      font-weight: 500;
+      margin-bottom: -1px;
+      padding: $basePadding*2 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      outline: none;
+      text-decoration: none;
+
+      &.active {
+        border-bottom: 2px solid $colorBlue;
+        color: $colorBlue;
+      }
+    }
+  }
+}
+
+// Tab content
+.t4b-tabs-content {
+  .t4b-fonts-search {
+    margin-top: 0;
+    position: sticky;
+    top: 106px;
+  }
+
+  #material,
+  #awesome {
+    max-height: 550px;
+    overflow: auto;
+  }
+}
+
+.t4b-tabs-content {
+  .category-container {
+    border-bottom: 1px solid $gray-300;
+    margin-bottom: $baseMargin*2;
+    padding-bottom: $basePadding*2;
+  }
+
+  .category-name {
+    color: $gray-800;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+}
+
+// Icon list
+.t4b-icons-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 2px;
+  list-style: none;
+  overflow: hidden;
+
+  li {
+    border-radius: 3px;
+    box-sizing: border-box;
+    flex-basis: 16.6%;
+    padding: $baseWidth*2;
+    text-align: center;
+    transition: all 0.25s;
+
+    &:hover {
+      background-color: lighten($gray-100, 3%);
+      box-shadow: 0 0 1px 0 rgba(0,0,0,0.4);
+      cursor: pointer;
+    }
+  }
+
+  i {
+    color: $gray-800;
+    font-size: 40px;
+    max-width: 40px;
+  }
+
+  .t4b-icon-name {
+    color: $gray-600;
+    display: block;
+    font-size: $fontSizeS;
+    overflow: hidden;
+    margin-top: $baseMargin/2;
+    text-overflow: ellipsis;
+    width: 100px;
+    white-space: nowrap;
+  }
+}
+
+// Icon Fonts configure
+// --------------------
+.load-font-icons {
+  display: flex;
+  padding: $basePadding*3 $basePadding*2;
+
+  .load-font-awesome_icons,
+  .load-font-material_icons {
+    box-sizing: border-box;
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+  }
+
+  .load-font-awesome_icons {
+    padding-right: $basePadding*2;
+  }
+
+  .load-font-material_icons {
+    padding-left: $basePadding*2;
+  }
+
+  .control-group {
+    margin-bottom: $baseMargin*2;
+    overflow: hidden;
+
+    .control-label {
+      display: inline-block;
+
+      label {
+        font-size: $fontSizeL;
+        color: $gray-800;
+      }
+    }
+
+    .controls {
+      float: right;
+    }
+  }
+
+  .custom-load-font {
+    fieldset {
+      border: 1px solid $borderColor;
+      border-radius: 5px;
+      min-height: 100px;
+      padding: $basePadding*2;
+
+      legend {
+        color: $gray-600;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        padding: 2px $basePadding 0;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+// Group buttons
+.btn-group {
+  overflow: hidden;
+  width: 180px;
+
+  button {
+    background-color: $gray-200;
+    border: 0;
+    color: $gray-600;
+    font-family: $mainFont;
+    font-size: 14px;
+    float: left;
+    padding: 0 $basePadding;
+    height: 32px;
+    line-height: 32px;
+    letter-spacing: 1px;
+    outline: none;
+    width: 50%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.active {
+      background: darken($colorGreen, 10%);
+      color: $colorWhite;
+    }
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}
+
+#status .btn-group {
+  width: auto;
+} 
+
+.custom-url {
+  input {
+    background-color: $gray-100;
+    box-sizing: border-box;
+    border: 0;
+    height: 36px;
+    font-family: $mainFont;
+    font-size: $fontSizeS;
+    line-height: 36px;
+    padding: 0 $basePadding*2;
+    display: block;
+    width: 100%;
+
+    &::placeholder {
+      font-size: $fontSizeS;
+    }
+  }
+
+  small {
+    color: $gray-500;
+    font-size: 11px;
+    padding: 0 $basePadding*2;
+  }
+}
+
+
+// Toggle
+.onoffswitch {
+  position: relative;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select: none;
+  width: 58px;
+}
+
+.onoffswitch-checkbox {
+  display: none;
+}
+
+.onoffswitch-label {
+  border-radius: 25px;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+}
+
+.onoffswitch-inner {
+  display: block;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+  width: 200%;
+}
+
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  font-weight: 500;
+  font-size: 11px;
+  float: left;
+  height: 24px;
+  padding: 0;
+  letter-spacing: 1.5px;
+  line-height: 24px;
+  width: 50%;
+}
+
+.onoffswitch-inner:before {
+  background-color: darken($colorGreen, 5%);
+  color: $colorWhite;
+  content: "ON";
+  padding-left: 8px;
+}
+
+.onoffswitch-inner:after {
+  background-color: darken($colorRed, 5%);
+  color: $colorWhite;
+  content: "OFF";
+  padding-right: 8px;
+  text-align: right;
+}
+
+.onoffswitch-switch {
+  background: $colorWhite;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 4px;
+  right: 38px;
+  transition: all 0.3s ease-in 0s;
+  height: 16px;
+  width: 16px;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 4px; 
+}

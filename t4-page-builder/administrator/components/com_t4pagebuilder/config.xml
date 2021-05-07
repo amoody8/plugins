@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="Advanced"
+		label="COM_T4PAGEBUILDER_ADVANCED_CONFIG"
+		description="COM_T4PAGEBUILDER_ADVANCED_CONFIG_DESC" addfieldpath="/administrator/components/com_t4pagebuilder/models/fields"
+		>
+		<field
+			name="bootstrap4"
+			type="loadbootstrap"
+			label="JA_PAGE_BUILDER_ADVANCED_LOADBOOTSTRAP_LABEL"
+			description="JA_PAGE_BUILDER_ADVANCED_LOADBOOTSTRAP_DESC"
+			filter="bootstrap4"
+			extension="com_t4pagebuilder"
+			view="pages"
+		/>
+		<field
+			name="loadlegacy"
+			type="radio"
+			label="T4_PAGE_BUILDER_ADVANCED_LOADLEGACY_LABEL"
+			description="T4_PAGE_BUILDER_ADVANCED_LOADLEGACY_DECS"
+			class="btn-group btn-group-yesno"
+			default="0"
+			>
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field
+			name="loadotherjs"
+			type="textarea"
+			label="JA_PAGE_BUILDER_ADVANCED_LOADJSOTHER_LABEL"
+			description="JA_PAGE_BUILDER_ADVANCED_LOADJSOTHER_DESC"
+			hint="JA_PAGE_BUILDER_ADVANCED_LOADJSOTHER_PLACEHOLDER"
+			extension="com_t4pagebuilder"
+			view="pages"
+		/>
+		<field
+			name="loadothercss"
+			type="textarea"
+			label="JA_PAGE_BUILDER_ADVANCED_LOADCSSOTHER_LABEL"
+			description="JA_PAGE_BUILDER_ADVANCED_LOADCSSOTHER_DESC"
+			hint="JA_PAGE_BUILDER_ADVANCED_LOADCSSOTHER_PLACEHOLDER"
+			extension="com_t4pagebuilder"
+			view="pages"
+		/>
+		<field
+			name="loadfonts"
+			type="hidden"
+			label="JA_PAGE_BUILDER_ADVANCED_LOADGOOGLEFONT_LABEL"
+			description="JA_PAGE_BUILDER_ADVANCED_LOADGOOGLEFONT_DESC"
+			filter="loadfonts"
+			extension="com_t4pagebuilder"
+			view="pages"
+		/>
+		<field
+			name="loadconfigicons"
+			type="hidden"
+			label="JA_PAGE_BUILDER_ADVANCED_LOADGOOGLEFONT_LABEL"
+			description="JA_PAGE_BUILDER_ADVANCED_LOADGOOGLEFONT_DESC"
+			filter="loadconfigicons"
+			extension="com_t4pagebuilder"
+			view="pages"
+		/>
+
+		<field
+			name="revision_config"
+			type="list"
+			label="T4_PAGE_BUILDER_REVISION_CONFIG_LABEL"
+			description="T4_PAGE_BUILDER_REVISION_CONFIG_DESC"
+			filter="revision_config"
+			default="2">
+			<option value="2">T4_PAGE_BUILDER_SAVE_ALL</option>
+			<option value="1">T4_PAGE_BUILDER_SAVE_5</option>
+			<option value="0">JDISABLED</option>
+		</field>
+		<field
+			name="btAssigned"
+			type="hidden"
+			filter="btAssigned"
+			extension="com_t4pagebuilder"
+			view="pages"
+		/>
+	</fieldset>
+	<fieldset
+		name="permissions"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		description="JCONFIG_PERMISSIONS_DESC"
+	>
+
+		<field
+			name="rules"
+			type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			validate="rules"
+			filter="rules"
+			component="com_t4pagebuilder"
+			section="component"
+		/>
+	</fieldset>
+</config>

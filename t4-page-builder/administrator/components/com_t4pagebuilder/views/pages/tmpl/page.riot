@@ -1,0 +1,670 @@
+<page class="t4b-libs__wrapper">
+    <div class="t4b-libs__sidebar" disabled>
+        <h3>{ props.title }</h3>
+        <ul>
+            <li onclick={()=> updateView(props)} class="t4b-active">
+                <label>
+                    All<span>{props.items.length}</span>
+                </label>
+            </li>
+            <li each={ item in getTags() } onclick={()=> updateView(props,item)}>
+                <label>{ item } <span>{countItem(item)}</span></label>
+            </li>
+        </ul>
+    </div>
+    <div class="t4b-libs__pages">
+        <div class="t4b-login-mark" onclick="{eventclicks}" style="position: absolute; width: 100%;height: 100%; top: 0; left: 0; right: 0; bottom: 0; display:none; z-index: 9998;"></div>
+        <div class="t4b-toolbar">
+            <div class="filter-search" if={state.search}>
+                <div class="search-box">
+                    <input type="text" name="filter_search" id="t4b-searchbox" onkeyup="{searchUpdate}" placeholder="Search" value="{state.search_value}" class="hasTooltip">
+                    <button type="button" class="btn hasTooltip" onclick="{clearSearch}" data-original-title="Clear" id="search-reset"><span class="fal fa-times"></span></button>
+                </div>
+            </div>
+            <div class="t4b-action">
+                <button type="button" class="btn-link btn-back" style="display: none;" title="Back to Libs" onclick="{backtoLibs}"><i class="fal fa-long-arrow-left"></i>{state.backto}</button>
+            </div>
+
+            <div id="t4b-site-info" class="toolbar-user">
+                <span if={!state.loginStatus} class="btn btn-login t4b-site-connect" title="Login" onclick="{(e) => jaLogin(e)}">
+                  <i class="fal fa-user-lock"></i>Login
+                </span>
+
+                <span class="login_tooltip">Login to Import</span>
+
+                <a href="https://www.joomlart.com/t4-page-builder" target="_blank" class="btn btn-upgrade" if={state.buttonEv == 'buildpro'}>Go to Pro&nbsp;&nbsp;<i class="fal fa-long-arrow-right"></i></a>                
+
+                <div class="user-info member-area" if={state.loginStatus}>
+                    <ul class="toolbar-nav">
+                        <li class="dropdown" onclick="{showUserInfo}">
+
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Account info">
+                            <span class="user-avatar">
+                              <img src="https://static.themepro.com/images/default/avatars/avatar.jpg" class="t4b-user-avatar" />
+                            </span>
+                            <i class="fal fa-angle-down"></i>
+                          </a>
+
+                            <div class="dropdown-menu" style="display:none; z-index: 9999;">
+                                <div class="dropdown-content-box">
+                                   <div class="t4b-user-info">
+                                    <span class="user-avatar"><img src="https://static.themepro.com/images/default/avatars/avatar.jpg" class="t4b-user-avatar" /></span>
+                                    <span class="user">
+                                      <strong class="user-name"><a href="https://member.joomlart.com/member/" target="_blank" title="Visit Your Account Page" class="t4b-link-blank-target">{(state.users.name.trim() != "") ? state.users.name : state.users.username}</strong></a>
+                                      <span class="user-badge badge-{(state.users.user_type != 'Free') ? 'premium' : 'free'}">{state.users.user_type}</span>
+                                    </span>
+
+                                   </div>
+
+                                    <div class="t4b-user-actions">
+                                      <p if={state.users.expire_date}>Your membership will expire on <strong>{state.users.expire_date}</strong>.</p>
+                                      <div class="btns">
+                                        <a class="btn btn-logout" href="#" title="Disconnect page" onclick="{(e) => jaLogout(e)}">Logout</a>
+                                        <a class="btn btn-success btn-renew" if={state.users.user_type != "Free"} href="https://www.joomlart.com/member" title="Renew Now!" target="_blank">Renew Now</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="layout t4b-login" style="display: none; z-index: 9999;" if={!state.loginStatus}>
+                    <div class="form-login">
+                        <form method="post" action="" id="admin-login-form">
+                          <div class="alert alert-info">
+                            If you are free users, upgrade to <strong>Pro</strong> to access all <strong>Pro Website Bundles &amp; Blocks</strong>. <a href="https://www.joomlart.com/t4-page-builder" title="View Pricing" target="_blank">View Pricing</a>
+                          </div>
+                            <div class="t4b-login-form__username">
+                              <span class="add-on"><i class="fal fa-lock"></i></span>
+                              <input type="text" id="login" name="am_admin_login" size="18" value="" autofocus="autofocus" placeholder="Email or Username" />
+                            </div>
+                            <div class="t4b-login-form__password">
+                              <span class="add-on"><i class="fal fa-key"></i></span>
+                              <input type="password" id="pass" name="am_admin_passwd" size="18" placeholder="Password" />
+                            </div>
+                            <div id="t4b-login-form__message" class="alert alert-error" if={state.login_msg}>{state.login_msg}</div>
+                            <div class="t4b-login-form__actions">
+                              <input class="btn btn-primary" type="submit" name="submit" value="Log In" onclick="{(event) => login(event)}">
+                            </div>
+                            <div class="t4b-login-form__links">
+                              <a class="btn-link" href="https://www.joomlart.com/member/signup/free" target="_blank" title="Free Signup">Don't have account</a>
+                              <a class="btn-link" href="https://www.joomlart.com/member/login?sendpass" target="_blank" title="Lost your password">Forgot password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div if={state.msg} class="alert alert-{state.msg_class}">{state.msg}</div>
+        <div class="t4b-pages-wrap">
+            <div class="page-item" each={item in state.items } onclick="{() => updateViewDetail(item)}">
+                <div class="page-item-inner">
+                    <div class="page-item__thumb" style="background-image: url({getThumb(item.thumb)});"></div>
+                    <h2 class="page-item__title">{item.title} <span>({item.num} pages)</span></h2>
+                    <span class="badge badge-warning page-item__locked" if={item.type != 1}><i class="fal fa-lock-alt"></i>Pro</span>
+                </div> <!-- End Bundle Item -->
+            </div>
+        </div>
+        <div class="t4b-page-detail" if={state.detail.length > 0} >
+            <div class="t4b-page-detail__package clearfix">
+              <div class="t4b-sub-head">
+                <h2 class="page-item__title">{state.package_title}</h2>
+                <span class="badge badge-success page-item__locked" if={state.badge && state.package_type == 1}>Free</span>
+                <span class="badge badge-warning page-item__locked" if={state.badge && state.package_type != 1}><i class="fal fa-lock-alt"></i>Pro</span>
+
+                <label for="checkall" class="check-all">
+                  <input id="checkall" type="checkbox" class="package_im_checkall" name="checkall-toggle" value="" onclick="{(e) => detailClickAll(e)}" class="" title="" data-original-title="Check All Items">
+                  <span class="checkmark"></span>Check All                  
+                </label>
+                  
+                <button type="button" class="btn btn-import btn-page-import-libs {state.btnIm_cls}" onclick="{importLibs}" if={ state.buttonEv !== 'login'}><i class="fal fa-file-import"></i>Import</button>
+              </div> <!-- End: Sub head -->
+            </div>
+
+            <ul class="page-list">
+                <li class="item" each={ item_detail in state.detail} onclick="{(e) => detailClick(e)}">
+                    <div class="item-inner">
+                        <div class="thumb"><img src="{item_detail.thumb}" alt="{item_detail.title}"></div>
+                        <div class="name">
+                          <label class="custom-checkbox">
+                            <input type="checkbox" id="cb2" class="package_im" name="jform[cid]" value="{item_detail.id}" data-title="{item_detail.title}" onclick="{(e) => detailClick(e)}">
+                            <span class="checkmark"><i class="fal fa-check"></i></span>
+                          </label>
+                          {item_detail.title}
+                        </div>
+                    </div>
+                </li>
+            </ul><!-- // Page list -->
+
+        </div>
+        <div class="t4b-page-import">
+            <div class="package-progress" style="display: none;">
+                <div class="progress progress-striped active">
+                    <div class="bar bar-success" style="width: 0;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="lead">
+                    <span class="uploading-text">Importing ...</span>
+                    <span class="uploading-number">0</span><span class="uploading-symbol">%</span>
+                </p>
+            </div>
+        </div>
+        <div class="t4b-search-result" if={state.data_search.length > 0}>
+
+        </div>
+        <button if={state.import_done} type='button' class='btn btn-primary btn-import-close'>Ok(3)</button>
+    </div>
+    <script>
+ export default {
+        onBeforeMount(props, state) {
+            // initial state
+            this.state = {
+                items: this.rebuildItem(props.items),
+                loginStatus: props.loginStatus,
+                users:props.users,
+                allPage: this.getAllPages(props.items),
+                buttonEv:props.btnEv,
+                data_search:[],
+                detail: [],
+                backto:"Back to All",
+                search:true,
+                text: '',
+                tag: "",
+                search_value: "",
+                msg: ""
+            }
+        },
+        getThumb(img) {
+            if (!img) img = "images/pages/page_default.png";
+            thumb = this.props.baseUrl + img;
+            if (img.indexOf("http://") == 0 || img.indexOf("https://") == 0 || img.indexOf("//") == 0) {
+                thumb = img;
+            }
+            return thumb;
+        },
+        countItem(tag) {
+            count = 0;
+            for (var i = 0; i < this.props.items.length; i++) {
+                if (this.props.items[i]['tags'].indexOf(tag) >= 0) {
+                    count++;
+                }
+            }
+            return count;
+        },
+        getTags() {
+            //get all tags on data
+            tags = [];
+            for (var i = 0; i < this.props.items.length; i++) {
+                var itemTag = this.props.items[i]['tags'];
+                if (itemTag.length >= 1) {
+                    itemTag.forEach(function(element, index) {
+                        if (tags.indexOf(element) == -1) {
+                            tags.push(element);
+                        }
+                    });
+                }
+            }
+            return tags;
+        },
+        getItemByTag(tag) {
+            if (tag) {
+                items = this.props.items.filter(item => item.tags.indexOf(tag) >= 0);
+            } else {
+                items = this.props.items;
+            }
+            return items;
+        },
+        searchUpdate(e) {
+            let itemsFilter = this.state.allPage;
+            let keysearch = e.target.value;
+            let msg = '';
+            let items = itemsFilter.filter(item => item.title.toLowerCase().indexOf(keysearch) > -1);
+            if (!items.length) msg = "Item not found!";
+            var btnIm_cls = "disabled";
+            this.update({
+                detail: this.rebuildItem(items),
+                backto:"Back to Search",
+                search_value: keysearch,
+                package_title:"Search result",
+                badge:false,
+                msg: msg,
+                msg_class: "notice",
+                btnIm_cls: btnIm_cls
+            })
+             this.inportPageToggle();
+             jQuery('.btn-link.btn-back').hide();
+        },
+        getAllPages(data){
+            let dataPage = [];
+            data.forEach( function(p, index) {
+                let bundles_title = p.title;
+                let detail_item = JSON.parse(p.detail);
+                detail_item.forEach( function(element, index) {
+                    element.bundle_id = p.id;
+                    element.title = p.title +" - "+ element.title;
+                });
+                dataPage = dataPage.concat(detail_item);
+                // statements
+            });
+            return dataPage;
+
+        },
+        clearSearch() {
+            items = this.getItemByTag();
+            this.update({
+                items: this.rebuildItem(items),
+                backto:"Back to All",
+                search_value: "",
+                tag: "",
+                msg: ""
+            });
+            this.backtoPrev();
+        },
+        rebuildItem(items) {
+            return items;
+            /*var COLUMNS_AMOUNT = 3;
+            return items.reduce((grid, col, index) => {
+              // add a new row
+              if (index % COLUMNS_AMOUNT === 0) grid[grid.length] = []
+              // add the column into the current row
+              grid[grid.length - 1].push(col)
+
+              return grid
+            }, []);*/
+        },
+        checkAllInput (){
+            var $ = jQuery;
+            var checkedVals = $('input.package_im').map(function() {
+                $(this).prop('checked',true);
+                return this.value;
+            }).get();
+            $('.package_im_checkall').prop('checked',true);
+            $('.page-list .item').addClass('selected');
+            this.update({
+                btnIm_cls: "",
+                itemIm:checkedVals
+               }); 
+        },
+        updateViewDetail(item) {
+            var $ = jQuery;
+            var that = this;
+            var file_url = remote_url + "member/builderbundle/get-item-detail?item_id=" + item.id;
+            postData(file_url).then((data) => {
+                if (data.status == '200') {
+                    this.update({
+                        detail:JSON.parse(data.data),
+                        package_title: item.title,
+                        package_type: item.type,
+                        package_id: item.id,
+                        package_thumb: item.thumb,
+                        package_desc: item.desc,
+                        badge:true,
+                        search:false,
+                        package_type: item.type,
+                        msg:""
+                    });
+                    that.inportPageToggle();
+                    var btnIm_cls = "disabled";
+                    if(that.state.loginStatus){
+                        that.checkAllInput();
+                        btnIm_cls = "";
+                    }else{
+                        this.update({
+                            btnIm_cls: btnIm_cls
+                        })
+                    }
+                } else {
+                    that.showError(data.message);
+                    return false;
+                }
+            });
+        },
+        showUserInfo() {
+            var $ = jQuery;
+            $('.user-info li.dropdown').find('.dropdown-menu').show();
+            $('.t4b-login-mark').show();
+        },
+        detailClickAll(e) {
+            var $ = jQuery;
+            var login_status = this.state.loginStatus;
+            if(!login_status){
+                //show tooltip login to import
+                var login_tooltip = $('.login_tooltip');
+                login_tooltip.addClass('show');
+                setTimeout(function(){ 
+                    login_tooltip.removeClass('show');
+                }, 3000);
+                $('.package_im_checkall').prop('checked',false);
+
+                return false;
+            }
+            window.Joomla.checkAll(e.target);
+            
+            if($(e.target).prop('checked')){
+                
+                var checkedVals = $('input.package_im').map(function() {
+                    $(this).prop('checked',true);
+                    return this.value;
+                }).get();
+                this.update({
+                    itemIm:checkedVals,
+                    btnIm_cls: "",
+                    msg:"",
+                    msg_class:""
+               });
+            }else{
+
+                var checkedVals = $('input.package_im').map(function() {
+                    $(this).prop('checked',false);
+                    return this.value;
+                }).get();
+                this.update({
+                    itemIm:checkedVals,
+                    btnIm_cls: "disabled",
+                    msg:"",
+                    msg_class:""
+                });
+            }
+
+        },
+        updateItemStatus(e){
+            var $ = jQuery; 
+            if(!this.state.loginStatus){
+                $(e.target).prop('checked',false);
+            }
+            
+        },
+        detailClick(e) {
+            var $ = jQuery;
+            var that = this;
+            var login_status = this.state.loginStatus;
+            if(!login_status || login_status == "false"){
+                //show tooltip login to import
+                var login_tooltip = $('.login_tooltip');
+                login_tooltip.addClass('show');
+                var timer = setTimeout(function(){ 
+                    login_tooltip.removeClass('show');
+                }, 3000);
+
+                return false;
+            }else{
+                var $item = $(e.target);
+                if(!$item.hasClass('item')) $item = $item.closest('.item');
+                var $input = $item.find('input.package_im');
+                $input.click();
+                var checkedVals = $('input.package_im').map(function() {
+                    if($(this).prop('checked')){
+                        return this.value;
+                    }
+                }).get();
+                if($input.prop('checked')){
+                    $item.addClass('selected');
+                }else{
+                    $item.removeClass('selected');
+                }
+                if(checkedVals.length == $('.package_im').length){
+                    $('.package_im_checkall').prop('checked',true);
+                }else{
+                    $('.package_im_checkall').prop('checked',false);
+                }
+                if(checkedVals.length){
+                   this.update({
+                    btnIm_cls: "",
+                    itemIm:checkedVals,
+                    msg:"",
+                    msg_class:""
+                   }); 
+                }else{
+                    this.update({
+                    itemIm:checkedVals,
+                    btnIm_cls: "disabled",
+                    msg:"",
+                    msg_class:""
+                   }); 
+                }
+            }
+
+
+        },
+        updateStyleLibs(){
+            this.update({
+                page_style:true
+            });
+        },
+        importLibs() {
+            var $ = jQuery;
+            
+             if(!this.state.loginStatus){
+                //show tooltip login to import
+                var login_tooltip = $('.login_tooltip');
+                login_tooltip.addClass('show');
+                var timer = setTimeout(function(){ 
+                    login_tooltip.removeClass('show');
+                }, 3000);
+
+                return false;
+            }
+            if(!this.state.itemIm || !this.state.itemIm.length || this.state.btnIm_cls){
+                this.update({
+                    msg:"Please select pages to import",
+                    msg_class:"error"
+                });
+                return false;
+            }
+            if(this.state.package_type != 1 && this.state.users.user_type == "Free"){
+                this.update({
+                    msg:"Upgrade Pro to import all Pro website bundles",
+                    msg_class:"success"
+                });
+                return false;
+            }
+
+            var url = url_base + "/index.php?option=com_t4pagebuilder&view=page&format=json&act=import&type=package";
+            var config = JSON.parse(localStorage.getItem('t4bConfig'));
+            var package_url = config.remote_url+"member/builderbundle/download/?user_id=" + config.user_id + "&item_id=" + this.state.package_id + "&token=" + config.user_token;
+            var data_page = new FormData();
+            data_page.append('package_url', package_url);
+            data_page.append('installtype', 'url');
+            data_page.append('page_import', JSON.stringify(this.state.itemIm));
+            data_page.append('page_style',0);
+
+            if(this.state.page_style){
+                data_page.append('page_style',1);
+            }
+            jQuery('.package-progress').toggle();
+            jQuery('.t4b-page-detail').toggle();
+            this.importPageBundle(data_page,url);
+
+            return false;
+        },
+        inportPageToggle() {
+            jQuery('.btn-link.btn-back').show();
+            jQuery('.t4b-pages-wrap').hide();
+        },
+        importPageBundle(data, url) {
+            var $ = jQuery;
+            var i = 0;
+            var that = this;
+            var progress = jQuery('.package-progress');
+            var pageExtra = jQuery('.t4b-pages');
+            var backtolibs = jQuery('.btn-link.btn-back');
+            var progressBar = progress.find('.bar');
+            var percentage = progress.find('.uploading-number');
+            var percentComplete = 0;
+            var completed = false;
+            jQuery.ajax({
+                    url: url,
+                    data: data,
+                    type: 'post',
+                    processData: false,
+                    cache: false,
+                    contentType: false,
+                    xhr: function() {
+                        var xhr = new window.XMLHttpRequest();
+
+                        progressBar.css('width', 0);
+                        progressBar.attr('aria-valuenow', 0);
+                        percentage.text(0);
+                        pageExtra.hide();
+                        // Upload progress
+                        xhr.upload.addEventListener("progress", function(evt) {
+
+                            if (evt.lengthComputable) {
+                                if (i == 0) {
+                                    i = 1;
+                                    percentComplete = 0;
+                                    var id = setInterval(frame, 10);
+
+                                    function frame() {
+                                        if (percentComplete >= 100) {
+                                            clearInterval(id);
+                                            i = 0;
+                                        } else {
+                                            percentComplete++;
+                                            progressBar.css('width', percentComplete + '%');
+                                            progressBar.attr('aria-valuenow', percentComplete);
+                                            percentage.text(percentComplete);
+                                        }
+                                    }
+                                }
+                            }
+                        }, false);
+
+                        return xhr;
+                    }
+                })
+                .done(function(res) {
+
+                    // progress.hide();
+                    // Handle extension fatal error
+                    if (res.error) {
+                        progress.hide();
+
+                        that.update({
+                            msg: res.error,
+                            msg_class: "error"
+                        });
+                        return false;
+                    }
+                    if(res.message){
+                        progress.hide();
+                        that.update({
+                            msg:res.message,
+                            msg_class: "success",
+                            page_style:false,
+                            import_done: 1
+                        });
+
+                        var counter = 3;
+                        var interval = setInterval(function() {
+                          counter--;
+                          $(".btn-import-close").html("Ok("+counter+")");
+                          if (counter === 0) {
+                            $('#importpage').modal('hide');
+                            clearInterval(interval);
+                            window.parent.location.reload();
+                          }
+                        }, 1000);
+                    }
+
+
+                }).error(function(error) {
+                    uploading = false;
+                    if (error.status === 200) {
+                        var res = error.responseText || error.responseJSON;
+                        // that.showError(error.statusText);
+                    } else {
+                        that.showError(error.statusText);
+                    }
+                });
+        },
+        showErrorInParent(error) {
+            Joomla.renderMessages({"error":[error]});
+            return false;
+        },
+        showError(error) {
+            if (!error) return;
+            this.update({
+                msg: error,
+                msg_class: "error"
+            });
+        },
+        backtoLibs(e) {
+            e.preventDefault();
+            this.backtoPrev();
+        },
+        backtoPrev() {
+            jQuery('.btn-link.btn-back').hide();
+            jQuery('.t4b-pages-wrap').show();
+            this.update({
+                detail:[],
+                search:true,
+                'msg': ""
+            });
+            Joomla.removeMessages();
+        },
+        updateView(props, tag) {
+            if (tag) {
+                items = props.items.filter(item => item.tags.indexOf(tag) !== -1);
+            } else {
+                items = props.items;
+                tag = "All";
+            }
+            this.update({
+                items: this.rebuildItem(items),
+                backto:"Back to "+tag,
+                tag: tag
+            });
+            this.backtoPrev();
+        },
+        jaLogin(e) {
+            e.preventDefault();
+            var $ = jQuery;
+            $('.t4b-login').toggle();
+            $('.t4b-login-mark').toggle();
+
+        },
+        jaLogout(e) {
+            e.preventDefault();
+            localStorage.setItem('t4bConfig',JSON.stringify({'login_status':false,'remote_url':remote_url}));
+            localStorage.setItem('importOpened', true);
+            window.location.reload();
+        },
+        login(e) {
+            e.preventDefault();
+            var that = this;
+            const login = encodeURIComponent(jQuery("#login").val()), pass = encodeURIComponent(jQuery('#pass').val());
+            var t4bConfig = JSON.parse(localStorage.getItem('t4bConfig')) || {};
+            postData(`${t4bConfig.remote_url}member/builderbundle/get-access-token?login=${login}&pass=${pass}`).then(data => {
+                if (data.status == '200') {
+                    data.data.login_status = true;
+                    data.data.remote_url = t4bConfig.remote_url;
+                    if(data.data.user_type.toLowerCase() != 'free'){
+                        data.data.user_type_pk = "pro";
+                    }else{
+                        data.data.user_type_pk = "free";
+                    }
+                    localStorage.setItem('t4bConfig', JSON.stringify(data.data));
+                    localStorage.setItem('importOpened', true);
+                    window.location.reload();
+                } else {
+                    that.update({
+                        login_msg:data.message
+                    });
+                    return false;
+                }
+
+            });
+        },
+        eventclicks() {
+            var $ = jQuery;
+            if($('.t4b-login').is(":visible")){
+                $('.t4b-login').hide();
+            }
+            $('.user-info li.dropdown').find('.dropdown-menu').hide();
+            $('.t4b-login-mark').hide();
+
+        },
+    }
+    </script>
+</page> 

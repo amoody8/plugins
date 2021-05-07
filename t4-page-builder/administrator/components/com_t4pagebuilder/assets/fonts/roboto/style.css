@@ -1,0 +1,39 @@
+/* Roboto Thin*/
+@font-face {
+  font-family: 'Roboto-Thin';
+  src: url('fonts/Roboto-Thin.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Roboto Light */
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('fonts/Roboto-Light.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Roboto Regular */
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('fonts/Roboto-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Roboto Medium */
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url('fonts/Roboto-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Roboto Bold */
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url('fonts/Roboto-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}

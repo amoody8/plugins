@@ -1,0 +1,344 @@
+// Page Import
+#importpage.modal {
+  bottom: 5%;
+  
+  .modal-dialog,
+  .modal-content,
+  #page_import,
+  #upload,
+  .uploadform,
+  .t4b-pages,
+  .t4b-main-container {
+    height: 100%;
+  }
+
+  #page_import {
+    margin-bottom: 0;
+  }
+
+  .t4b-main-container {
+    padding: $base-padding*2 0 $base-padding*2 $base-padding*3;
+  }
+
+  .tab-content {
+    height: calc(100% - 48px);
+  }
+
+  .chose-page-install {
+    height: calc(100% - 36px);
+  }
+
+  .modal-body {
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+.t4b-pages {
+  h3 {
+    display: none;
+  }
+
+  .checkall-toggle {
+    margin-bottom: $base-margin;
+    overflow: hidden;
+
+    label {
+      background-color: darken($gray-100, 5%);
+      border-radius: 3px;
+      float: left;
+      padding: 8px 8px 8px 30px;
+
+      input, .checkmark {
+        left: 8px;
+        top: 9px;
+      }
+
+      .checkmark {
+        background-color: $white;
+      }
+    }
+  }
+
+  .page-list {
+    list-style: none;
+    margin: 0 -10px;
+    padding: 0;
+    height: calc(100% - 34px);
+    overflow: auto;
+
+    li {
+      display: block;
+      float: left;
+      padding: 0 10px 20px;
+      width: 20%;
+
+      .item-inner {
+        border-radius: 3px;
+        border: 1px solid $border-color;
+      }
+
+      .thumb {
+        background-color: $gray-100;
+        border-bottom: 1px solid $border-color;
+        border-radius: 3px 3px 0 0;
+        color: $gray-400;
+        min-height: 260px;
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
+
+        .place-holder {
+          display: block;
+          font-size: 14px;
+          position: absolute;
+          top: 50%;
+          text-align: center;
+          width: 100%;
+          transform: translateY(-50%);
+        }
+
+        i {
+          display: block;
+          font-size: 32px;
+          margin-bottom: 12px;
+        }
+      }
+
+      .name {
+        padding: $base-padding/2;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .custom-checkbox {
+    color: $gray-700;
+    font-size: 15px;
+    font-weight: 400;
+    display: block;
+    margin: 0;
+    padding: 0 0 0 20px;
+    position: relative;
+
+    input {
+      cursor: pointer;
+      height: 0;
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      width: 0;
+
+      &:checked ~ .checkmark {
+        border-color: $green;
+
+        &:after {
+          display: block;
+        }
+      }
+    }
+
+    .checkmark {
+      border: 2px solid $gray-300;
+      border-radius: 2px;
+      display: block;
+      height: 16px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 3px;
+        top: 0px;
+        width: 4px;
+        height: 6px;
+        border: solid $green;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+
+// Tab modal
+#importTabTabs {
+  border-bottom: 1px solid $gray-200;
+  position: relative;
+
+  li {
+    margin: 0 0 -1px;
+    padding: 0 $base-padding;
+
+    a {
+      border-radius: 0;
+      border: 0;
+      color: $text-color;
+      font-size: 15px;
+      padding: $base-padding*1.5 0;
+      position: relative;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+
+      &:hover, &:focus, &:active {
+        background-color: transparent;
+        color: $link-hover-color;
+      }
+
+      &:after {
+        content: "";
+        height: 2px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    &.active {
+      a {
+        color: $link-active-color;
+
+        &:after {
+          background-color: $link-active-color;
+        }
+      }
+    }
+  }
+}
+
+// Modal
+#importpage {
+  border-radius: 0;
+
+  .close {
+
+  }
+}
+
+//Page library
+#libs {
+  height: 100%;
+
+  .t4b-container {
+    padding: 0;
+  }
+
+  .load-libs,
+  .t4b-container,
+  .t4b-items {
+    height: 100%;
+  }
+
+  // List all page type
+  .t4b-libs__wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    height: 100%;
+
+    .t4b-libs__sidebar {
+      background-color: $gray-200;
+      flex-basis: 25%;
+      padding: $base-padding*2;
+
+      h3 {
+        background-color: $blue;
+        border-radius: 3px;
+        border-bottom: 1px solid $gray-200;
+        color: $white;
+        font-size: 15px;
+        font-weight: 500;
+        margin: 0 0 $base-margin*2;
+        padding: $base-padding*1.5 $base-padding*2;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          border-bottom: 1px solid $border-color;
+          padding: $base-padding*1.5 0;
+
+          label {
+            font-size: 15px;
+            margin: 0;
+          }
+
+          &.t4b-active {
+            label {
+              color: $link-active-color;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+
+    .t4b-libs__pages {
+      padding: 0 $base-padding*3;
+      flex-basis: 75%;
+      overflow-y: scroll;
+    }
+
+    #filter-bar {
+      border-bottom: 1px solid $border-color;
+      height: auto;
+      padding-bottom: $base-padding;
+      margin-bottom: $base-margin*3;
+
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+
+    // Page Items
+    .page-item {
+      background-color: $gray-200;
+      margin-bottom: $base-margin*3;
+      padding: $base-padding;
+      transition: all 0.25s ease-in-out;
+
+      &:hover {
+        box-shadow: 0 5px 10px rgba($black, .1);
+        border-color: darken($border-color, 5%);
+      }
+
+      .page-item__thumb {
+        margin-bottom: $base-margin*2;
+        overflow: hidden;
+        max-height: 300px;
+      }
+
+      .page-item__title {
+        font-weight: 500;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.load-libs {
+  .t4b-items {
+    .nav-tabs {
+      border: none;
+
+      li {
+        float: none;
+        display: block;
+        width: 100%;
+      }
+    }
+  }  
+}

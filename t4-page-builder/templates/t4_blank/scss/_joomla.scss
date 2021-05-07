@@ -1,0 +1,1004 @@
+// ------------------------------------
+// Joomla! specific styles
+// ------------------------------------
+
+// Extend style in base
+// --------------------
+@import "../../../plugins/system/t4/themes/base/scss/_joomla";
+
+//
+// Generic Styles
+// -------------------------
+
+// Article Titles
+// -------------------------
+h2.item-title,
+.item-title h2 {
+  font-size: var(--h2-font-size);
+
+  a {
+    color: var(--body-text-color);
+
+    &:hover, &:active, &:focus {
+      border-bottom: 1px solid var(--body-text-color);
+      color: var(--body-text-color);
+    }
+  }
+}
+
+// Page Header
+.page-header,
+.categories-list {
+  h1 {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+  }
+
+  h2 {
+    font-size: var(--h3-font-size);
+    margin: 0;
+
+    a {
+      color: var(--body-text-color);
+      &:hover, &:focus, &:active {
+        color: var(--link-hover-color);
+      }
+    }
+  }
+}
+
+
+// Article Aside
+// -------------------------
+.article-info {
+  a {
+    // Link states
+    &:hover, &:focus, &:active {
+    }
+  }
+  
+  .article-info-term {
+  }
+  
+  dd {
+    > div {
+    }
+  }
+}
+
+// Author
+.createdby {
+}
+
+// Category Name
+.category-name {
+}
+
+// URL
+.article-url {
+}
+
+// Publish Date
+.published {
+  time {
+  }
+}
+
+// Modified Date
+.modifydate {
+}
+
+// Hits
+.hits {
+}
+
+// Article Desciption
+.contentdescription {
+}
+
+.contentdescription p {
+}
+
+// Content rating
+.content_rating {
+}
+
+.content_vote {
+}
+
+
+// Article Tools
+// -------------------------
+.icons {
+  .btn {
+    .caret {
+    }
+  }
+
+  .icon-cog {
+  }
+
+  .dropdown-menu {
+    a {
+      border-bottom: 1px solid $border-color;
+      color: $gray-700;
+
+      &:hover, &:focus, &:active {
+        background-color: $gray-100;
+        color: var(--link-hover-color);
+      }
+    }
+  }
+}
+
+
+// Tags
+// -------------------------
+.tags {
+  > li {
+
+    > a {
+    }
+  }
+}
+
+.com-tags-tag.tag-category {
+  .filters {
+  }
+  
+  .category {
+  }
+}
+
+
+// Article Images
+// -------------------------
+.item-image {
+  img {
+  }
+}
+
+// Float Left Image
+.pull-left.item-image,
+.item-image.pull-left {
+}
+
+// Float right Image
+.pull-right.item-image,
+.item-image.pull-right {
+}
+
+// Image caption
+.img_caption img {
+}
+
+div.img_caption {
+
+  p.img_caption {
+  }
+}
+
+figure {
+  &.pull-left {
+  }
+
+  &.pull-right {
+  }
+
+  figcaption {
+  }
+}
+
+// Article Index
+// -----------
+.article-index {
+  h3 {
+  }
+
+  ul {
+  }
+}
+
+.com-content-article__body {
+  .pagenavcounter {
+  }
+
+  .pager {
+    ul {
+
+      li {
+      }
+    }
+  }
+
+  // Slider style
+  .pane-sliders {
+    .panel {
+      border: 1px solid $border-color;
+
+      h3.title {
+        background-color: $gray-100;
+        font-size: $font-size-base;
+
+        &.pane-toggler-down {
+          border-bottom: 1px solid $border-color;
+        }
+
+        a {
+          &:hover, &:focus, &:active {
+          }
+        }
+      }
+
+      .content {
+      }
+    }
+  }
+
+  // Tabs style
+  dl.tabs {
+    border-bottom: 1px solid $border-color;
+
+    dt {
+      border: 1px solid $border-color;
+      border-radius: 3px 3px 0 0;
+
+      &.open {
+        border-bottom: 1px solid $white;
+      }
+
+      h3 {
+
+        a {
+          color: var(--body-text-color);
+
+          &:hover, &:focus, &:active {
+            color: var(--link-hover-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Read more
+// -----------
+.readmore {
+
+  .btn {
+    background-color: $gray-200;
+    padding: $spacer/3 $spacer/1.5;
+    
+    // Link States
+    &:hover, &:active, &:focus {
+      background-color: $primary;
+      color: $white;
+    }
+
+    // The Arrow
+    .icon-chevron-right {
+    }
+  }
+}
+
+// Items More
+// -----------
+.items-more {
+  .nav-tabs {
+    > li {
+    }
+
+    > li > a {
+      background: $gray-100;
+      color: var(--body-text-color);
+
+      // Link States
+      &:hover, &:active, &:focus {
+        background: $gray-800;
+        color: $white;
+      }
+    }
+  }
+}
+
+
+//
+// List Layouts
+// -------------------------
+
+// Leading Items
+// -------------
+.items-leading {
+  @include clearfix();
+
+  // Single Item
+  .col {
+    .item-image {
+    }
+
+    p {}
+  }
+}
+
+
+// Intro Items
+// -------------
+.items-row {
+
+  // Single Item
+  .item {
+
+    // Styles on Desktop
+    @include media-breakpoint-up(md) {
+    }
+
+    .item-title {
+    }
+
+    .item-image {
+    }
+  }
+
+}
+
+// Blog Layout
+// -----------
+.blog,
+.blog-featured {
+  .items-leading {
+    .blog-item {
+    }
+  }
+
+  .blog-items {
+    .blog-item {
+    }
+  }
+
+  // The Article
+  .blog-item {}
+  .blog-item-content {}
+}
+
+// Reset the duplicate container inside t4-body-main
+.blog-featured {
+}
+
+
+//
+// Article Page
+// -------------------------
+.item-page {
+}
+
+
+//
+// Generic Category
+// -------------------------
+.category-desc {
+  border: 1px solid $border-color;
+  color: $text-muted;
+
+  > img {
+  }
+}
+
+.category {
+
+  li {}
+
+  .list {}
+
+  .list-title {
+    a {
+      color: $gray-700;
+      &:hover, &:focus, &:active {
+        color: var(--link-hover-color);
+      }
+    }
+  }
+
+  // Striped Style
+  &.row-striped,
+  &.list-striped {
+  }
+}
+
+// Filters
+// T4: Joomla! use <fieldset> that break "display: flex".
+// So we need to re-style the layout without using BS "btn-toolbar" styles 
+// More info here: https://bugs.chromium.org/p/chromium/issues/detail?id=262679
+.filters {
+  legend {
+  }
+
+  legend,
+  .btn-group,
+  .input-group {
+  }
+
+  .input-group + .btn-group {
+  }
+}
+
+//
+// Categories List
+// -------------------------
+.categories-list {
+
+  .base-desc {
+    background-color: darken($gray-100, 2%);
+    border-radius: $border-radius;
+    padding: $spacer*2;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .page-header {
+    border: 0;
+    border-bottom: 1px solid $border-color;
+    margin: 0 0 $spacer;
+    padding: 0 0 $spacer;
+
+    a {
+      font-weight: $font-weight-bold;
+    }
+
+    // Badges
+    .badge {
+      float: right;
+    }
+
+    // Collapse Toggle
+    .btn {
+    }
+  }
+
+  // Indent Sub Categories
+  .page-header + .fade,
+  .fade > div {
+  }
+
+  // Category Desc
+  .category-desc {
+  }
+
+  .com-content-categories__items {
+    .com-content-categories__item {
+    }
+  }
+}
+
+
+//
+// Category List
+// -------------------------
+.category-list {
+}
+
+.content-category {
+  .control-group {
+  }
+
+  .filters {
+  }
+
+  // Sub Cat
+  .cat-children {
+    border-top: 1px solid $border-color;
+
+    > h3 {
+    }
+
+    .category-desc {
+    }
+
+    > div {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+}
+
+
+//
+// Contact Category
+// -------------------------
+.contact-category {
+  h2 {}
+
+  .category-desc {}
+
+  // T4: Joomla! add ".row" to the <li>. So we need to make <ul> ".container"
+  .category {
+    @include make-container();
+  }
+
+  .list-title {
+    a {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+
+//
+// Contacts
+// -------------------------
+.contact {
+  .page-header {
+  }
+
+  dt {
+  }
+
+  dd {
+  }
+
+  #slide-contact {
+    .card {
+    }
+    
+    .card-header {
+      padding: 0;
+
+      .btn {
+        color: $gray-600;
+        display: block;
+        font-weight: $font-weight-bold;
+        padding: $spacer/1.5 $spacer;
+        text-align: left;
+        width: 100%;
+
+        &:hover, &:focus, &:active {
+          color: var(--link-hover-color);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  // Contact Form
+  #contact-form {
+  }
+
+  h3 {
+    border-bottom: 1px solid $border-color;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacer;
+    padding-bottom: $spacer/2;
+  }
+}
+
+
+//
+// Newsfeed
+// -------------------------
+.newsfeed {
+  .feed-description {
+  }
+
+  > ol {
+  }
+
+  > ol > li {
+  }
+
+  .feed-link {
+  }
+
+  .feed-item-description {
+    figure {
+    }
+
+    .lead {
+    }
+    
+    .feedflare {
+    }
+  }
+}
+
+
+//
+// Newsfeed
+// -------------------------
+.newsfeed-category {
+  #filter-search {
+  }
+  
+  .category {
+    li {
+    }
+  }
+}
+
+
+// Pagination 
+.pagination-wrap {
+  .counter {
+  }
+}
+
+
+//
+// Search
+// -------------------------
+.search {
+
+  .btn-toolbar {
+    .btn {
+    }
+  }
+
+  .searchintro {}
+
+  fieldset {
+    legend {
+    }
+  }
+
+  .ordering-box {
+    @extend .d-flex;
+    @extend .flex-row;
+    @extend .align-items-baseline;
+   
+    label {}
+
+    select {
+    }
+  }
+
+  .form-limit {}
+
+}
+
+//
+// Search form
+.com-finder__search {
+  .input-group > .js-finder-search-query {
+    border-radius: $border-radius;
+  }
+
+  .input-group-append {
+    margin: 0 0 0 $spacer/4;
+
+    .btn {
+      border-radius: $border-radius !important;
+      margin: 0 $spacer/4;
+    }
+  }
+}
+
+
+//
+// The Results
+#search-results {
+  border-top: 1px solid $border-color;
+
+  .search-results {
+  }
+
+  .result-item {
+    border-bottom: 1px solid $border-color;
+    padding: $spacer 0;
+  }
+
+  .result-title {
+    margin: 0 0 $spacer/2;
+  }
+
+  .result-category {}
+  .result-text {
+  }
+
+  .result-taxonomy {
+    margin-bottom: $spacer/2;
+  }
+
+  .result-date {
+    margin-bottom: $spacer/4;
+  }
+
+  .result-url {
+    @extend .small;
+    color: $gray-500;
+  }
+
+  .result-created {
+    color: $gray;
+  }
+
+  .search-pagination {
+    padding-top: $spacer;
+
+    .search-pages-counter {
+      @extend .small;
+      color: $gray-600;
+    }
+  }
+}
+
+
+.highlight {
+  background: $yellow; 
+  padding: 1px;
+}
+
+//
+// The Empty Result
+#search-result-empty {
+  background-color: $gray-100;
+  border-radius: $border-radius;
+  color: $gray-700;
+  padding: $spacer;
+  text-align: center;
+
+  h2 {
+    font-weight: $font-weight-bold;
+    font-size: $h3-font-size;
+  }
+
+  p {
+    color: $gray-600;
+  }
+}
+
+// Smart Search
+// -------------------------
+div#finder-filter-window .filter-branch .finder-selects {
+}
+
+
+//
+// Tag Category
+// -------------------------
+.tag-category {
+  .category h3 {
+  }
+}
+
+.input-group-btn {
+  .btn + .btn {
+  }
+}
+
+// 
+// Edit Article 
+// --------------------------
+#jform_title {
+}
+
+
+// Edit module button
+// --------------------------
+.jmodedit {
+  background-color: $gray-200;
+  border-radius: 3px;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  line-height: 1;
+
+  span {
+    color: $gray-600;
+    margin: 0 !important;
+    line-height: 27px;
+  }
+
+  &:hover {
+    background-color: $gray-600;
+
+    span {
+      color: $white;
+    }
+  }
+}
+
+
+// Fix modal overlay
+// -----------------
+body.modal-open {
+  .t4-wrapper-inner {
+    z-index: auto;
+    perspective: none;
+  }
+
+  .modal {
+    background-color: $white;
+    border-radius: 5px;
+    top: 10%;
+    bottom: 10%;
+    left: 50%;
+    margin-left: -40%;
+    overflow: hidden;
+    height: auto;
+    width: 80%;
+
+    .modal-header {
+      position: relative;
+
+      h3 {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        width: 100%;    
+        font-weight: normal;
+        line-height: 50px;    
+        font-size: 18px;
+        color: #333;
+      }
+
+      .close {
+        position: absolute;
+        right: $spacer;
+        top: $spacer;
+      }
+    }
+
+    .modal-body {
+      height: calc(100% - 56px);
+
+      iframe {
+        border: 0;
+        overflow: auto;
+        height: 100%;
+        min-height: 100%;
+      }
+    }
+  }
+}
+
+body.contentpane {
+  background-color: #fff;
+
+  .row-fluid { @include make-row(); }
+
+  .span2  { @include make-col(2); }
+  .span3  { @include make-col(3); }
+  .span4  { @include make-col(4); }
+  .span5  { @include make-col(5); }
+  .span6  { @include make-col(6); }
+  .span7  { @include make-col(7); }
+  .span8  { @include make-col(8); }
+  .span9  { @include make-col(9); }
+  .span10 { @include make-col(10); }
+  .span11 { @include make-col(11); }
+  .span12 { @include make-col(12); }
+
+  .well {
+    background-color: $gray-100;
+    margin-bottom: $spacer;
+    padding: $spacer $spacer*2;
+    @extend .card;
+
+    .row-fluid {
+      margin-bottom: $spacer/2;
+    }
+
+    .control-group {
+      .controls {
+        margin-left: 0;
+      }
+    }
+
+    label {
+      min-width: 130px;
+      padding-right: $spacer/2;
+      text-align: right;
+    }
+  }
+
+
+  input[type="text"] {
+    border: 1px solid $border-color;
+    padding: $spacer/4 $spacer/2;
+  }  
+}
+
+
+// Improve style for MCE Editor
+// ----------------------------
+.mce-panel.mce-window {
+  border-radius: 5px;
+  border: 0 !important;
+  padding: 0 !important;
+
+  .mce-window-head {
+    border-bottom: 1px solid $border-color;
+    padding: $spacer;
+
+    .mce-close {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  .mce-foot {
+    border-radius: 0 0 5px 5px;
+    border-top: 1px solid $border-color;
+
+    .mce-btn {
+      border-radius: 5px;
+    }
+  }
+}
+
+.container-popup {
+  padding: $spacer/2 $spacer !important;
+
+  #uploadform.well {
+    margin-bottom: 0;
+  }
+}
+
+.js-stools-container-bar {
+  margin-bottom: $spacer;
+
+  .btn-wrapper {
+    input {
+      display: inline-block;
+      width: auto;
+    }
+
+    button {
+      display: inline-block;
+    }
+  }
+
+  .btn {
+    @extend .btn-secondary;
+  }
+}
+
+.js-stools-container-list {
+  margin-bottom: $spacer;
+}
+
+.thumbnails.thumbnails-media {
+  list-style: none;
+  margin: $spacer -8px 0;
+  padding: 0;
+  overflow: hidden;
+
+  li a {
+    color: $gray-600;
+    display: block;
+    padding-top: $spacer*2;
+
+    &:hover, &:focus, &:active {
+      color: var(--link-hover-color);
+    }
+
+    span {
+      font-size: 32px;
+      height: auto;
+      width: auto;
+    }
+  }
+}
+
+//
+// Template Configure page
+// -------------------------
+.com_config {
+  .hr-condensed {
+    display: none;
+  }
+
+  #templates-form {
+    .btn-toolbar {
+      display: none;
+    }
+  }
+
+  #page-site {
+    h1 {
+      font-size: $font-size-lg;
+      @extend .alert;
+      @extend .alert-success;
+    }
+  }
+}

@@ -1,0 +1,1398 @@
+// Close button
+.close {
+  border-radius: 50%;
+  color: $gray-400;
+  display: block;
+  height: $base-padding*4;
+  font-size: 24px;
+  line-height: $base-padding*4;
+  text-align: center;
+  transition: all 0.25s ease-in-out;
+  width: $base-padding*4;
+  z-index: 1060;
+}
+
+// Modal header
+.modal-header {
+}
+
+// Modal body
+.modal-body {
+}
+
+// Modal footer
+.modal-footer {
+}
+
+// IMPORT PAGE
+#importpage {
+  font-size: 15px;
+  border-radius: 5px;
+  bottom: 5%;
+  width: 1000px;
+  left: 50%;
+  right: auto;
+  margin-left: 0;
+  transform: translateX(-50%);
+
+  @media screen and (min-width: 1300px) {
+    width: 1300px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 1400px;
+  }
+
+  .modal-dialog,
+  .modal-content,
+  .modal-body,
+  .page-import,
+  .t4b-main-container,
+  .tab-pane,
+  .load-libs,
+  .t4b-container,
+  .t4b-libs__wrapper {
+    height: 100%;
+  }
+
+  .tab-content {
+    height: calc(100% - 58px);
+    overflow: auto;
+  }
+
+  // Close button
+  .modal-content > .close {
+    background-color: $gray-200;
+    border-radius: 50%;
+    color: $gray-600;
+    padding-bottom: $base-padding;
+    line-height: $base-height*4;
+    position: absolute;
+    right: $base-padding*2;
+    opacity: 1;
+    top: $base-padding*1.5;
+
+    &:hover, &:focus, &:active {
+      background-color: $blue;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+
+  // Button style
+  .btn {
+    background-color: $btn-bg;
+    border: 0;
+    border-radius: $btn-border-radius;
+    font-family: $font-family-base;
+    font-size: $btn-font-size;
+    font-weight: $btn-font-weight;
+    font-size: $btn-font-size;
+    padding: $btn-padding-y $btn-padding-x;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: $transition-base;
+
+    &.btn-primary {
+      background-color: $blue;
+      color: $white;
+
+      &:hover, &:focus, &:active {
+        background-color: darken($blue, 4%);
+      }
+    }
+
+    &.btn-success {
+      background-color: $green;
+      color: $white;
+
+      &:hover, &:focus, &:active {
+        background-color: darken($green, 4%);
+      }
+    }
+  }
+
+  // Badge
+  .badge {
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 400;
+    padding: 3px 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    i {
+      margin-right: 4px;
+    }
+
+    &.badge-free,
+    &.badge-success {
+      background-color: $green;
+      color: $white;
+    }
+  }
+
+  // FROM LIBRARY TAB AND UPLOAD TAB
+  // -------------------------------
+  .nav-tabs {
+    border-bottom: 1px solid $gray-200;
+    position: relative;
+    margin-bottom: 0;
+    padding: 0 $base-padding;
+
+    li {
+      margin: 0 0 -1px;
+      padding: 0 $base-padding*2;
+
+      &.active {
+        a {
+          color: $link-active-color;
+
+          &:after {
+            background-color: $link-active-color;
+          }
+        }
+      }
+    }
+
+    a {
+      border-radius: 0;
+      border: 0;
+      color: $text-color;
+      font-size: 14px;
+      font-weight: 600;
+      padding: $base-padding*2.5 0;
+      position: relative;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+
+      &:hover, &:focus, &:active {
+        background-color: transparent;
+        color: $link-hover-color;
+      }
+
+      &:after {
+        content: "";
+        height: 2px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  // Tab Content
+  .tab-content {
+    padding: 0;
+
+    .t4b-container {
+      padding: 0;
+    }
+  }
+
+  // Layout
+  .t4b-libs__wrapper {
+    padding-left: $base-padding*32;
+    position: relative;
+    display: block;
+
+    // Sidebar
+    .t4b-libs__sidebar {
+      background-color: $gray-bg;
+      border-right: 1px solid $border-color;
+      border-radius: 0 0 0 $border-radius-base;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      left: 0;
+      width: $base-padding*32;
+
+      h3 {
+        color: $gray-600;
+        font-size: 12px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0 $base-padding*3;
+        line-height: 50px;
+        min-height: 50px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0 -1px 0 0;
+        padding: 0 0 $base-padding*2 $base-padding*3;
+
+        li {
+          border-radius: 5px 0 0 5px;
+          border: 1px solid transparent;
+          border-right: 0;
+          display: block;
+
+          label {
+            display: block;
+            font-family: $font-family;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 0;
+            padding: 14px $base-padding*2;
+            line-height: 1;
+            transition: all 0.25s ease-in-out;
+
+            &:hover {
+              color: $link-color;
+            }
+          }
+
+          span {
+            background-color: $gray-300;
+            border-radius: $btn-border-radius;
+            display: inline-block;
+            color: $gray-700;
+            font-weight: 400;
+            float: right;
+            padding: $base-padding/2 $base-padding;
+            text-align: center;
+            transition: all 0.25s ease-in-out;
+          }
+
+          // Active
+          &.t4b-active {
+            background-color: $white;
+            border-color: $border-color;
+            color: $blue;
+          }
+        }
+      }
+    }
+
+    // List all bundle
+    .t4b-libs__pages,
+    .t4b-libs-step2 {
+      height: 100%;
+      overflow: auto;
+      padding: 0 $base-padding*3 $base-padding*2;
+    }
+
+    // Toolbar
+    // --------------------------------------
+    .t4b-toolbar {
+      border-bottom: 1px solid $border-color;
+      margin: 0 -24px;
+      padding: $base-padding $base-padding*3;
+      position: relative;
+
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      #filter-bar {
+        height: auto;
+        margin: 0;
+
+        &:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        #t4b-searchbox {
+          background-color: $white;
+          border-radius: $border-radius-base 0 0 $border-radius-base;
+          border: 0;
+          color: $gray-700;
+          height: $base-padding*5;
+          font-family: $font-family;
+          font-size: $font-size-base;
+          margin: 0;
+          padding: 0 $base-padding*2;
+        }
+
+        .search {
+          margin-left: 0;
+        }
+
+        button {
+          background-color: $gray-400;
+          border-radius: 0 $border-radius-base $border-radius-base 0;
+          font-family: $font-family;
+          color: $white;
+          border: 0;
+          padding-left: $base-padding*2;
+          padding-right: $base-padding*2;
+          height: $base-padding*5;
+          transition: all 0.25s ease-in-out;
+
+          &:hover, &:focus, &:active {
+            background-color: $red;            
+          }
+
+          span {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .filter-search {
+        display: none;
+        float: right;
+      }
+
+      // Back to library
+      .t4b-action {
+        float: left;
+
+        .btn-link {
+          border: 0;
+          border-radius: $btn-border-radius;
+          color: $gray-600;
+          font-family: $btn-font-family;
+          font-weight: $btn-font-weight;
+          padding: $btn-padding-y $btn-padding-x;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          transition: $transition-base;
+          text-decoration: none;
+
+          &:hover, &:focus, &:active {
+            background-color: $gray-200;
+            text-decoration: none;
+          }
+
+          i {
+            margin-right: 4px;
+          }
+        }
+      }
+
+      // User information
+      #t4b-site-info {
+        display: inline-block;
+        float: right;
+        position: relative;
+
+        .btn {
+          border: 0;
+          box-shadow: none;
+          border-radius:  25px;
+          font-family: $font-family-base;
+          font-size: $btn-font-size;
+          padding: $base-padding $base-padding*2.5;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          line-height: normal;
+
+          i {
+            margin-right: $base-margin/2;
+          }
+        }
+
+        .btn-login {
+          background-color: $gray-300;
+          color: $gray-800;
+          padding: $btn-padding-y $base-padding*4 $btn-padding-y $base-padding*2;
+          transition: $transition-base;
+
+          &:hover, &:hover, &:focus {
+            background-color: $blue;
+            box-shadow: $elevationZ1;
+            color: $white;
+          }
+
+          &::after {
+            content: "\f107";
+            display: block;
+            font-family: "Font Awesome 5 Pro";
+            font-size: 18px;
+            position: absolute;
+            right: $base-padding*2;
+            top: $base-padding;
+          }
+
+          i {
+            margin-right: $base-margin;
+          }
+        }
+
+        // Login box
+        .t4b-login {
+          background-color: $white;
+          border: 1px solid darken($border-color, 5%);
+          box-shadow: 0 5px 9px rgba($black, .1);
+          border-radius: $border-radius-base;
+          padding: $base-padding*3;
+          position: absolute;
+          top: 42px;
+          right: 0;
+          min-width: $base-width*40;
+
+          .alert {
+            margin: 0 0 $base-margin*2;
+          }
+
+          h3 {
+            font-size: 20px;
+            margin: 0 0 $base-margin*1.5;
+          }
+
+          p {
+            color: $gray-600;
+            font-size: $font-size-sm;
+            margin-bottom: $base-margin*3;
+          }
+
+          .t4b-login-form__username,
+          .t4b-login-form__password {
+            margin-bottom: $base-margin*1.5;
+            position: relative;
+
+            .add-on {
+              position: absolute;
+              top: $base-padding;
+              left: $base-padding*2;
+            }
+
+            input {
+              border-radius: $input-border-radius;
+              height: $base-height*4.5;
+              font-family: $font-family-base;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: $base-height*4.5;
+              padding: 0 $base-padding*2 0 $base-padding*5;
+              width: 100%;
+
+              &:hover {
+                border-color: $gray-500;
+              }
+
+              &:focus, &:active {
+                border-color: $blue;
+              }
+            }
+          }
+
+          .t4b-login-form__actions {
+            margin-bottom: $base-margin*2;
+            text-align: right;
+          }
+
+          .t4b-login-form__links {
+            .btn-link {
+              font-size: $font-size-sm;
+              font-weight: normal;
+              margin: $base-margin;
+            }
+          }
+        }
+      }
+    }
+
+    // Button upgrade
+    .btn-upgrade {
+      font-weight: 500;
+      transition: $transition-base;
+
+      &:hover, &:focus, &:active {
+        background-color: $green;
+        color: $white;
+      }
+    }
+
+    // Member Area
+    .member-area {
+      display: inline-block;
+      margin-left: $base-margin;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .dropdown-toggle {
+        background: darken($gray-100, 5%);
+        display: block;
+        border-radius: 25px;
+        padding: $base-padding/1.5 $base-padding*1.5 $base-padding/1.5 $base-padding/1.5;
+        position: relative;
+        transition: $transition-base;
+
+        &:hover, &:focus, &:active {
+          background: $gray-200;
+          text-decoration: none;
+        }
+
+        .user-avatar {
+          border-radius: 50%;
+          display: inline-block;
+          margin-right: $base-margin;
+          max-width: $base-width*3;
+          overflow: hidden;
+          vertical-align: middle;
+        }
+
+        i {
+          vertical-align: middle;
+        }
+      }
+
+      // User style
+      .user-name {
+        color: $gray-800;
+        display: block;
+        font-size: $font-size-sm;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .user-badge {
+        border-radius: 3px;
+        font-weight: 400;
+        font-size: 9px;
+        padding: 2px $base-padding/2;
+        line-height: 1;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        &.badge-premium {
+          background-color: $orange;
+          color: $white;
+        }
+
+        &.badge-free {
+          background-color: $green;
+          color: $white;
+        }
+      }
+
+      .dropdown-menu {
+        left: auto;
+        right: 0;
+        top: 40px;
+        min-width: $base-width*35;
+      }
+
+      .dropdown-content-box {
+        padding: $base-padding*2;
+      }
+
+      .t4b-user-info {
+        border-bottom: 1px solid $border-color;
+        overflow: hidden;
+        padding-bottom: $base-padding*2;
+        clear: both;
+
+        .user-avatar {
+          box-shadow: $elevationZ2;
+          border-radius: 50%;
+          float: left;
+          max-width: $base-width*6;
+          margin-right: $base-margin*2;
+          overflow: hidden;
+        }
+
+        .user-name {
+          font-size: $font-size-lg;
+          font-weight: 600;
+          margin-bottom: $base-margin;
+
+          a {
+            color: $gray-800;
+
+            &:hover, &:focus, &:active {
+              text-decoration: none;
+            }
+          }
+        }
+
+        .user-badge {
+          font-size: 10px;
+          padding: 4px 8px;
+        }
+      }
+
+      .t4b-user-actions {
+        padding-top: $base-padding*2;
+        text-align: center;
+
+        p {
+          margin-bottom: $base-margin*2;
+        }
+
+        .btn {
+          font-family: $font-family-base;
+          font-weight: 500;
+          margin: 0 $base-margin/2;
+          transition: $transition-base;
+
+          &.btn-logout {
+            &:hover, &:focus, &:active {
+              background-color: $red;
+              color: $white;
+            }
+          }
+
+          &.btn-renew {
+            &:hover, &:focus, &:active {
+            }
+          }
+        }
+      }
+    }
+
+
+    // Page title
+    .t4b-sub-head {
+      border-bottom: 1px solid $border-color;
+      margin-bottom: $base-margin;
+      padding: $base-padding 0;
+      overflow: hidden;
+      position: relative;
+
+      .btn-import {
+        background-color: $green;
+        color: $white;
+        float: right;
+
+        &:hover, &:focus, &:active {
+          background-color: darken($green, 3%);
+        }
+
+        i {
+          margin-right: $base-margin;
+        }
+
+        &.disabled {
+          background-color: $gray-200;
+          color: $gray-500;
+          opacity: 1;
+        }
+      }
+    }
+
+    .page-item__title {
+      display: inline-block;
+      margin: 0 $base-margin 0 0;
+      line-height: 34px;
+      vertical-align: middle;
+    }
+
+    .check-all {
+      background-color: darken($gray-100, 2%);
+      border-radius: $border-radius-base;
+      font-family: $font-family-base;
+      font-weight: 500;
+      padding: 4px 8px;
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      top: 12px;
+
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+
+      .checkmark {
+        display: inline-block;
+        position: relative;
+        height: 16px;
+        margin-right: 4px;
+        width: 16px;
+
+        &:before {
+          color: $gray-500;
+          content: "\f04d";
+          font-family: "Font Awesome 5 Pro";
+          font-size: 16px;
+        }
+      }
+
+      input:checked ~ .checkmark:before {
+        color: $green;
+        content: "\f14a";
+      }
+    }
+
+    .custom-checkbox {
+      display: inline-block;
+      margin: 0;
+      vertical-align: middle;
+
+      input {
+        margin-right: $base-margin/2;
+        vertical-align: top;
+      }
+    }
+
+    // Alert message
+    .alert {
+      border: 0;
+      font-size: $font-size-sm;
+      margin-top: $base-margin*2;
+      padding: $base-padding $base-padding*2;
+    }
+
+    // List all pages.
+    .t4b-pages-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -12px;
+      padding: $base-padding*2 0;
+
+      .page-item {
+        flex-basis: 100%;
+        padding: $base-padding*1.5 $base-padding*1.5 $base-padding*2;
+
+        @media screen and (min-width: $md) {
+          flex-basis: 50%;
+        }
+
+        @media screen and (min-width: $lg) {
+          flex-basis: 33.33%;
+        }
+
+        @media screen and (min-width: 1600px) {
+          flex-basis: 25%;
+        }
+
+        .page-item-inner {
+          border: 1px solid darken($gray-100, 3%);
+          border-radius: $border-radius-base;
+          position: relative;
+          transition: all 0.25s ease-in-out;
+
+          .page-item__locked {
+            position: absolute;
+            top: $base-padding*1.5;
+            right: $base-padding*1.5;
+          }
+
+          &:hover {
+            background-color: $white;
+            border-color: $green;
+
+            .page-item__thumb {
+              background-position: center 20%;
+              overflow: hidden;
+            }
+          }
+
+          &:before,
+          &:after {
+            border: 1px solid darken($gray-100, 3%);
+            border-top: 0;
+            border-radius: 0 0 2px 2px;
+            content: "";
+            display: block;
+            height: 3px;
+            position: absolute;
+          }
+
+          &:before {
+            bottom: -5px;
+            left: 4px;
+            right: 4px;
+          }
+
+          &:after {
+            bottom: -9px;
+            left: 8px;
+            right: 8px;
+          }
+
+          .page-item__thumb {
+            background-size: cover;
+            border-radius: $border-radius-sm $border-radius-sm $border-radius-base $border-radius-base;
+            background-position: center 0;
+            min-height: $base-height*35;
+            overflow: hidden;
+            transition: all 1.5s ease-out 0.5s;
+          }
+
+        }
+
+        .page-item__title {
+          background: $white;
+          border-radius: 0 0 $border-radius-base $border-radius-base;
+          display: block;
+          padding: $base-padding $base-padding*2;
+          font-size: $font-size-base;
+          font-weight: 500;
+
+          span {
+            color: $gray-600;
+            display: inline-block;
+            font-size: $caption-font-size;
+            font-weight: 400;
+            margin-left: $base-margin/2;
+          }
+        }
+      }
+    }
+  }
+
+  .t4b-page-detail__package {
+  }
+
+  // Upload tab
+  // --------------------------
+  div#upload {
+    padding: 0 $base-padding*3;
+    height: calc(100% - 20px);
+
+    .uploader-wrapper {
+      background: $gray-200;
+      padding: 0;
+    }
+
+    .alert {
+      margin-top: $base-margin*2;
+    }
+
+    #dragarea-content {
+      padding: $base-padding*5;
+
+      #upload-icon {
+        color: $gray-300;
+        font-size: 48px;
+        margin-bottom: $base-margin*5;
+      }
+
+      #select-file-button {
+        font-family: $font-family;
+        padding: $base-padding*1.5 $base-padding*3;
+        font-weight: 500;
+        font-size: $font-size-xs;
+      }
+    }
+
+    // Step 2: Choose page to install
+    .chose-page-install {
+      .t4b-pages {
+        padding: 0;
+      }
+
+      // This style must change
+      .checkall-toggle {
+        overflow: hidden;
+        min-height: 36px;
+
+        .t4b-action-wrap {
+          border: 0;
+          float: right;
+          padding: 0;
+          margin: 0;
+
+          .btn-page-import {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // 
+  // LOGIN FORM
+  .t4b-login__wrapper {
+    display: block;
+    height: 100%;
+
+    .layout.login {
+      align-items: center;
+      display: flex;
+      height: 100%;
+    }
+
+    .form-login {
+      background-color: $white;
+      border: 1px solid $gray-300;
+      border-radius: 5px;
+      width: $base-width*60;
+      margin: 0 auto;
+      padding: $base-padding*4;
+    }
+
+    h3 {
+      font-size: $font-size-xl;
+      margin-top: 0;
+      margin-bottom: $base-margin*5;
+      text-align: center;
+    }
+
+    .t4b-login-form__username,
+    .t4b-login-form__password {
+      position: relative;
+      margin-bottom: $base-margin*2;
+
+      .add-on {
+        position: absolute;
+        left: $base-padding*3;
+        top: $base-padding*1.5;
+      }
+
+      input {
+        background-color: darken($gray-100, 2%);
+        border: 1px solid transparent;
+        border-radius: $input-border-radius;
+        color: $gray-800;
+        height: $base-height*5;
+        font-family: $font-family;
+        font-size: $btn-font-size;
+        font-weight: 500;
+        line-height: $base-height*5;
+        padding: 0 $base-padding 0 $base-padding*6;
+        transition: all 0.25s ease-in-out;
+        width: 100%;
+
+        &:hover {
+          border: 1px solid $gray-300;
+        }
+
+        &:focus, &:active {
+          background-color: $white;
+          border: 1px solid $blue;
+        }
+
+        &::placeholder {
+          color: $gray-800;
+        }
+      }
+    }
+
+    .btn {
+      border: 0;
+      border-radius: $btn-border-radius;
+      font-family: $font-family;
+      font-weight: 500;
+      font-size: $font-size-sm;
+      margin-right: $base-margin;
+      padding: $base-padding $base-padding*3;
+    }
+
+    .btn-link {
+      float: right;
+    }
+  }
+
+
+  // 
+  // LIST ALL PAGES IN A BUNDLE
+  // --------------------------
+  .upload-progress {
+    padding: $base-padding*3;
+
+    .progress {
+      box-shadow: none;
+      padding: 2px;
+
+      .bar-success {
+        border-radius: $border-radius-sm;
+        box-shadow: none;
+      }
+    }
+  }
+
+
+  // 
+  // LIST ALL PAGES IN A BUNDLE
+  // --------------------------
+  .t4b-pages {
+    padding: $base-padding*3;
+
+    h3 {
+      border-bottom: 1px solid $border-color;
+      font-size: $font-size-xl;
+      font-weight: 500;
+      margin-top: 0;
+      margin-bottom: $base-margin*3;
+      padding-bottom: $base-padding*2;
+    }
+
+    .checkall-toggle {
+      label {
+        background-color: $gray-200;
+        border-radius: $border-radius-sm;
+        display: inline-block;
+        font-size: $font-size-sm;
+        padding: $base-padding/1.5 $base-padding;
+        width: auto;
+
+        input {
+          margin: 0 $base-margin 0 0;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  // List all page in a bundle
+  .page-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    list-style: none;
+    margin: 0 -16px;
+    padding: 0;
+
+    .item {
+      padding: $base-padding*2;
+
+      @media screen and (min-width: $md) {
+        flex-basis: 50%;
+      }
+
+      @media screen and (min-width: $lg) {
+        flex-basis: 33.33%;
+      }
+
+      @media screen and (min-width: $xl) {
+        flex-basis: 25%;
+      }
+
+      &.selected {
+        .item-inner {
+          border: 2px solid $green;
+        }
+      }
+
+      .item-inner {
+        border: 2px solid transparent;
+        box-shadow: 0 3px 5px rgba($black, .1);
+        transition: $transition-base;
+
+        &:hover {
+          box-shadow: 0 3px 9px rgba($black, .2);
+        }
+      }
+
+      .thumb {
+        height: 260px;
+        overflow: hidden;
+        position: relative;
+        img{
+          max-width: 100%;
+          height: auto;
+          vertical-align: middle;
+          border: 0;
+        }
+      }
+
+      .name {
+        background-color: $white;
+        border-top: 1px solid $border-color;
+        font-size: 14px;
+        font-weight: 600;
+        padding: $base-padding*1.5 $base-padding*2;
+
+        label {
+          display: inline-block;
+          font-size: $font-size-sm;
+          font-weight: 500;
+          position: relative;
+          margin-bottom: 0;
+
+          input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+          }
+
+          .checkmark {
+            background: $white;
+            border-radius: 3px;
+            border: 2px solid $gray-400;
+            display: inline-block;
+            height: 16px;
+            margin-right: $base-margin;
+            line-height: 12px;
+            text-align: center;
+            width: 16px;
+
+            i {
+              color: $white;
+              font-size: 12px;
+            }
+          }
+
+          input:checked ~ .checkmark {
+            background-color: $green;
+            border-color: $green;
+          }
+        }
+      }
+    }
+  }
+
+  .t4b-action-wrap {
+    border-top: 1px solid $border-color;
+    padding: $base-padding*2 0 0;
+    margin: 0 $base-margin*3;
+
+    .btn,
+    .btn-link {
+      background-color: $gray-200;
+      border-radius: $border-radius-base;
+      border: 0;
+      color: $gray-700;
+      font-family: $btn-font-family;
+      font-size: $btn-font-size;
+      font-weight: $btn-font-weight;
+      margin-right: $base-margin;
+      padding: $btn-padding-y*1.5 $btn-padding-x;
+      line-height: 1;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+
+      &:hover, &:focus, &:active {
+        background-color: $gray-300;
+        text-decoration: none;
+      }
+
+      &.btn-primary {
+        background-color: $blue;
+        color: $white;
+
+        &:hover, &:focus, &:active {
+          background: darken($blue, 3%);
+        }
+      }
+
+      i {
+        font-size: 12px;
+        margin-right: $base-margin;
+      }
+    }
+  }
+}
+
+.t4b-page-import {
+  .package-progress {
+    margin-top: $base-margin*2;
+  }
+}
+
+// REVISION PAGE
+// ---------------------------------
+.container-popup {
+  .toolbar {
+    .btn {
+      background-color: $gray-300;
+      border: 0;
+      border-radius: 5px;
+      box-shadow: none;
+      font-family: $font-family-base;
+      font-size: 14px;
+      margin-left: $base-margin/2 !important;
+      padding: 8px 12px;
+      min-width: auto;
+      transition: all 0.25s ease-out;
+      width: auto;
+
+      &:hover, &:focus, &:active {
+        background-color: darken($gray-300, 5%);
+      }
+    }
+  }
+}
+
+.revision {
+  font-family: $font-family-base;
+
+  table.table-hover {
+    tr {
+      th {
+        background-color: $gray-200;
+        border-bottom: 0;
+        color: $gray-600;
+        font-weight: 500;
+        padding: 10px $base-padding*2;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      td {
+        background: transparent;
+        border-bottom: 1px solid $border-color;
+        border-top: 0;
+        padding: 10px $base-padding*2;
+      }
+    }
+
+    tr:nth-child(2n+1) td {
+      background: transparent;
+    }
+
+    tr:hover td {
+      background-color: $gray-100;
+    }
+  }
+}
+
+// Tooltip
+.login_tooltip {
+  background-color: $green;
+  border-radius: $border-radius-base;
+  color: $white;
+  display: inline-block;
+  padding: $base-padding 0;
+  position: absolute;
+  min-width: $base-width*15;
+  left: 0;
+  top: 50px;
+  text-align: center;
+  transition: $transition-base;
+  display: none;
+  z-index: 100;
+
+  &.show {
+    display: inline-block;
+    top: 45px;
+  }
+
+  &:before {
+    border-bottom: 5px solid $green;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    margin-left: -2px;
+  }
+}
+
+
+// Preview modal
+#preview {
+  border-radius: 5px;
+  left: $base-padding*2;
+  right: $base-padding*2;
+  top: $base-padding*2;
+  bottom: $base-padding*2;
+  margin-left: 0;
+  text-align: center;
+  width: auto;
+
+  .modal-body {
+    padding: 0;
+  }
+
+  .t4b-preview-header {
+    background-color: $gray-100;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid $border-color;
+    padding: $base-padding*2 $base-padding*3 $base-padding*1.5;
+    position: relative;
+
+    .t4b-preview-page-title {
+      font-size: 18px;
+      position: absolute;
+      left: $base-padding*2;
+      top: 26px;
+      margin: 0;
+
+      i {
+        color: $gray-500;
+        font-size: 18px;
+        margin-right: $base-margin;
+        vertical-align: top;
+      }
+    }
+
+    .close {
+      background-color: $gray-600;
+      position: absolute;
+      right: $base-padding*2;
+      top: $base-padding*2;
+      height: $base-height*5;
+      padding: 0;
+      line-height: $base-height*5;
+      text-align: center;
+      width: $base-width*5;
+
+      &:hover, &:focus, &:active {
+        background-color: $gray-500;
+        color: $white;
+        opacity: 1;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .t4b-preview-devices {
+    margin: 0 auto;
+    width: 200px;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        color: $gray-600;
+        display: inline-block;
+        text-align: center;
+        transition: $transition-base;
+        width: 64px;
+
+        i {
+          font-size: 16px;
+        }
+
+        span {
+          display: block;
+          font-size: 12px;
+          font-weight: 500;
+          padding-top: 2px;
+        }
+
+        &.active,
+        &:hover {
+          color: $blue;
+          cursor: pointer;          
+        }
+
+        &.active {
+          span {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  // iFrame preview
+  iframe {
+    border-radius: 0 0 5px 5px;
+    height: calc(100vh - 102px);
+    transition: $transition-base;
+
+    &.view-mobile {
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin-top: $base-margin*4;
+      height: 736px;
+      width: 414px;
+    }
+
+    &.view-tablet {
+      border-radius: 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      width: 768px;
+    }
+  }
+}

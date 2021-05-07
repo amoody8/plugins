@@ -1,0 +1,93 @@
+/** 
+ *------------------------------------------------------------------------------
+ * @package       T4 Page Builder for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2020 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
+ *                & Google group to become co-author)
+ *------------------------------------------------------------------------------
+ */
+
+@import '../vendors/fontawesome/variables';
+@import '../vendors/fontawesome/mixins';
+@import '../vendors/fontawesome/core';
+@import '../vendors/fontawesome/larger';
+@import '../vendors/fontawesome/fixed-width';
+@import '../vendors/fontawesome/list';
+@import '../vendors/fontawesome/bordered-pulled';
+@import '../vendors/fontawesome/animated';
+@import '../vendors/fontawesome/rotated-flipped';
+@import '../vendors/fontawesome/stacked';
+@import '../vendors/fontawesome/icons';
+@import '../vendors/fontawesome/screen-reader';
+
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  font-display: $fa-font-display;
+  src: url('#{$fa-font-path}/fa-brands-400.eot');
+  src: url('#{$fa-font-path}/fa-brands-400.eot?#iefix') format('embedded-opentype'),
+  url('#{$fa-font-path}/fa-brands-400.woff2') format('woff2'),
+  url('#{$fa-font-path}/fa-brands-400.woff') format('woff'),
+  url('#{$fa-font-path}/fa-brands-400.ttf') format('truetype'),
+  url('#{$fa-font-path}/fa-brands-400.svg#fontawesome') format('svg');
+}
+
+.fab {
+  font-family: 'Font Awesome 5 Brands';
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 300;
+  font-display: $fa-font-display;
+  src: url('#{$fa-font-path}/fa-light-300.eot');
+  src: url('#{$fa-font-path}/fa-light-300.eot?#iefix') format('embedded-opentype'),
+  url('#{$fa-font-path}/fa-light-300.woff2') format('woff2'),
+  url('#{$fa-font-path}/fa-light-300.woff') format('woff'),
+  url('#{$fa-font-path}/fa-light-300.ttf') format('truetype'),
+  url('#{$fa-font-path}/fa-light-300.svg#fontawesome') format('svg');
+}
+
+.fal {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+} 
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-display: $fa-font-display;
+  src: url('#{$fa-font-path}/fa-solid-900.eot');
+  src: url('#{$fa-font-path}/fa-solid-900.eot?#iefix') format('embedded-opentype'),
+  url('#{$fa-font-path}/fa-solid-900.woff2') format('woff2'),
+  url('#{$fa-font-path}/fa-solid-900.woff') format('woff'),
+  url('#{$fa-font-path}/fa-solid-900.ttf') format('truetype'),
+  url('#{$fa-font-path}/fa-solid-900.svg#fontawesome') format('svg');
+}
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: $fa-font-display;
+  src: url('#{$fa-font-path}/fa-regular-400.eot');
+  src: url('#{$fa-font-path}/fa-regular-400.eot?#iefix') format('embedded-opentype'),
+  url('#{$fa-font-path}/fa-regular-400.woff2') format('woff2'),
+  url('#{$fa-font-path}/fa-regular-400.woff') format('woff'),
+  url('#{$fa-font-path}/fa-regular-400.ttf') format('truetype'),
+  url('#{$fa-font-path}/fa-regular-400.svg#fontawesome') format('svg');
+}
+
+.far {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 400;
+}

@@ -1,0 +1,137 @@
+/**
+ *------------------------------------------------------------------------------
+ * @package       T4 Page Builder for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2020 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github
+ *                & Google group to become co-author)
+ *------------------------------------------------------------------------------
+ */
+
+.color-primary  { color: $primary; }
+.color-success  { color: $success; }
+.color-info     { color: $info; }
+.color-warning  { color: $orange; }
+.color-danger   { color: $red; }
+
+// Global style for section
+.t4b-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  position: relative;
+
+  .container,
+  .container-fluid,
+  .container-none {
+    position: relative;
+    z-index: 1;
+  }
+
+  .container-none > .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  // Section heading
+  .t4b-section__heading {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+
+    @media screen and (min-width: 992px) {
+      max-width: 50%;
+    }
+  }
+
+  // Section title
+  .t4b-section__title {
+    margin-bottom: 32px;
+    margin-top: 0;
+    font-style: normal;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+    letter-spacing: -0.01em; 
+  }
+
+  h2.t4b-section__title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  // Section description
+  .t4b-section__desc {
+    margin-left: auto;
+    margin-right: auto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  // Overlay
+  .t4b-bg-overlay {
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    @media screen and (min-width: 768px) {
+      background-size: 100% auto;
+    }
+  }
+}
+
+// Flat style for section
+.t4b-section-flat {
+  padding-top: 8.533rem;
+  padding-bottom: 8.533rem;
+
+  @media (max-width: 992px) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+// Global style for other elements
+.t4b-justify-content-start .justify-content-item {
+  justify-content: flex-start !important;
+}
+
+.t4b-justify-content-end .justify-content-item {
+  justify-content: flex-end !important;
+}
+
+.t4b-justify-content-center .justify-content-item {
+  justify-content: center !important;
+}
+
+.t4b-direction-default .flex-row-item {
+  flex-direction: row !important;
+}
+
+.t4b-direction-reverse .flex-row-item {
+  flex-direction: row-reverse !important;
+}
+
+.fade:not(.show) {
+  display: none;
+}
+
+.fade.active {
+  opacity: 1; 
+} 
+
+.collapse.show {
+  height: auto;
+}
+
+span[data-anim-type],
+a[data-anim-type] {
+  display: inline-block;
+}

@@ -1,0 +1,114 @@
+// VARIABLES
+// -----------------------
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$gray-bg: #f6f6f6; 
+
+$blue:    #0D47A1;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+
+// 
+// Text color
+$text-color: $gray-800;
+
+//
+// Link color
+$link-color: $blue;
+$link-hover-color: $link-color;
+
+// Font family + All elements font size
+$font-family: "Roboto", sans-serif;
+$font-family-base: "Roboto", sans-serif;
+
+$font-size-xxl:   36px;
+$font-size-xl:    24px;
+$font-size-lg:    18px;
+$font-size-base:  16px;
+$font-size-sm:    14px;
+$font-size-xs:    12px;
+
+$btn-font-size:       14px;
+$caption-font-size:   12px;
+$overline-font-size:  10px;
+
+// Border color
+$border-color: $gray-200;
+$border-color-darker: darken($gray-200, 10%);
+
+
+// Link variables
+$link-color: $blue;
+$link-hover-color: darken($link-color, 10%);
+$link-active-color: $blue;
+
+
+// Spacing variable
+$base-padding:  8px;
+$base-margin:   8px;
+$base-width:    8px;
+$base-height:   8px;
+
+// 
+// Border radius
+$border-radius-sm: 3px;
+$border-radius-base: 5px;
+$border-radius-lg: 7px;
+
+
+$label-color: $gray-600;
+
+// Input variables
+$input-border-radius: 25px;
+
+// Button variables
+$btn-bg: darken($gray-100, 3%);
+$btn-border-radius: 25px;
+$btn-font-family: $font-family-base;
+$btn-font-size: 12px;
+$btn-font-weight: 500;
+
+$btn-padding-y: $base-padding;
+$btn-padding-x: $base-padding*2;
+
+// All screen sizes
+$xs: 0;
+$sm: 567px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$transition-base: all 200ms ease-in-out;
+
+/* box-shadow: $elevationZ*; */
+$elevationZ0: none;
+$elevationZ1: 0 2px 1px -1px rgba(0,0,0,.06), 0 1px 1px 0 rgba(0,0,0,.06), 0 1px 3px 0 rgba(0,0,0,.08);
+$elevationZ2: 0 3px 1px -2px rgba(0,0,0,.06), 0 2px 2px 0 rgba(0,0,0,.06), 0 1px 5px 0 rgba(0,0,0,.08);
+$elevationZ4: 0 2px 4px -1px rgba(0,0,0,.06), 0 4px 5px 0 rgba(0,0,0,.06), 0 1px 10px 0 rgba(0,0,0,.08);
+$elevationZ6: 0 3px 5px -1px rgba(0,0,0,.06), 0 6px 10px 0 rgba(0,0,0,.06), 0 1px 18px 0 rgba(0,0,0,.08);
+$elevationZ8: 0 5px 5px -3px rgba(0,0,0,.06), 0 8px 10px 1px rgba(0,0,0,.06), 0 3px 14px 2px rgba(0,0,0,.08);
+$elevationZ10: 0 6px 6px -3px rgba(0,0,0,.06), 0 10px 14px 1px rgba(0,0,0,.06), 0 4px 18px 3px rgba(0,0,0,.08);
+$elevationZ12: 0 7px 8px -4px rgba(0,0,0,.06), 0 12px 17px 2px rgba(0,0,0,.06), 0 5px 22px 4px rgba(0,0,0,.08);
+$elevationZ14: 0 7px 9px -4px rgba(0,0,0,.06), 0 14px 21px 2px rgba(0,0,0,.06), 0 5px 26px 4px rgba(0,0,0,.08);
+$elevationZ16: 0 8px 10px -5px rgba(0,0,0,.06), 0 16px 24px 2px rgba(0,0,0,.06), 0 6px 30px 5px rgba(0,0,0,.08);
+$elevationZ18: 0 9px 11px -5px rgba(0,0,0,.06), 0 18px 28px 2px rgba(0,0,0,.06), 0 7px 34px 6px rgba(0,0,0,.08);
+$elevationZ20: 0 10px 13px -6px rgba(0,0,0,.06), 0 20px 31px 3px rgba(0,0,0,.06), 0 8px 38px 7px rgba(0,0,0,.08);
+$elevationZ22: 0 10px 14px -6px rgba(0,0,0,.06), 0 22px 35px 3px rgba(0,0,0,.06), 0 8px 42px 7px rgba(0,0,0,.08);
+$elevationZ24: 0 11px 15px -7px rgba(0,0,0,.06), 0 24px 38px 3px rgba(0,0,0,.06), 0 9px 46px 8px rgba(0,0,0,.08);

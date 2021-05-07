@@ -1,0 +1,37 @@
+/** 
+ *------------------------------------------------------------------------------
+ * @package       T4 Page Builder for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2020 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
+ *                & Google group to become co-author)
+ *------------------------------------------------------------------------------
+ */
+
+// Editor Vars & Mixins
+@import "_editor_variables";
+@import "_editor_mixins";
+
+//
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500');
+
+//
+// Vendors
+@import "../vendors/grapesjs/node_modules/spectrum-colorpicker/spectrum";
+@import "../vendors/grapesjs/node_modules/font-awesome/scss/font-awesome";
+// @import "_editor_fontawesome";
+@import "../vendors/grapesjs/node_modules/codemirror/lib/codemirror";
+@import "../vendors/grapesjs/node_modules/codemirror/theme/hopscotch";
+
+//
+// grapesjs main
+@import "../vendors/grapesjs/src/styles/scss/main.scss";
+
+//
+// T4 Editor Styles
+@import "_editor_elements";
+@import "_editor_main";
+@import "_modal";

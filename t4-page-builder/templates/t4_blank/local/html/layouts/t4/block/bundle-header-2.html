@@ -1,0 +1,197 @@
+<!-- HEADER BLOCK -->
+<header class="header-block bundle-header-2">
+  <div class="container">
+    <div class="header-block-inner clearfix">
+      <div class="logo-wrap">
+        <jdoc:include type="element" name="logo" data-home="index.php" />
+      </div>
+
+      <div class="toggle-wrap">
+        <jdoc:include type="element" name="megamenu-toggle" />
+        <jdoc:include type="element" name="offcanvas-toggle" />
+      </div>
+
+      <nav id="t4-mainnav" class="t4-mainnav bundle-mainnav-2">
+        <jdoc:include type="element" name="megamenu" />
+      </nav>
+
+    </div>
+  </div>
+</header>
+<!-- // HEADER BLOCK -->
+
+<style>
+  /* Header */
+  .header-block-inner {
+    min-height: 56px;
+  }
+
+  /* Logo */
+  .logo-wrap {
+    float: left;
+    margin-top: 28px;
+  }
+
+  @media screen and (max-width: 992px) {
+    .nav-breakpoint-lg .logo-wrap {
+      margin-top: 16px;
+    }
+
+    .navbar-brand {
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-breakpoint-md .logo-wrap {
+      margin-top: 16px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .nav-breakpoint-xs .logo-wrap {
+      margin-top: 16px;
+    }
+  }
+
+
+  /* MAIN NAVIGATION */
+  .bundle-header-2 #t4-mainnav {
+    float: right;
+  }
+
+  #t4-header .bundle-mainnav-2 .navbar-nav .nav-link {
+    border-radius: 0;
+  }
+
+  #t4-header .bundle-mainnav-2 .navbar-nav .nav-link:hover,
+  #t4-header .bundle-mainnav-2 .navbar-nav .nav-link:focus,
+  #t4-header .bundle-mainnav-2 .navbar-nav .nav-link:active {
+    background-color: transparent;
+  }
+
+  #t4-header .bundle-mainnav-2 .navbar-nav .active > .nav-link {
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .nav-breakpoint-xl .bundle-header-2 #t4-mainnav {
+      float: none;   
+      clear: both;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .nav-breakpoint-lg .bundle-header-2 #t4-mainnav {
+      float: none;
+      clear: both;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-breakpoint-md .bundle-header-2 #t4-mainnav {
+      float: none;
+      clear: both;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .nav-breakpoint-md .bundle-header-2 #t4-mainnav {
+      float: none;
+      clear: both;
+    }
+  }
+
+  /* Break point lg 992px */
+  @media screen and (max-width: 992px) {
+    .nav-breakpoint-lg #t4-mainnav .navbar {
+      display: block;
+    }
+
+    .nav-breakpoint-lg #t4-header .navbar-nav > li {
+      padding: 6px 0;
+    }
+
+    .nav-breakpoint-lg #t4-header .navbar-nav > li a.nav-link {
+      padding: 0;
+    }
+  }
+
+
+  /* Offcanvas button */
+  .toggle-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    padding: 16px;
+  }
+
+  .navbar-expand-lg {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .navbar-expand-lg .navbar-toggler {
+    border: 0;
+    border-radius: 0;
+    color: #999;
+    padding: 4px 6px;
+  }
+
+  .navbar-expand-lg .navbar-toggler:hover {
+    background-color: #f0f0f0;
+    color: #666;
+  }
+
+  .navbar-expand-lg .navbar-toggler i {
+    font-size: 20px;
+  }
+
+  /* Break point sm */
+  @media screen and (min-width: 576px) {
+  }
+
+  /* Break point xl 1200px */
+  @media screen and (min-width: 1200px) {
+  }
+
+  /* Break point lg 992px */
+  @media screen and (min-width: 992px) {
+    .nav-breakpoint-lg .toggle-wrap {
+      float: right;
+      position: relative;
+      top: auto;
+      right: auto;
+      padding: 0;
+      margin-top: 30px;
+    }
+  }
+
+  /* Break point md 768px */
+  @media screen and (min-width: 768px) {
+  }
+
+  #t4-header .bundle-header-2 #triggerButton {
+    border-radius: 0;
+    color: #999;
+    display: inline-block;
+    float: none;
+    padding: 4px 6px;
+    position: relative;
+    top: auto;
+    right: auto;
+    height: auto;
+    line-height: 1;
+    width: auto;
+  }
+
+  #t4-header .bundle-header-2 #triggerButton:hover {
+    background-color: #f0f0f0;
+    color: #666;
+  }
+
+  #t4-header .bundle-header-2 #triggerButton i {
+    font-size: 20px;
+  }
+</style>

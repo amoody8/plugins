@@ -1,0 +1,61 @@
+/** 
+ *------------------------------------------------------------------------------
+ * @package       T4 Page Builder for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2020 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
+ *                & Google group to become co-author)
+ *------------------------------------------------------------------------------
+ */
+
+/*!
+ * Bootstrap v4.2.1 (https://getbootstrap.com/)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+@import "../vendors/bootstrap4/scss/functions";
+@import "../vendors/bootstrap4/scss/variables";
+@import "../vendors/bootstrap4/scss/mixins";
+@import "../vendors/bootstrap4/scss/root";
+@import "../vendors/bootstrap4/scss/reboot";
+@import "../vendors/bootstrap4/scss/type";
+@import "../vendors/bootstrap4/scss/images";
+@import "../vendors/bootstrap4/scss/code";
+@import "../vendors/bootstrap4/scss/tables";
+@import "../vendors/bootstrap4/scss/forms";
+@import "../vendors/bootstrap4/scss/transitions";
+@import "../vendors/bootstrap4/scss/button-group";
+@import "../vendors/bootstrap4/scss/input-group";
+@import "../vendors/bootstrap4/scss/custom-forms";
+@import "../vendors/bootstrap4/scss/card";
+@import "../vendors/bootstrap4/scss/breadcrumb";
+@import "../vendors/bootstrap4/scss/pagination";
+@import "../vendors/bootstrap4/scss/badge";
+@import "../vendors/bootstrap4/scss/jumbotron";
+@import "../vendors/bootstrap4/scss/alert";
+@import "../vendors/bootstrap4/scss/progress";
+@import "../vendors/bootstrap4/scss/media";
+@import "../vendors/bootstrap4/scss/list-group";
+@import "../vendors/bootstrap4/scss/close";
+@import "../vendors/bootstrap4/scss/toasts";
+@import "../vendors/bootstrap4/scss/print";
+@import "../vendors/bootstrap4/scss/buttons";
+@import "../vendors/bootstrap4/scss/modal";
+@import "../vendors/bootstrap4/scss/tooltip";
+@import "../vendors/bootstrap4/scss/popover";
+@import "../vendors/bootstrap4/scss/carousel";
+@import "../vendors/bootstrap4/scss/spinners";
+@import "../vendors/bootstrap4/scss/utilities";
+
+.jpb,.jpb-page {
+	@import "../vendors/bootstrap4/scss/grid";
+	@import "../vendors/bootstrap4/scss/dropdown";
+	@import "../vendors/bootstrap4/scss/nav";
+	@import "../vendors/bootstrap4/scss/navbar";
+}
+
+// Global style
+@import "global"

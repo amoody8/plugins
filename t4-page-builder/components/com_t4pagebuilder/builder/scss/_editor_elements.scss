@@ -1,0 +1,1347 @@
+/** 
+ *------------------------------------------------------------------------------
+ * @package       T4 Page Builder for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2020 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
+ *                & Google group to become co-author)
+ *------------------------------------------------------------------------------
+ */
+
+// UI Themes
+
+// Material Themes
+.gjs-one-bg {
+  background-color: $gjs-one-bg;
+}
+
+.gjs-two-color {
+  color: $gjs-two-color;
+  fill: $gjs-two-color;
+}
+
+.gjs-three-bg {
+  background-color: $gjs-three-bg;
+}
+
+.gjs-four-color { /** Mostly use for Active Color */
+  color: $gjs-four-color;
+  fill: $gjs-four-color;
+
+  .gjs-four-color-h,
+  &:hover {
+  }
+}
+
+.gjs-color-warn {
+}
+
+
+//
+// Form Elements (Material Design Theme)
+// ----------------------------------------------
+
+//
+// Buttons
+// T4 added. For better re-using.
+.gjs-t4-btn {
+  background-color: $btn-one-bg;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  color: $btn-one-color;
+  cursor: pointer;
+  font-size: $fontSizeS;
+  height: 28px;
+  line-height: 28px;
+  padding: 0;
+  text-align: center;
+  transition: $btnTrans;
+  opacity: 1;
+  width: 28px;
+
+  &.fa,
+  .fa {
+    font-size: $fontSizeL;
+    
+    &::before {
+      font-weight: 300;
+    }
+  }
+
+  &:hover {
+    background-color: darken($btn-one-bg, 8%);
+    color: $btn-one-color;
+  }
+}
+
+.gjs-t4-btn-raised {
+  box-shadow: $elevationZ2;
+  &:active {
+    box-shadow: $elevationZ4;
+  }
+}
+
+.gjs-t4-btn-sm {
+  font-size: $fontSize;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  &.fa,
+  .fa {
+    font-size: $fontSize;
+  }
+}
+
+.gjs-t4-btn-lg {
+  font-size: $fontSizeXL;
+  width: $baseWidth*4;
+  height: $baseWidth*4;
+  line-height: $baseWidth*4;
+  
+  &.fa,
+  .fa {
+    font-size: $fontSizeXL;
+  }
+}
+
+.gjs-t4-btn-two {
+  background-color: $btn-two-bg;
+  color: $btn-two-color;
+}
+
+.gjs-t4-btn-three {
+  background-color: $btn-three-bg;
+  color: $btn-three-color;
+}
+
+.gjs-t4-btn-main {
+  background-color: $btn-main-bg;
+  color: $btn-main-color;
+}
+
+.gjs-t4-btn-alt {
+  background-color: $btn-alt-bg;
+  color: $btn-alt-color;
+}
+
+.gjs-t4-btn-dark {
+  background-color: $gray-800;
+  color: #fff;
+}
+
+// Direction buttons
+.icons-flex {
+  min-height: 12px;
+
+  &:hover {
+    background-position: center center;
+  }
+}
+
+.icon-dir-row {
+  background: url(../img/flex-dir-row.png) no-repeat center 0;
+}
+
+.icon-dir-row-rev {
+  background: url(../img/flex-dir-row-rv.png) no-repeat center 0;
+}
+
+.icon-dir-col {
+  background: url(../img/flex-dir-col.png) no-repeat center 0;
+}
+
+.icon-dir-col-rev {
+  background: url(../img/flex-dir-col-rv.png) no-repeat center 0;
+}
+
+.icon-just-start {
+  background: url(../img/flex-just-start.png) no-repeat center 0;
+}
+
+.icon-just-end {
+  background: url(../img/flex-just-end.png) no-repeat center 0;
+}
+
+.icon-just-sp-bet {
+  background: url(../img/flex-just-sp-bet.png) no-repeat center 0;
+}
+
+.icon-just-sp-ar {
+  background: url(../img/flex-just-sp-ar.png) no-repeat center 0;
+}
+
+.icon-just-sp-cent {
+  background: url(../img/flex-just-sp-ar.png) no-repeat center 0;
+}
+
+.icon-al-start {
+  background: url(../img/flex-al-start.png) no-repeat center 0;
+}
+
+.icon-al-end {
+  background: url(../img/flex-al-end.png) no-repeat center 0;
+}
+
+.icon-al-str {
+  background: url(../img/flex-al-str.png) no-repeat center 0;
+}
+
+.icon-al-center {
+  background: url(../img/flex-al-center.png) no-repeat center 0;
+}
+
+.gjs-radio-item input:checked + .gjs-radio-item-label {
+  background-position: center -56px;
+}
+
+
+//
+// Default Field
+//
+.gjs-field {
+  background-color: $mainDkLlColor;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  transition: all $defaultTrans;
+
+  &:hover {
+    background-color: $mainDklColor;
+    border-color: $borderColor;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $gjs-four-color;
+  }
+
+  input, select, textarea {
+    font-family: $mainFont;
+    font-size: $fontSizeS;
+    font-weight: 500;
+    padding: 6px $baseMargin*1.5;
+  }
+
+  // Field Arrow
+  .gjs-d-s-arrow {
+    border-top-color: $gjs-two-color;
+  }
+}
+
+.gjs-clm-tags .gjs-clm-field input,
+.gjs-clm-tags .gjs-clm-field select,
+.gjs-clm-tags .gjs-sm-field input,
+.gjs-clm-tags .gjs-sm-field select,
+.gjs-sm-sector .gjs-clm-field input,
+.gjs-sm-sector .gjs-clm-field select,
+.gjs-sm-sector .gjs-sm-field input,
+.gjs-sm-sector .gjs-sm-field select {
+  color: inherit;
+  background-color: inherit;
+  border: inherit;
+
+  &:focus {
+    color: inherit;
+  }
+}
+
+.gjs-sm-label {
+  font-weight: 400;
+  color: $gray-500;
+  transition: color $defaultTrans;
+  margin: 0 $baseWidth $baseWidth $baseWidth*1.5;
+
+  > span {
+    margin-right: $baseMargin;
+  }
+
+  &.gjs-color-warn {
+    color: $colorWarn;
+  }
+
+  &.gjs-four-color {
+    color: $gjs-four-color;
+  }
+
+  .gjs-sm-clear {
+    color: transparent;
+    &::before {
+      @include icon("\f0e2");
+      color: $gray-400;
+      display: inline;
+      font-weight: 400;
+      font-size: $fontSize;
+    }
+  }
+
+  // .gjs-sm-clear:hover {
+  //   &::before {
+  //     color: $colorRed;
+  //   }
+  // }
+}
+
+//
+// Fields Arrows & Units
+.gjs-field .gjs-input-unit,
+.gjs-input-unit {
+  font-size: $fontSize;
+  font-weight: 400;
+}
+
+.gjs-field-arrows {}
+
+.gjs-field-arrow-u {
+  border-bottom-color: $gray-500;
+}
+
+.gjs-field-arrow-d {
+  border-top-color: $gray-500;
+}
+
+
+//
+// Hover State
+.gjs-sm-property:hover {
+  .gjs-sm-label {
+    color: $gray-900;
+  }
+
+  .gjs-sm-label.gjs-color-warn {
+    color: $colorWarn;
+  }
+
+  .gjs-sm-label.gjs-four-color {
+    color: $gjs-four-color;
+  }
+}
+
+
+//
+// Active State
+.gjs-sm-property.isActive,
+.gjs-sm-property.isActive:hover {
+  .gjs-sm-label {
+    color: $mainAccentColor;
+    opacity: 1;
+  }
+
+  .gjs-sm-label.gjs-color-warn {
+    color: $colorWarn;
+  }
+
+  .gjs-sm-label.gjs-four-color {
+    color: $gjs-four-color;
+  }
+
+  .gjs-field {
+    border-color: $mainAccentColor;
+    background: $gjs-one-bg;
+    box-shadow: $elevationZ2;
+  }
+}
+
+
+//
+// Changed State
+.gjs-sm-property.isChanged,
+.gjs-sm-property.isChanged:hover {
+}
+
+
+//
+// Select
+.gjs-select {
+  select {
+    color: $fontColor;
+  }
+
+  select:-moz-focusring,
+  select select:-moz-focusring {
+    color: inherit;
+    text-shadow: none;
+  }
+}
+
+
+//
+// Radio
+.gjs-field-radio {
+}
+
+.gjs-radio-item {
+  border-left-color: transparent;
+  transition: all $defaultTrans;
+  color: $gray-700;
+}
+
+.gjs-radio-item:hover {
+  background-color: transparent;
+  color: $mainAccentColor;
+}
+
+.gjs-radio-item-label {
+  &::before {
+  }
+}
+
+.gjs-radio-item:first-child,
+.gjs-radio-item:first-child .gjs-radio-item-label {
+  border-radius: 50px 0 0 50px;
+}
+
+.gjs-radio-item:last-child,
+.gjs-radio-item:last-child .gjs-radio-item-label {
+  border-radius: 0 50px 50px 0;
+}
+
+.gjs-radio-item input:checked + .gjs-radio-item-label {
+  background-color: $mainAccentColor;
+  color: #fff;
+  box-shadow: $elevationZ2;
+  border-radius: 50px;
+}
+
+.gjs-sm-property.isActive .gjs-field.gjs-field-radio {
+  border-color: transparent;
+  background-color: $mainDklColor;
+  box-shadow: none;
+}
+
+.gjs-field-radio:hover,
+.gjs-sm-property.isActive:hover .gjs-field.gjs-field-radio {
+  border-color: transparent;
+}
+
+
+//
+// Colors Picker
+.gjs-field-colorp {
+  height: 24px;
+  width: 24px;
+  border-left: 0;
+  right: 4px;
+  top: 4px;
+}
+
+.gjs-field-colorp .gjs-checker-bg,
+.gjs-field-colorp .gjs-field-colorp-c {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.gjs-field-color-picker {
+  border-radius: 50%;
+}
+
+//
+// Media field
+.gjs-field-wrp--media {
+  background-color: $mainDkLlColor;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  transition: all $defaultTrans;
+
+  > span {
+    display: block;
+    position: relative;
+    padding-right: 30px;
+
+    input[type="text"] {
+      background-color: transparent;
+      border: 0;      
+      line-height: 28px;
+      padding: 0;
+      text-indent: 12px;
+    }
+  }
+
+  .btn {
+    background-color: $gray-300;
+    border-radius: 50%;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    height: 24px;
+    text-align: center;
+    width: 24px;
+
+    &:hover, &:focus, &:active {
+      background-color: darken($colorBlue, 5%);
+      cursor: pointer;
+
+      i {
+        opacity: 1;
+      }
+    }
+
+    i {
+      color: $colorWhite;
+      line-height: 24px;
+      opacity: 0.8;
+    }
+  }
+
+  &:hover {
+    background-color: $mainDklColor;
+    border-color: $borderColor;
+  }
+}
+
+
+//
+// Range
+.gjs-field-range,
+.gjs-field-range:hover,
+.gjs-sm-property.isActive .gjs-field.gjs-field-range {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+
+//
+// Property
+.gjs-clm-tags .gjs-sm-property,
+.gjs-sm-sector .gjs-sm-property {
+  padding: $baseWidth $baseWidth/2;
+  margin: 0 0 $baseWidth/2;
+}
+
+#gjs-sm-OverlayProp {
+  .gjs-sm-property {
+    width: 100%;
+  }
+
+  .gjs-sm-field.gjs-sm-file {
+    background-color: $gray-200;
+    border-radius: 5px;
+    padding: 4px;
+  }
+
+  button.gjs-sm-btn {
+    background-color: $gray-600;
+    box-shadow: none;
+    border-radius: 5px;
+    border: 0;
+    color: $colorWhite;
+    font-family: $mainFont;
+    text-shadow: none;
+    transition: all 0.25s;
+
+    &:hover, &:focus, &:active {
+      background-color: $colorBlue;
+    }
+  }
+
+  #gjs-sm-preview-box.gjs-sm-show {
+    padding: 0;
+
+    #gjs-sm-preview-file {
+      background-size: cover;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+  }
+}
+
+// Hide arrow in range opacity
+.gjs-sm-OverlayProp {
+  .gjs-field-arrows {
+    display: none;
+  }
+}
+
+
+//
+// Properties Group
+.gjs-sm-properties {
+  padding: 0 $baseWidth/2 $baseWidth;
+  // padding: 0;
+  // max-height: 0;
+  // height: 0;
+  // opacity: 0;
+  // display: flex !important;
+  // transition: max-height 200ms ease, opacity 50ms ease, border $defaultTrans;
+
+  .gjs-sm-properties {
+    padding: 0;
+    margin: 0;
+    width: auto;
+  }
+}
+
+// .gjs-sm-open .gjs-sm-properties {
+//   padding: 0 $baseWidth/2 $baseWidth;
+//   max-height: 2000px;
+//   height: auto;
+//   opacity: 1;
+// }
+
+.gjs-sm-property .gjs-sm-properties {
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+
+//
+// Traits
+.gjs-trt-trait {
+  padding: $baseWidth/2 $baseWidth;
+  justify-content: space-between;
+
+  .gjs-label {
+    font-weight: 400;
+    font-size: $fontSizeS;
+    width: auto;
+    padding: 8px 8px 4px 12px;
+  }
+
+  .gjs-field {
+    width: auto;
+    min-width: 60px;
+    max-width: 140px;
+  }
+
+  // Checkbox
+  .gjs-field-checkbox {
+    border-radius: 3px;
+    display: block;
+    height: 22px;
+    min-width: 22px;
+    width: 22px;
+
+    input:checked + .gjs-chk-icon {
+      border-color: $gray-600;
+      margin-left: 7px;
+      margin-top: 2px;
+    }
+  }
+
+}
+
+
+//
+// Composite
+.gjs-clm-tags .gjs-sm-composite.gjs-clm-field,
+.gjs-clm-tags .gjs-sm-field.gjs-sm-composite,
+.gjs-sm-sector .gjs-sm-composite.gjs-clm-field,
+.gjs-sm-sector .gjs-sm-field.gjs-sm-composite {
+  background-color: transparent;
+  border: 1px dashed $borderColor;
+  border-radius: $baseWidth;
+}
+
+.gjs-sm-sector .gjs-sm-composite.gjs-sm-property {
+
+  // background: transparent;
+  // border: 1px solid $borderColor;
+
+  // margin-top: $baseWidth;
+  // margin-bottom: $baseWidth;
+  // padding: $baseWidth/2 $baseWidth/2 0;
+  // border-radius: $baseWidth;
+
+  > .gjs-sm-property {
+    float: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  > .gjs-sm-property + .gjs-fields {
+    display: block !important;
+    max-height: 200px;
+    line-height: normal;
+    opacity: 1;
+    margin-top: $baseWidth;
+    transition: max-height 100ms ease, opacity 50ms ease, border $defaultTrans;
+  }
+
+  .gjs-sm-simple-input .gjs-field {
+    position: relative;
+    width: calc(100% - (28px + 8px));
+    float: none;
+  }
+
+  .gjs-sm-simple-input > .gjs-sm-label,
+  > .gjs-sm-label {
+  }
+
+   > .gjs-sm-label {
+    margin-left: $baseWidth*1.5;
+   }
+
+   // Expand Button
+  .gjs-field .fa-caret-left,
+  .gjs-field .fa-caret-down {
+    @extend .gjs-t4-btn;
+    position: absolute;
+    display: block;
+    margin-left: $baseWidth;
+    top: 0;
+    right: -(28px + $baseWidth);
+    &::before {
+      content: "\f141";
+    }
+  }
+
+  .gjs-field .fa-caret-down {
+    @extend .gjs-t4-btn-main;
+  }
+
+  > .gjs-fields {
+
+  }
+
+}
+
+// Open
+.gjs-sm-sector .gjs-sm-composite.gjs-sm-property.isCollapsed {
+  background: transparent;
+  border-color: transparent;
+
+  > .gjs-sm-property + .gjs-fields {
+    display: block !important;
+    max-height: 0;
+    line-height: 0;
+    opacity: 0;
+    margin-top: 0;
+  }
+
+}
+
+
+//
+// Stack & layers
+.gjs-sm-stack {
+}
+
+.gjs-clm-tags .gjs-sm-property .gjs-sm-layers,
+.gjs-sm-sector .gjs-sm-property .gjs-sm-layers {
+  margin-top: $baseWidth;
+  padding: 0;
+  min-height: 32px;
+  border-radius: $baseWidth;
+  background-color: $gray-100;
+  border-color: $borderColor;
+  position: relative;
+  &::before {
+    //cursor: not-allowed;
+    display: block;
+    content: "Click + button to add new value";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    padding-top: 8px;
+    opacity: .5;
+  }
+}
+
+.gjs-clm-tags .gjs-sm-property .gjs-sm-layer,
+.gjs-sm-sector .gjs-sm-property .gjs-sm-layer {
+  background-color: $gray-100;
+  border-radius: 0;
+  margin: 0;
+  padding: $baseWidth*1.5 $baseWidth;
+  position: relative;
+  cursor: pointer;
+  transition: all $defaultTrans;
+  &:first-child {
+    border-radius: $baseWidth $baseWidth 0 0;
+  }
+  &:last-child {
+    border-radius: 0 0 $baseWidth $baseWidth;
+  }
+  #gjs-sm-label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: $gray-500;
+    transition: color $defaultTrans;
+  }
+  &:hover #gjs-sm-label {
+    color: $gray-900;
+  }
+  #gjs-sm-inputs {
+    margin-top: $baseWidth;
+  }
+}
+
+.gjs-clm-tags .gjs-sm-property .gjs-sm-layer.gjs-sm-active,
+.gjs-sm-sector .gjs-sm-property .gjs-sm-layer.gjs-sm-active {
+  background-color: #fff;
+  border-radius: $baseWidth;
+  box-shadow: $elevationZ4;
+  z-index: 1;
+  padding-bottom: 0;
+  #gjs-sm-label {
+    color: $gray-900;
+  }
+}
+
+.gjs-clm-tags .gjs-sm-stack #gjs-sm-add,
+.gjs-sm-sector .gjs-sm-stack #gjs-sm-add {
+  @extend .gjs-t4-btn;
+  font-size: $fontSizeXL;
+  top: -28px;
+}
+
+.gjs-sm-layer > #gjs-sm-move {
+  margin-right: $baseWidth;
+
+  .fa {
+    font-weight: 400;
+    font-size: $fontSize;
+  }
+}
+
+.gjs-clm-tags .gjs-sm-property .gjs-sm-layer #gjs-sm-close-layer,
+.gjs-sm-sector .gjs-sm-property .gjs-sm-layer #gjs-sm-close-layer {
+  @extend .gjs-t4-btn;
+  @extend .gjs-t4-btn-sm;
+  right: $baseWidth;
+  top: $baseWidth;
+}
+
+.gjs-clm-tags .gjs-sm-property .gjs-sm-layer>#gjs-sm-preview-box,
+.gjs-sm-sector .gjs-sm-property .gjs-sm-layer>#gjs-sm-preview-box {
+  right: 40px;
+  top: 6px;
+  height: 20px;
+  width: 20px;
+  border-radius: 2px;
+}
+
+.gjs-clm-tags .gjs-sm-property .gjs-sm-layer > #gjs-sm-preview-box #gjs-sm-preview,
+.gjs-sm-sector .gjs-sm-property .gjs-sm-layer > #gjs-sm-preview-box #gjs-sm-preview {
+  border: 1px solid $borderColor;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.gjs-clm-tags #gjs-sm-text-shadow #gjs-sm-preview:after,
+.gjs-sm-sector #gjs-sm-text-shadow #gjs-sm-preview:after {
+  content: "T";
+  font-weight: 900;
+  line-height: 20px;
+  padding: 0 5px;
+}
+
+// Drag bar
+// .gjs-placeholder {
+//   border-color: transparent rgba($colorGreen,.5) !important;
+// }
+
+.gjs-clm-tags {
+  span.fa:before {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 300;
+    font-size: 12px;  
+    margin-left: 5px;
+    margin-bottom: 2px;
+  }
+
+  span.fa-check-square-o:before {
+    content: "\f14a";
+    color: $colorGreen;
+  }
+
+  span.fa-square-o:before {
+    content: "\f0c8";
+    color: $gray-800;
+  }
+}
+
+
+//
+// Components
+// ----------------------------------------------
+
+//
+// Tag, Chip
+// T4 added. For better reusing.
+.gjs-t4-chip {
+  border-radius: 50px;
+  margin: 0 4px 4px 0;
+  padding: 4px;
+  background: $gjs-three-bg;
+  @include text-contrast($gjs-three-bg);
+}
+
+.gjs-clm-tags .gjs-clm-tag {
+  @extend .gjs-t4-chip;
+}
+
+.gjs-clm-tags #gjs-clm-tag-label {
+  padding: 0 4px;
+}
+
+.gjs-clm-tags #gjs-clm-close {
+  @extend .gjs-t4-btn;
+  @extend .gjs-t4-btn-sm;
+  background-color: $btn-three-bg;
+  color: $btn-three-color;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  display: inline-block;
+  opacity: .7;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.gjs-clm-tags #gjs-clm-add-tag {
+  @extend .gjs-t4-btn;
+  @include text-contrast($gjs-one-bg);
+
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0;
+  border-color: transparent;
+  transition: all $defaultTrans;
+}
+
+.gjs-clm-tags #gjs-clm-new {
+  border: none;
+  background-color: transparent;
+  border-radius: 50px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 8px 0 32px;
+  margin: 1px;
+  position: absolute;
+  bottom: 0;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: transparent;
+  }
+}
+
+.gjs-clm-tags #gjs-clm-new[style="display: block;"] + #gjs-clm-add-tag {
+  display: inline-block !important;
+  width: 100%;
+  text-align: left;
+  border-color: $mainAccentColor;
+  background-color: transparent;
+  &::before {
+    margin-left: 12px;
+  }
+}
+
+
+//
+// Blocks
+// --------------------------------------------
+.gjs-block {
+  background: $mainDkLlColor;
+  border-color: transparent;
+  border-radius: $cardRadius;
+  margin: 1.6%;
+  padding: 0;
+  width: 30%;
+  min-height: 80px;
+  box-shadow: none;
+  justify-content: space-evenly;
+  transition: all 100ms ease-in-out, $elevationTrans;
+
+  // Blocks Icons
+  &.fa:before,
+  &.fal:before {
+    font-size: 1.5rem;
+  }
+}
+
+.gjs-block-label {
+  font-family: $altFont;
+  font-size: $fontSizeSm;
+  font-weight: 400;
+  text-transform: uppercase;
+  opacity: .7;
+
+  .gjs-block-text {
+    padding: $baseWidth 0;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    border-radius: $cardRadius - 1px;
+  }
+
+  .gjs-block-svg {
+    margin: $baseWidth auto 0;
+    text-align: center;
+    max-width: 60px;
+    width: auto;
+  }
+
+}
+
+// Hover State
+.gjs-block:hover {
+  box-shadow: $elevationZ4;
+  background: $mainAccentColor;
+  color: #fff;
+  transform: translate(0,-2px);
+  .gjs-block-label  {
+    opacity: 1;
+  }
+}
+
+//
+// Blocks Container
+.gjs-blocks-c {
+  padding: 2% 2% 6%;
+}
+
+.gjs-blocks-cs,
+.gjs-sm-sectors,
+.gjs-clm-tags {
+  background: transparent;
+}
+
+//
+// Block Headers
+.gjs-manager-header,
+.gjs-block-header {
+  padding: $baseWidth*2 $baseWidth*2 $baseWidth*1.5;
+  overflow: hidden;
+  clear: both;
+  text-align: left;
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: $fontSizeXL;
+    text-align: left;
+    font-weight: 500;
+  }
+  
+  .t4-helper {
+    @extend .gjs-t4-btn;
+    background: #fff;
+    float: right;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: -24px;
+  }
+}
+
+.gjs-sm-header {
+  padding: $baseWidth $baseWidth*2;
+  text-align: left;
+  font-weight: 400;
+  font-size: $fontSizeL;
+  color: $gray-700;
+}
+
+//
+// Filter Blocks
+.gjs-filter-blocks {
+  padding: 0;
+  margin: 0 $baseWidth $baseWidth*2;
+  width: auto;
+
+  select {
+    width: 100%;
+    font-size: $fontSize;
+    font-weight: 500;
+  }
+}
+
+//
+// Category Blocks
+.gjs-block-category,
+.gjs-sm-sector,
+.gjs-clm-tags {
+  font-weight: 400;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  transition: all $defaultTrans;
+  &:hover {
+   background: $gjs-one-bg;
+  }
+}
+
+.gjs-clm-tags {
+  &:hover {
+   background: transparent;
+  }
+}
+
+.gjs-block-categories {
+}
+
+// Category Blocks Title
+.gjs-block-category .gjs-title,
+.gjs-category-title,
+.gjs-clm-tags .gjs-sm-title,
+.gjs-layer-title,
+.gjs-sm-sector .gjs-sm-title {
+  background: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  font-weight: 500;
+  font-size: $fontSizeL;
+  letter-spacing: 0;
+  padding: $baseWidth*1.5 $baseWidth*2;
+}
+
+// Layer Title
+.gjs-layer-title {
+  padding: $baseWidth $baseWidth*2;
+}
+
+// Hover State
+.gjs-block-category:hover,
+.gjs-sm-sector:hover {
+}
+
+// Open State
+.gjs-block-category.gjs-open,
+.gjs-category-open,
+.gjs-sm-open.gjs-clm-tags,
+.gjs-sm-sector.gjs-sm-open {
+  border-top-color: $borderColor;
+  border-bottom-color: $borderColor;
+  background: $gjs-one-bg;
+  + .gjs-block-category.gjs-open,
+  + .gjs-category-open,
+  + .gjs-sm-open.gjs-clm-tags,
+  + .gjs-sm-sector.gjs-sm-open {
+    border-top-color: transparent;
+  }
+}
+
+.gjs-clm-tags + .gjs-sm-sector.gjs-sm-open {
+  border-top-color: transparent;
+}
+
+// .gjs-sm-sector.gjs-sm-open + .gjs-sm-sectors > .gjs-sm-sector {
+//   border-top-color: transparent;
+// }
+
+
+// Category Blocks Title Caret
+.gjs-block-category .gjs-caret-icon,
+.gjs-sm-sector .gjs-sm-title > i.fa {
+  float: right;
+  font-size: $fontSizeXL !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: .7;
+  &.fa-caret-down:before {
+    content: "\f107";
+    font-weight: 400;
+  }
+  &.fa-caret-right:before {
+    content: "\f105";
+    font-weight: 400;
+  }
+}
+
+
+//
+// Image Blocks
+.gjs-group-Block,
+.gjs-group-Page {
+  .gjs-block {
+    min-height: 0;
+    width: 100%;
+  }
+  .gjs-block-label {
+    opacity: 1;
+  }
+  .gjs-block-text {
+    display: none;
+  }
+}
+
+
+
+//
+// MISC
+// ---------------------------------------------
+
+//
+// Utilities
+.hidden {
+  display: none;
+}
+
+// Toolbar
+.gjs-rte-toolbar {
+  background-color: $gray-900;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 1px;
+  color: $gray-300;
+  
+  min-width: 275px;
+
+  .gjs-rte-actionbar {
+    .gjs-rte-action {
+      border-right: 1px solid rgba(0,0,0,0.05);
+      font-size: 14px !important;
+      height: 32px;
+      width: 32px;
+
+      &:hover, &:focus, &:active {
+        color: $colorBlue;
+      }
+
+      &.gjs-rte-active {
+        background-color: rgba(0,0,0,0.05);
+        color: $colorBlue;
+      }
+    }
+  }
+}
+
+//
+// Tooltip
+.tooltip-component {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.tooltip-component--empty {
+  width: 50px;
+  height: 50px;
+}
+
+.tooltip-component__body,
+[data-tooltip]::after {
+  background: rgba($colorBlack, 0.8);
+  border-radius: 3px;
+  bottom: 100%;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  color: #fff;
+  content: attr(data-tooltip);
+  display: block;
+  font: normal normal normal 14px/1 Roboto;
+  font-size: $fontSizeS;
+  left: 50%;
+  line-height: normal;
+  max-width: 32rem;
+  opacity: 0;
+  overflow: hidden;
+  padding: $basePadding $basePadding*1.5;
+  pointer-events: none;
+  position: absolute;
+  text-overflow: ellipsis;
+  transform: translate(-50%, 0);
+  transition: opacity 0.25s, transform 0.25s;
+  text-rendering: auto;
+  text-transform: capitalize;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  z-index: 10;
+}
+
+[data-tooltip-visible=true]::after,
+[data-tooltip]:focus::after,
+[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -0.5rem);
+}
+
+[data-tooltip-pos=right]::after {
+  bottom: 50%;
+  left: 100%;
+  transform: translate(0, 50%);
+}
+
+[data-tooltip-pos=right]:focus::after,
+[data-tooltip-pos=right]:hover::after,
+[data-tooltip-visible=true][data-tooltip-pos=right]::after {
+  transform: translate(0.5rem, 50%);
+}
+
+[data-tooltip-pos=bottom]::after {
+  bottom: auto;
+  top: 100%;
+  transform: translate(-50%, 0);
+}
+
+[data-tooltip-pos=bottom]:focus::after,
+[data-tooltip-pos=bottom]:hover::after,
+[data-tooltip-visible=true][data-tooltip-pos=bottom]::after {
+  transform: translate(-50%, 0.5rem);
+}
+
+[data-tooltip-pos=left]::after {
+  bottom: 50%;
+  left: auto;
+  right: 100%;
+  transform: translate(0, 50%);
+}
+
+[data-tooltip-pos=left]:focus::after,
+[data-tooltip-pos=left]:hover::after,
+[data-tooltip-visible=true][data-tooltip-pos=left]::after {
+  transform: translate(-0.5rem, 50%);
+}
+
+[data-tooltip-length=small]::after {
+  white-space: normal;
+  width: 80px;
+}
+
+[data-tooltip-length=medium]::after {
+  white-space: normal;
+  width: 150px;
+}
+
+[data-tooltip-length=large]::after {
+  white-space: normal;
+  width: 300px;
+}
+
+[data-tooltip-length=fit]::after {
+  white-space: normal;
+  width: 100%;
+}
+
+// IE 11 bugfix
+button[data-tooltip] {
+  overflow: visible;
+}
+
+
+//
+// Scrollbar
+.gjs-editor-cont ::-webkit-scrollbar {}
+
+.gjs-editor-cont ::-webkit-scrollbar-thumb {
+  background-color: rgba($gray-900, 0.14);
+}
+
+.gjs-editor-cont ::-webkit-scrollbar-track {
+  background-color: rgba($gray-900, 0.02);
+}
+
+// Spin
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(-360deg); }
+}
+
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(-360deg); }
+}
+
+@keyframes spin {
+ from {transform:rotate(0deg);}
+  to {transform:rotate(-360deg);}
+}

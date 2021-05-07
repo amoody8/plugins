@@ -1,0 +1,296 @@
+/* Base css */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #wrapper {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#wrapper {
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+* ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1)
+}
+
+* ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2)
+}
+
+* ::-webkit-scrollbar {
+  width: 10px
+}
+
+
+/* Style */
+
+/*
+#wrapper > div {
+  margin: 5px;
+}*/
+
+*:empty {
+	min-height: 10px;
+}
+
+div:empty {
+	min-height: 50px;
+}
+
+.presentation {
+	min-height: auto;
+}
+
+[type="modules"]::after,
+[type="menu"]::after,
+[type="module"]::after,
+[type="component"]::after,
+[type="message"]::after,
+[type="articles"]::after,
+[type="t4"]::after {
+	display: block;
+	height: 40px;
+	width: 100%;
+	background: #eee;
+	text-align: center;
+	line-height: 40px;
+	color: #212529 !important;
+	font-size: 13px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+[type="modules"],
+[type="module"],
+[type="menu"],
+[type="component"],
+[type="articles"],
+[type="message"],
+[type="t4"]::after {
+	display: block;
+}
+[type="menu"]::after,
+[type="module"]::after,
+[type="articles"]::after {
+	content: attr(type) ': ' attr(title);
+}
+
+[type="modules"]::after {
+	content: attr(type) ': ' attr(name);
+}
+[name="mod_articles_latest"]::after {
+	content: 'Articles - Latest: 'attr(title);
+}
+[name="mod_articles_category"]::after {
+	content: 'Articles - Category: 'attr(title);
+}
+[name="mod_articles_categories"]::after {
+	content: 'Articles - Categories: 'attr(title);
+}
+
+[type="component"]::after,
+[type="message"]::after {
+	content: attr(type);
+}
+
+[type="t4"]::after {
+	content: "{{" attr(name) "}}";
+}
+
+[type="t4"][name="block"]::after {
+	display: none;
+}
+
+[data-view="half"] {
+	max-width: 100%;
+	margin: 0 auto;
+	width: 600px;
+}
+
+[data-view="col"] {
+	max-width: 100%;
+	width: 350px;
+	margin: 0 auto;
+}
+
+.gjs-dashed {
+	padding: 3px;
+}
+
+body[data-view="full"] {
+}
+
+.gjs-off-prv {
+}
+
+.gjs-dashed .container {
+}
+
+.gjs-dashed [class~="col"],
+.gjs-dashed [class^="col-"] {
+	padding-top: 1.0rem;
+	padding-bottom: 1.0rem;
+}
+
+.gjs-dashed [data-highlightable] {
+  min-height: 1rem;
+  outline-offset: -1px !important;
+}
+
+.gjs-comp-selected.nav-item.dropdown {
+  outline: none !important;
+}
+
+.gjs-comp-selected.nav-item.dropdown .dropdown-toggle {
+  outline: 3px solid #3b97e3 !important;
+}
+
+.navbar-nav .dropdown-menu {
+	min-height: 50px;
+	box-shadow: 0 3px 5px #999;
+}
+
+.gjs-dashed #wrapper {
+	padding-bottom: 3rem;
+}
+
+.dropdown-inner ul:after {
+	content: "+ add links";
+	display: block;
+	color: #ccc;
+	text-align: center;
+	font-size: 12px;
+	padding: 5px;
+}
+
+[type="share-block"] {
+	display: block;
+	position: relative;
+}
+
+[type="share-block"] button {
+  position: relative;
+	z-index: 311 !important;
+}
+
+.tab {
+	border-radius: 3px;
+	color: inherit;
+	display: inline-block;
+	margin-right: 10px;
+	padding: 7px 14px;
+	transition: opacity 0.3s;
+	text-decoration: none;
+}
+
+.tab.tab-active {
+	background-color: #0d94e6;
+	color: white;
+}
+
+.tab-content {
+	padding: 6px 12px;
+	min-height: 100px;
+	animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* Disable mouse events for children */
+.no-events * {
+	pointer-events: none;
+}
+
+.shareblock-edit {
+	position: relative;
+	display: block;
+}
+
+.shareblock-edit > * {
+	z-index: 2;
+	position: relative;
+	background: #fff;
+}
+
+.shareblock-edit > button {
+	position: absolute;
+	bottom: -32px;
+	height: 32px;
+}
+
+.shareblock-edit > .shareblock-btn-update {
+	left: 8px;
+}
+
+.shareblock-edit > .shareblock-btn-update,
+.shareblock-edit > .shareblock-btn-cancel {
+	background: #3073bb;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  padding: 0 .75rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.shareblock-edit > .shareblock-btn-update:hover {
+  background-color: #28609d;
+}
+
+.shareblock-edit > .shareblock-btn-cancel {
+  background-color: #b35900;
+	left: 84px;
+  color: #fff;
+}
+
+.shareblock-edit > .shareblock-btn-cancel:hover {
+  background-color: #8d4600;
+}
+
+.shareblock-edit > .shareblock-mask {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: rgba(0,0,0,0.3);
+	z-index: 1;
+}
+
+/* Fix pointer for button */
+.btn {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+}
+
+/* Disable div empty */
+.gjs-css-rules div:empty,
+.gjs-js-cont:empty {
+}
+/*editor re-Captcha*/
+div.t4b-recaptcha:empty{
+	background: url('/media/t4pagebuilder/builder/img/captcha.png') no-repeat;
+	min-height: 85px;
+	width: 100%;
+}
+.lightbox-item{
+	display: block;
+	padding: 6px;
+}

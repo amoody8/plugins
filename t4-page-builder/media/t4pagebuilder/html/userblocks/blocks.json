@@ -1,0 +1,21 @@
+{
+	"blocks":[
+		{
+			"blocks": [
+			{
+			  "label": "test",
+			  "name": "test2",
+			  "attributes": {
+			    "class": "fa fa-th"
+			  },
+			  "content": "<div class=\"t4-block-grid\">\n\t<h3 class=\"text-center\">Grid title</h3>\n\t<p class=\"lead mb-5 text-center\">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>\n\t<div class=\"row row-grid\">\n\t\t<div class=\"col-md-4\">\n\t\t\t<img src=\"http://via.placeholder.com/600x400\" class=\"img-fluid img-thumbnail\" alt=\"\" />\n\t\t\t<h4 class=\"mb-3 mt-3\">Title</h4>\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut posuere ante. Etiam ullamcorper condimentum augue nec vestibulum.</p>\n\t\t\t<a href=\"#\" class=\"btn btn-link\" role=\"button\">Col link</a>\n\t    <a href=\"#\" class=\"btn btn-link\" role=\"button\">Another link</a>\n\t\t</div>\n\n\t\t<div class=\"col-md-4\">\n\t\t\t<img src=\"http://via.placeholder.com/600x400\" class=\"img-fluid img-thumbnail\" alt=\"\" />\n\t\t\t<h4 class=\"mb-3 mt-3\">Title</h4>\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut posuere ante. Etiam ullamcorper condimentum augue nec vestibulum.</p>\n\t\t\t<a href=\"#\" class=\"btn btn-link\" role=\"button\">Col link</a>\n\t    <a href=\"#\" class=\"btn btn-link\" role=\"button\">Another link</a>\n\t\t</div>\n\n\t\t<div class=\"col-md-4\">\n\t\t\t<img src=\"http://via.placeholder.com/600x400\" class=\"img-fluid img-thumbnail\" alt=\"\" />\n\t\t\t<h4 class=\"mb-3 mt-3\">Title</h4>\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut posuere ante. Etiam ullamcorper condimentum augue nec vestibulum.</p>\n\t\t\t<a href=\"#\" class=\"btn btn-link\" role=\"button\">Col link</a>\n\t    <a href=\"#\" class=\"btn btn-link\" role=\"button\">Another link</a>\n\t\t</div>\n\t</div>\n</div>",
+			  "thumb": ""
+			}
+			],
+			"components":[],
+			"package": "t4",
+			"category": "UserBlocks"
+		}
+	]
+
+}

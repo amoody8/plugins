@@ -1,0 +1,12 @@
+body {
+	pointer-events: none;
+}
+
+.jub-editor [type="modules"]:after,
+.jub-editor [type="component"]:after {
+	background: #f7f7f7;
+}
+
+.jub-editor #t4-navbar-collapse {
+	display: flex !important;
+}

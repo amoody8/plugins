@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'PT Root UI';
+    src: local('PT Root UI Light'), url('PTRootUI_Light.woff') format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'PT Root UI';
+    src: local('PT Root UI Regular'), url('PTRootUI_Regular.woff') format('woff');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'PT Root UI';
+    src: local('PT Root UI Regular'), url('PTRootUI_Regular.woff') format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'PT Root UI';
+    src: local('PT Root UI Medium'), url('PTRootUI_Medium.woff') format('woff');
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: 'PT Root UI';
+    src: local('PT Root UI Medium'), url('PTRootUI_Medium.woff') format('woff');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'PT Root UI';
+    src: local('PT Root UI Bold'), url('PTRootUI_Bold.woff') format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'PT Root UI';
+    src: local('PT Root UI Bold'), url('PTRootUI_Bold.woff') format('woff');
+    font-weight: 700;
+}

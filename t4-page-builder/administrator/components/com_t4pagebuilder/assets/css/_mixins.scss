@@ -1,0 +1,21 @@
+// MISXIN
+// -------------------------------------------
+@mixin jpb-btn($btn-bg-color, $btn-text-color, $btn-text-hover-color) {
+  background-color: $btn-bg-color;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: none;
+  color: $btn-text-color;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 28px;
+  padding: 5px 12px;
+  min-width: auto;
+  transition: all 0.25s ease-out;
+  width: auto;
+
+  &:hover, &:focus, &:active {
+    background-color: darken($btn-bg-color, 5%);
+    color: $btn-text-hover-color;
+  }
+}

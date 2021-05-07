@@ -1,0 +1,79 @@
+//
+// OFF-CANVAS CONTENT STYLES
+// -------------------------------------
+// Extend style in base
+// --------------------
+@import "../../../plugins/system/t4/themes/base/scss/_offcanvas";
+
+// Offcanvas toggle
+// -----------------------------------
+.t4-offcanvas-toggle {
+  border: 0;
+  color: $gray-600;
+  display: block;
+  float: right;
+  height: 52px;
+  line-height: 52px;
+  margin-left: 4px;
+  padding: 0;
+  transition: all 0.35s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    color: $gray-800;
+  }
+
+  > span {
+    vertical-align: middle;
+  }
+
+  i {
+    font-size: 22px;
+  }
+}
+
+.nav-breakpoint {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &#{$infix} {
+      .t4-offcanvas-toggle {
+        @include media-breakpoint-down($breakpoint) {
+          position: absolute;
+          right: 0;
+          top: 0;
+          z-index: 30;
+        }
+      }
+    }
+  }
+}
+
+
+.t4-offcanvas {
+  // Off Canvas Header
+  // -----------------------------------
+  .t4-off-canvas-header {
+  }
+
+  // Off Canvas Body
+  // -----------------------------------  
+  .t4-off-canvas-body {
+    // Nav bar
+    .navbar {
+      .nav-link,
+      .separator {
+        &:hover, &:focus, &:active {
+        }
+      }
+
+      // Dropdown menu
+      .dropdown-menu {
+        .dropdown-item,
+        .nav-link {
+        }
+      }
+    }
+  }
+}
