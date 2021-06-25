@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<assets>
+	<scripts>
+		<file>js/owl-carousel2/owl.carousel.min.js</file>
+		<file>js/owl.slider.js</file>
+		<file>js/isotope.pkgd.js</file>
+		<file>js/imagesloaded.pkgd.min.js</file>
+		<file>js/packery-mode.pkgd.min.js</file>
+		<file>js/script.js</file>
+		<file>js/jquery.infinitescroll.js</file>
+		<file>js/infinitive-paging.js</file>
+	</scripts>
+
+	<stylesheets>
+    <file>//fonts.googleapis.com/css?family=Karla:400,700</file>
+    <file>//fonts.googleapis.com/css?family=Bitter:400,400italic</file>
+    <file>//fonts.googleapis.com/css?family=PT+Serif:400,700</file>
+    <file>//fonts.googleapis.com/css?family=Open+Sans:400,700,600</file>
+    <file>//fonts.googleapis.com/css?family=PT+Mono</file>
+    <file>//fonts.googleapis.com/css?family=Roboto:400,500,700</file>
+		<file>fonts/font-awesome/css/font-awesome.min.css</file>
+	  <file>acm/clients/css/style.css</file>
+	  <file>acm/cta/css/style.css</file>
+	  <file>acm/features-intro/css/style.css</file>
+	  <file>acm/teams/css/style.css</file>
+	  <file>js/owl-carousel2/assets/owl.carousel.css</file>
+	</stylesheets>
+	
+</assets>

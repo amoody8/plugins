@@ -1,0 +1,163 @@
+/**
+ * ------------------------------------------------------------------------
+ * JA Mono Template
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2004-2011 J.O.O.M Solutions Co., Ltd. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: J.O.O.M Solutions Co., Ltd
+ * Websites:  http://www.joomlart.com -  http://www.joomlancers.com
+ * This file may not be redistributed in whole or significant part.
+ * ------------------------------------------------------------------------
+ */
+
+/* MAIN STYLE
+---------------------*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Karla",sans-serif;
+	font-size: 14px;
+	line-height: 1.625;
+	margin: 0;
+}
+
+/* Mask */
+
+
+
+/* OutLine */
+#outline {
+	margin-top: 9%;
+	text-align: center;
+}
+
+/* Eror Code */
+.error-code {
+	color: #333;
+	font-size: 230px;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: -10px;
+	margin-bottom: 20px;
+}
+
+.error-code span {
+    position: relative;
+    z-index: 1;
+    color: #ddd;
+    font-weight: bold;
+}
+
+.error-code span.first,
+.error-code span.last {
+    z-index: 2;
+    color: #333;
+}
+
+
+/* Message Error */
+.wrap-text {
+	position: relative;
+	height: 49px;
+	margin-bottom: 30px;
+}
+
+/* Message Error */
+.error-message {
+	color: #333;
+	font-size: 30px;
+	font-weight: 400;
+	min-height: 49px;
+	text-transform: uppercase;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: top 900ms;
+}
+
+.has-des .error-message {
+	top: -35px;
+}
+
+.des-message {
+	position: absolute;
+	bottom: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.error-message:after {
+	background-color: #333;
+	bottom: 0;
+	content: "";
+	display: block;
+	height: 2px;
+	left: 50%;
+	position: absolute;
+	width: 60px;
+	margin-left: -30px;
+}
+
+#errorboxbody p {
+	color: #999;
+	display: block;
+	margin: 0 0 30px;
+}
+
+/* Button Home */
+.button-home {
+	animation: opacity ;
+	background: #2727A4;
+	border: 1px solid #2727A4;
+	border-radius: 0;
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 13px 50px;
+	opacity: 0;
+	transform: rotateX(90deg);
+	transition: all 1000ms;
+	transition-delay: 2.1s;
+}
+
+.button-home.show {
+	transform: rotateX(0);
+	opacity: 1;
+}
+
+.button-home:hover,
+.button-home:focus,
+.button-home:active {
+	background: #060682;
+	border-color: #060682;
+}
+
+@media (max-width:  360px){
+
+	/* OutLine */
+	#outline {
+		margin-top: 20%;
+	}
+
+	/* Eror Code */
+	.error-code {
+	  font-size: 150px;
+	}
+
+	/* Message Error */
+	.error-message {
+	}
+
+	/* Message Error */
+	.error-message h2 {
+	  font-size: 24px;
+	}
+}

@@ -1,0 +1,47 @@
+/**
+ * $JA#COPYRIGHT$
+ */
+
+// ---------------------------------------------------------
+// SMART SEARCH
+// ---------------------------------------------------------
+
+.off-canvas body > .autocompleter-choices {
+  width: 0px;
+  left: auto;
+}
+
+//
+// OFF-CANVAS CONTENT STYLES
+// -------------------------------------
+// Tablet/Mobile view
+@media (max-width: @screen-lg-max) {
+  div.t3-off-canvas {
+    &#t3-off-canvas-sidebar {
+      transform: translate3d(-50%, 0px, 0px);
+      -webkit-transform: translate3d(-50%, 0px, 0px);
+    }
+  }
+
+  .off-canvas-right {
+    .t3-off-canvas#t3-off-canvas-sidebar {
+      display: block;
+    }
+  }
+
+  .off-canvas-open .t3-off-canvas#t3-off-canvas-sidebar {
+    
+    &.off-canvas-current {
+
+      + div.t3-wrapper {
+        transform: translate3d(@t3-off-canvas-width, 0px, 0px);
+        -webkit-transform: translate3d(@t3-off-canvas-width, 0px, 0px);
+      }
+    }
+  }
+}
+
+// Edit Module RTL
+.btn.jmodedit {
+  margin-left: 5px!important;
+}

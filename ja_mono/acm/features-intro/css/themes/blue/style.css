@@ -1,0 +1,185 @@
+.acm-features .features-item {
+  display: table;
+}
+.acm-features .features-item:before,
+.acm-features .features-item:after {
+  display: table;
+  content: " ";
+}
+.acm-features .features-item:after {
+  clear: both;
+}
+.acm-features .features-item > div {
+  display: table-cell;
+  float: none !important;
+  vertical-align: middle;
+}
+.acm-features .features-img img {
+  max-width: 100%;
+}
+.acm-features .features-content {
+  background: #ffffff;
+  padding: 20px;
+}
+.acm-features .features-content h3 {
+  margin-top: 0;
+}
+.acm-features.content-left .features-content {
+  text-align: right;
+}
+.acm-features.content-right .features-img {
+  text-align: right;
+}
+.acm-features.content-top {
+  display: block;
+}
+.acm-features.content-top > div {
+  display: block;
+}
+.acm-features.content-top .features-img {
+  float: none;
+  margin: 0 auto;
+}
+.acm-features.content-top .features-content {
+  float: none;
+  margin: 0 auto;
+}
+.acm-features.style-dark p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.acm-features.style-dark h3 a {
+  color: #ffffff;
+}
+.acm-features.style-dark h3 a:hover,
+.acm-features.style-dark h3 a:focus,
+.acm-features.style-dark h3 a:active {
+  color: #00a7e7;
+  text-decoration: none;
+}
+.acm-features > .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.acm-features > .row > div {
+  margin-left: -0.25px;
+  margin-right: -0.25px;
+}
+.acm-features.style-1 .features-item {
+  padding: 80px 5%;
+  display: block;
+  overflow: hidden;
+}
+.acm-features.style-1 .features-item.style-dark {
+  background: #111111;
+  color: #ffffff;
+}
+.acm-features.style-1 .features-item.style-dark .feature-content > a {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+.acm-features.style-1 .features-item.style-dark .feature-title:after {
+  border-bottom-color: #ffffff;
+}
+.acm-features.style-1 .features-item.style-highlight {
+  background: #00a7e7;
+  color: #ffffff;
+}
+.acm-features.style-1 .features-item.style-highlight .feature-content > a {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+.acm-features.style-1 .features-item.style-highlight .feature-title:after {
+  border-bottom-color: #ffffff;
+}
+.acm-features.style-1 .features-item:hover .feature-image {
+  -webkit-animation: image_animation 0.6s;
+  -moz-animation: image_animation 0.6s;
+  -o-animation: image_animation 0.6s;
+  animation: image_animation 0.6s;
+}
+.acm-features.style-1 .features-item:hover .feature-content {
+  -webkit-animation: content_animation 0.6s;
+  -moz-animation: content_animation 0.6s;
+  -o-animation: content_animation 0.6s;
+  animation: content_animation 0.6s;
+}
+.acm-features.style-1 .feature-image {
+  display: block;
+  position: relative;
+  top: 0;
+}
+.acm-features.style-1 .feature-image img {
+  max-width: 80px;
+  max-height: 80px;
+  line-height: 80px;
+}
+.acm-features.style-1 .feature-title {
+  margin: 40px 0 20px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 0;
+  display: inline-block;
+  top: 0;
+}
+.acm-features.style-1 .feature-desc {
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.acm-features.style-1 .feature-content > a {
+  text-transform: uppercase;
+  border-bottom: 1px solid #00a7e7;
+  font-weight: 700;
+  font-size: 12px;
+  position: relative;
+  z-index: 1;
+}
+@-webkit-keyframes image_animation {
+  0% {
+    -webkit-transform: translate3d(0, -300%, 0px);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0px);
+  }
+}
+@-moz-keyframes image_animation {
+  0% {
+    -moz-transform: translate3d(0, -300%, 0px);
+  }
+  100% {
+    -moz-transform: translate3d(0, 0, 0px);
+  }
+}
+@keyframes image_animation {
+  0% {
+    transform: translate3d(0, -300%, 0px);
+  }
+  100% {
+    transform: translate3d(0, 0, 0px);
+  }
+}
+@-webkit-keyframes content_animation {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0px);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0px);
+  }
+}
+@-moz-keyframes content_animation {
+  0% {
+    -moz-transform: translate3d(0, 100%, 0px);
+  }
+  100% {
+    -moz-transform: translate3d(0, 0, 0px);
+  }
+}
+@keyframes content_animation {
+  0% {
+    transform: translate3d(0, 100%, 0px);
+  }
+  100% {
+    transform: translate3d(0, 0, 0px);
+  }
+}

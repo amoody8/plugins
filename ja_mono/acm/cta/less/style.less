@@ -1,0 +1,92 @@
+/**
+ * $JA#COPYRIGHT$
+ */
+ 
+// VARIABLES & MIXINS
+// ------------------
+@import "../../../less/vars.less"; // Modify this for custom colors, font-sizes, etc
+
+
+// ----------------------------------------
+// CTA STYLE
+// ----------------------------------------
+.acm-cta {
+  display: table;
+  height: 100vh;
+  width: 100%;
+  background-color: @brand-primary;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center center;
+
+
+  // Tablet/mobile view
+  @media (max-width: @screen-lg-max) {
+    background-size: cover;
+    background-position: center center;
+    padding: (@t3-global-padding * 4 + @grid-width) @t3-global-padding @t3-global-padding * 4;
+    height: auto;
+  }
+
+  .cta-content {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 @grid-width*2;
+
+    @media (max-width: @screen-lg-max) {
+      padding: 0;
+    }
+  }
+
+  .cta-heading {
+    font-size: 54px;
+    color: @white;
+    font-weight: @font-weight-bold;
+    line-height: @headings-line-height;
+    margin: 0 auto @t3-global-margin * 3;
+    font-family: @headings-font-family;
+    max-width: @content-max-width;
+    position: relative;
+    z-index: 10;
+
+    // Mobile view
+    @media (max-width: @screen-xs-max) {
+      font-size: @font-size-h1;
+    }
+  }
+}
+
+// Fix blend Color for IE 
+.ie11,.ie10,.ie9,.ie8 {
+  .acm-cta {
+    position: relative;
+
+    &:before {
+      background: @brand-primary;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      .opacity(0.9);
+    }
+  }
+}
+
+@supports (-ms-accelerator:true) {
+ .acm-cta {
+  position: relative;
+
+    &:before {
+      background: @brand-primary;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      .opacity(0.9);
+    }
+  } 
+}

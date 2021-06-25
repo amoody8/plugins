@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+<fields name="attribs">
+    <fieldset name="extra-fields" label="TPL_GROUP_EXTRA_FIELDS_LABEL" description="" group="extrafields">
+        <field  name="jcontent_height" type="list" default="0" label="TPL_CONTENT_2HEIGHT_LABEL" description="TPL_CONTENT_2HEIGHT_DESC" >
+        	<option value="0">No</option>
+			<option value="1">Yes</option>
+        </field>
+    </fieldset>
+</fields>
+</form>

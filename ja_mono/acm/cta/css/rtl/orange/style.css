@@ -1,0 +1,79 @@
+.acm-cta {
+  display: table;
+  height: 100vh;
+  width: 100%;
+  background-color: #ff7100;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center center;
+}
+@media (max-width: 1399px) {
+  .acm-cta {
+    background-size: cover;
+    background-position: center center;
+    padding: 160px 20px 80px;
+    height: auto;
+  }
+}
+.acm-cta .cta-content {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 160px;
+}
+@media (max-width: 1399px) {
+  .acm-cta .cta-content {
+    padding: 0;
+  }
+}
+.acm-cta .cta-heading {
+  font-size: 54px;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 auto 60px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  max-width: 640px;
+  position: relative;
+  z-index: 10;
+}
+@media (max-width: 767px) {
+  .acm-cta .cta-heading {
+    font-size: 36px;
+  }
+}
+.ie11 .acm-cta,
+.ie10 .acm-cta,
+.ie9 .acm-cta,
+.ie8 .acm-cta {
+  position: relative;
+}
+.ie11 .acm-cta:before,
+.ie10 .acm-cta:before,
+.ie9 .acm-cta:before,
+.ie8 .acm-cta:before {
+  background: #ff7100;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+@supports (-ms-accelerator:true) {
+  .acm-cta {
+    position: relative;
+  }
+  .acm-cta:before {
+    background: #ff7100;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+  }
+}

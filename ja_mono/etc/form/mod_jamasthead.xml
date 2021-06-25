@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="custom-field" label="JA Extra Fields" description="">
+				<field name="enable-blend" type="list" default="1" label="TPL_ENABLE_BLEND_BACKGROUND" description="TPL_DESC_ENABLE_BACKGROUND">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				
+				<field name="enable-effect" type="list" default="1" label="TPL_ENABLE_EFFECT" description="TPL_DESC_ENABLE_EFFECT">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+		</fieldset>	
+  </fields>
+</form>

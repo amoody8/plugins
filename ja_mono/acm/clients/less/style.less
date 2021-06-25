@@ -1,0 +1,144 @@
+/**
+ * $JA#COPYRIGHT$
+ */
+ 
+// VARIABLES & MIXINS
+// ------------------
+@import "../../../less/vars.less"; // Modify this for custom colors, font-sizes, etc
+
+
+.uber-cliens {
+
+	&.img-grayscale {
+		.client-item span {
+			position: relative;
+      max-width: 100%;
+      width: auto !important;
+		}
+
+		.client-img {
+			display: inline-block;
+			line-height: 1;
+
+			@media (max-width: @screen-md-max) {
+				display: block;
+			}
+		}
+	}
+
+	.client-item {
+    text-align: center;
+    height: 240px;
+    line-height: 240px;
+
+    // Mobile view
+    @media (max-width: @screen-xs-max) {
+    }
+
+		&:hover .client-img {
+			img {
+				.opacity(1) !important;
+			}
+		}
+	}
+
+	.owl-carousel {
+		margin: 0;
+
+    .owl-stage-outer {
+      overflow: hidden;
+      width: 100%;
+
+      // Mobile view
+      @media (max-width: @screen-xs-max) {
+      }
+    }
+
+    .owl-stage {
+      .clearfix();
+
+      // Mobile view
+      @media (max-width: @screen-xs-max) {
+      }
+    }
+
+    .owl-item {
+      float: left;
+      text-align: center;
+      height: 240px;
+      line-height: 240px;
+
+      // Mobile view
+      @media (max-width: @screen-xs-max) {
+      }
+
+      & + .owl-item {
+        border-left: 1px solid @t3-border-color;
+      }
+    }
+
+    .client-img {
+      display: inline-block;
+      width: 100%;
+      padding: 0;
+
+      a {
+        display: block;
+      }
+
+      @media (min-width: @screen-sm-min) {
+        padding-left: @t3-global-padding*2;
+        padding-right: @t3-global-padding*2;
+      }
+
+      @media (min-width: @screen-md-min) {
+        padding-left: @t3-global-padding;
+        padding-right: @t3-global-padding;
+      }
+
+      @media (min-width: @screen-lg-min) {
+        padding-left: @t3-global-padding*2;
+        padding-right: @t3-global-padding*2;
+      }
+
+      img {
+        display: inline-block;
+      }
+    }
+	}
+
+	.owl-controls {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: -40px;
+
+    @media (max-width: @screen-sm-max) {
+      display: none;
+    }
+
+    .owl-nav div {
+      margin: 0;
+      border-radius: 2px;
+      background-color: rgba(0, 0, 0, 0.2);
+      text-indent: -999em;
+      width: 40px;
+      overflow: hidden;
+      position: relative;
+      color: @white;
+      display: inline-block;
+      font-size: @font-size-small;
+      padding: 3px 10px;
+      .opacity(1);
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      &.owl-prev {
+        margin-right: 5px;
+      }
+
+    }
+  }
+}

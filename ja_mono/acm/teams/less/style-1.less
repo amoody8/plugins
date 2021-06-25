@@ -1,0 +1,177 @@
+/**
+ * $JA#COPYRIGHT$
+ */
+ 
+// -------------------------------
+// TEAMS STYLE 1
+// -------------------------------
+.acm-teams {
+  background-color: @body-bg;
+
+  .style-1 {
+    overflow: hidden;
+
+    // Tablet view
+    @media (max-width: @screen-sm-max) {
+      > .row:after {
+        display: inline!important;
+      }
+    }
+
+    &.full-width {
+      .row {
+        margin: 0;
+      }
+    }
+
+    .team-items-head {
+      margin: 0 auto;
+      max-width: 640px;
+      padding: @t3-global-padding (@grid-gutter-width / 2);
+      text-align: center;
+
+      h3 {
+        font-size: @font-size-large * 3;
+        margin: 0 0 @t3-global-margin;
+      }
+
+      .block-intro {
+        font-size: @font-size-large;
+        line-height: 1.6;
+        padding-left: (@grid-width - @font-size-base)/2;
+        padding-right: (@grid-width - @font-size-base)/2;
+
+        @media (min-width: @screen-md-min) {
+          margin: (@t3-global-margin * 3) 0;
+        }
+      }
+    }
+
+    .team-items-footer {
+      background: @yellow;
+      color: @white;
+      padding: @t3-global-padding @grid-gutter-width/2;
+      text-align: center;
+
+      a {
+        font-weight: @font-weight-bold;
+        color: @white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+        &:hover, &:focus, &:active {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .row {
+      border-top: 1px solid @t3-border-color;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      border-right: 1px solid @t3-border-color;
+      border-bottom: 1px solid @t3-border-color;
+      position: relative;
+      .transition(transform 0.35s ease 0s);
+
+      &:last-child {
+        @media (min-width: @screen-md) {
+          border-right: 0;
+        }
+      }
+
+      .item-inner {
+        background-color: @white;
+        padding: @t3-global-padding * 2;
+        position: relative;
+        text-align: center;
+      }
+
+      // Member image
+      .member-image {
+        margin-bottom: @t3-global-margin;
+        text-align: center;
+
+        img {
+          max-width: 64px;
+          position: relative;
+        }
+      }
+
+      .member-info {
+        padding: 0;
+      }
+
+      // Member name
+      h4 {
+        font-size: @font-size-h3 - 2;
+        font-weight: @font-weight-bold;
+        margin: 0 0 5px;
+        line-height: 32px;
+
+        span {
+          font-weight: @font-weight-normal;
+        }
+      }
+
+      // Member title
+      .member-title {
+        color: @gray-light;
+        font-size: @font-size-base - 1;
+        letter-spacing: 0.5px;
+        position: relative;
+        margin-bottom: @t3-global-margin / 2;
+        text-transform: uppercase;
+      }
+
+      // Member description
+      .member-desc {
+        @media (min-width: @screen-sm) {
+          min-height: 80px;
+        }
+      }
+
+      // Member Links
+      .member-links {
+        box-sizing: border-box;
+        overflow: hidden;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .transition(all 0.35s ease 0s);
+
+        li {
+          display: inline-block;
+          margin: 12px 0;
+
+          a {
+            color: @gray-light;
+            display: block;
+            font-size: 16px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            width: 24px;
+
+            &:hover, &:focus, &:active {
+              color: @brand-primary;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        z-index: 2;
+
+        
+      }
+    }
+  }
+}
+
+
+// FIX BUG IE 8
+// ------------
+.ie8 {}

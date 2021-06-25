@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <title>CTA Style 1</title>
+	<sampledata><![CDATA[  {":type":"ja_mono:cta","cta":{"jatools-layout-cta":"style-1","cta-style[cta-style]":["style-light"],"cta-style[cta-heading]":["Mono is a Creative ((br /))Digital Studio ((br /))Based in Norway."],"cta-style[cta-intro]":[""],"cta-style[cta-bg]":["images/joomlart/hero/bg-1.jpg"],"cta-style[cta-btn-text]":["Discover more"],"cta-style[cta-btn-link]":["#"]}}
+    ]]></sampledata>
+  <fields name="cta-style">
+    <fieldset name="basic" label="CTA_BASIC_LABEL" description="CTA_BASIC_DESC" multiple="0"> 
+     
+      <field name="cta-style" type="list" default="style-dark"
+          global="1"
+          label="CTA_STYLE_LABEL"
+          description="CTA_STYLE_DESC">
+        <option value="style-dark">LAYOUT_CTA_DARK</option>
+        <option value="style-light">LAYOUT_CTA_LIGHT</option>
+      </field>
+
+    </fieldset>
+
+    <fieldset name="cta-content" label="CTA_CONTENT_LABEL" description="CTA_CONTENT_DESC" multiple="0">
+      <field name="cta-heading" type="textarea" cols="40" rows="5" default="" label="CTA_HEADING_LABEL" description="CTA_HEADING_DESC"></field>
+      <field name="cta-intro" type="textarea" cols="40" rows="5" default="" label="CTA_INTRODUCTION_LABEL" description="CTA_INTRODUCTION_DESC"></field>
+      <field name="cta-bg" type="media" default="" label="CTA_BACKGROUND_LABEL" description="CTA_BACKGROUND_DESC"></field>
+      <field name="cta-btn-text" type="text" size="50" default="" label="CTA_BUTTON1_TEXT_LABEL" description="CTA_BUTTON1_TEXT_DESC"></field>
+      <field name="cta-btn-link" type="text" size="50" default="" label="CTA_BUTTON1_LINK_LABEL" description="CTA_BUTTON1_LINK_DESC"></field>   
+    </fieldset>
+  </fields>
+</form>

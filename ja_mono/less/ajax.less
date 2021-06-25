@@ -1,0 +1,89 @@
+/**
+ * $JA#COPYRIGHT$
+ */
+
+.ajax-show-content .block-left, .ajax-show-content .block-right {
+	overflow: hidden;
+}
+
+.block-new-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	.translate(100%; 0);
+}
+
+.ajax-prev .block-new-content {
+	.translate(-100%; 0);
+}
+
+.ajax-show-content .block-new-content, .ajax-show-content .block-old-content {
+	width: 100%;
+}
+
+.ajax-showing-content .block-new-content, .ajax-showing-content .block-old-content {
+	width: 100%;
+	.transition(transform 500ms ease 50ms);
+}
+
+.ajax-showing-content .block-old-content {
+	.translate(-100%; 0);
+}
+
+.ajax-showing-content .block-new-content {
+	.translate(0; 0);
+}
+
+.ajax-prev.ajax-showing-content .block-old-content {
+	.translate(100%; 0);
+}
+
+.block-right {
+	min-height: 100%;
+}
+
+.load-indicator {
+	background: @white;
+	visibility: hidden;
+	height: 4px;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: -100px;
+	z-index: 20;
+}
+
+.load-indicator-progress {
+	background: @brand-primary;
+	height: 4px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 0;
+    .transition(width 100ms linear 0ms);
+}
+
+.ajax-loading, .ajax-show-content {
+	.load-indicator {
+		visibility: visible;
+		top: 0;
+	}
+}
+
+.ajax-loading {
+	.load-indicator-progress {
+		.transition(width 2000ms linear 0ms);
+		width: 90%;
+  }
+}
+
+.ajax-show-content {
+	.load-indicator-progress {
+		.transition(width 500ms linear 0ms);
+		width: 100%;
+  }
+}
+
+.block-invisible {
+	
+}
